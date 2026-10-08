@@ -2,29 +2,25 @@
 
 `skullbase-corridor` is an Apache-2.0 research software package for
 surgeon-supervised geometric exploration of rigid skull-base approach
-corridors in physical image coordinates (millimetres). It is not autonomous
-planning software, a validated navigation system, or a treatment recommendation.
-Surgeon supervision describes the intended research workflow, not completed
-clinical validation or permission to use it for patient care.
-
-It samples candidate trajectories through a portal, models each insertion path
-as a finite swept capsule, and reports geometric feasibility, reach, depth,
-clearance, directional witness components, and an estimated feasible solid
-angle. Outputs describe the configured geometric
-model only. They are **not** claims of safe resection, surgical safety, or
-clinical suitability. The current publication scope is software methods and
-engineering verification using synthetic fixtures and existing public,
-deidentified data; no private patient data or outcomes are required or claimed.
-See [SoftwareX manuscript](paper/softwarex.md) and
-[source-release checklist](docs/SOFTWARE_RELEASE_CHECKLIST.md). Institutional
-non-human-subjects determination may still be required; public availability
-does not itself establish ethics exemption or redistribution permission.
+corridors in physical image coordinates (millimetres). It samples finite rigid
+instruments through declared portals and reports reach, insertion depth,
+clearance, target-set coverage, retained path witnesses, and explicit
+abstention states.
 
 Archived release: [v0.2.1, DOI 10.5281/zenodo.23244307](https://doi.org/10.5281/zenodo.23244307).
 
-## Install and run
+## Quickstart
 
-**Primary local workflow:** install the packaged
+Generate and analyze a deterministic case without patient data:
+
+```bash
+python -m pip install -e '.[desktop,test]' build
+skullbase-corridor synthetic case.json
+skullbase-corridor analyze case.json result.json
+skullbase-corridor doctor
+```
+
+For image-linked review, install the packaged
 [3D Slicer module](slicer/README.md), load a CT, place one target, and select
 **Plan Corridors**. A managed external Python runtime runs TotalSegmentator and
 the finite-instrument engine on the workstation; CT data are not uploaded.
@@ -37,11 +33,28 @@ Predicted masks and modeled paths require review. Missing cranial nerves,
 cavernous-sinus contents, dura, or other critical anatomy remains visibly
 unavailable; a modeled feasible path is not a safe surgical route.
 
+## Scope and evidence
+
+The numerical geometry engine contains no anatomy thresholds or landmark
+logic; the approach labels, TotalSegmentator adapter, entry-proposal workflow,
+and public-data evaluation are cranial-specific. This is research software,
+not autonomous planning software, a validated navigation system, or a treatment
+recommendation.
+
+The publication evidence uses only synthetic data and publicly available,
+deidentified data and does not involve human subjects research. No private
+patient data or outcomes are used. See the
+[SoftwareX manuscript](paper/softwarex.md), [validation summary](docs/VALIDATION.md),
+and [source-release checklist](docs/SOFTWARE_RELEASE_CHECKLIST.md).
+
+The `research/` directory contains reproducibility protocols and retained
+engineering evidence; `infra/azure/` contains optional historical benchmark
+infrastructure. Neither is required for the public workstation workflow, and
+cloud benchmarking is not part of the SoftwareX evaluation.
+
+## Install and verify
+
 ```bash
-python -m pip install -e '.[desktop,test]' build
-skullbase-corridor synthetic case.json
-skullbase-corridor analyze case.json result.json
-skullbase-corridor doctor
 python packaging/verify_source_release.py --desktop --tests
 ```
 

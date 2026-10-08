@@ -37,7 +37,7 @@ research software \sep computational geometry \sep medical imaging \sep 3D Slice
 
 \end{frontmatter}
 
-\section{Code metadata (mandatory)}
+\section*{Code metadata (mandatory)}
 
 \begin{longtable}{@{}p{0.29\linewidth}@{\hspace{0.03\linewidth}}p{0.66\linewidth}@{}}
 \toprule
@@ -70,17 +70,17 @@ Issues may additionally be reported at \href{https://github.com/abachu2005/skull
 
 Computational descriptions of a surgical corridor can obscure distinctions that materially change a geometric result. An infinitely thin ray is not a finite-width instrument; an instrument has finite length; an oblique instrument must fit through an aperture; an alternative route is not necessarily available simultaneously with another route; and an unrepresented structure is not demonstrated free space. A sampled failure to reach a target is also not proof of physical or operative inaccessibility.
 
-\texttt{skullbase-corridor} was developed to make these assumptions explicit and inspectable. The intended users are technically supported surgeons and researchers studying configured geometric scenarios. Portal locations, target samples, protected structures, registration, segmentations, instrument dimensions, and review state remain inputs requiring human review. The software does not convert these inputs into clinical ground truth.
+\texttt{skullbase-corridor} was developed to make these assumptions explicit and inspectable. Skull-base surgery is the motivating application, and the model-assisted adapter, entry proposals, approach labels, and public-data evaluation are cranial-specific. The numerical geometry engine contains no imaging thresholds or landmark logic: it operates on declared physical-space targets, portals, instruments, and protected geometry. Its algorithms could therefore be generalized to other rigid-access corridor studies by replacing the approach labels and cranial adapters, although no non-cranial use is evaluated here.
 
-The contribution is a reusable software representation of finite-instrument corridor geometry with traceable witnesses and conservative handling of incomplete information. Existing medical-image visualization and annotation functions are used through 3D Slicer \citep{slicer}. The package adds typed corridor semantics, finite insertion and aperture constraints, exact-path state reporting, approach-specific set comparisons, incomplete-anatomy abstention, and checksummed exports. It supports reproducible software experiments without asserting that the configured openings are anatomically appropriate or that a geometrically feasible path is surgically safe.
+The intended users are technically supported surgeons and researchers. Existing image review functions are provided through 3D Slicer \citep{slicer}; the package adds finite insertion and aperture constraints, retained path witnesses, set-based approach comparisons, incomplete-anatomy abstention, and checksummed exports. Inputs still require human review, and geometric feasibility is not clinical safety.
 
 \section{Related work}
 
-3D Slicer provides an extensible environment for segmentation, registration, visualization, and image-guided-intervention research \citep{slicer,ungi2016}. Procedure-specific modules have supported brain laser-ablation planning, pedicle-screw trajectories, implant navigation, and stereoelectroencephalography workflows \citep{yeniaras2014,muralidharan2018,chen2017,narizzano2017}. These systems establish the value of integrating planning with image review, but do not address finite-instrument skull-base aperture geometry.
+3D Slicer provides an extensible environment for segmentation, registration, visualization, and image-guided-intervention research \citep{slicer,ungi2016}. Procedure-specific modules have supported brain laser-ablation planning, pedicle-screw trajectories, implant navigation, and stereoelectroencephalography workflows \citep{yeniaras2014,muralidharan2018,chen2017,narizzano2017}. These systems integrate planning with image review but do not address finite-instrument skull-base aperture geometry.
 
-Computer-assisted neurosurgical trajectory planning has been studied for deep brain stimulation, keyhole procedures, and intracranial electrodes \citep{brunenberg2007,beriault2012,shamir2012,trope2015,sparks2017,wankhede2022}. The closest methods rank straight centerlines or cylindrical safety envelopes according to distances from segmented hazards. Shamir et al. map candidate cranial entries and placement uncertainty \citep{shamir2012}, while Bériault et al. use a cylindrical trajectory model \citep{beriault2012}. The present software therefore does not claim novelty merely for assigning a nonzero diameter to a trajectory. Its distinction is the joint representation of finite insertion length, shaft and tip radii, a constrained portal aperture, target reach, exact retained witnesses, and alternative versus simultaneous coverage.
+Computer-assisted neurosurgical trajectory planning has been studied for deep brain stimulation, keyhole procedures, and intracranial electrodes \citep{brunenberg2007,beriault2012,shamir2012,trope2015,sparks2017,wankhede2022}. The closest methods rank straight centerlines or cylindrical safety envelopes according to distances from segmented hazards. Shamir et al. map candidate cranial entries and placement uncertainty \citep{shamir2012}, while Bériault et al. use a cylindrical trajectory model \citep{beriault2012}. The distinction here is the joint representation of finite insertion length, shaft and tip radii, a constrained portal aperture, target reach, exact retained witnesses, and alternative versus simultaneous coverage.
 
-Quantitative skull-base anatomy commonly compares area of exposure, corridor depth, angle of attack, surgical freedom, or working volume in cadaveric specimens \citep{roth2009,wilson2014,elhadi2014,lin2021,agosti2022}. Those measurements characterize named approaches and operative exposure. They do not directly compute a patient-specific feasible set of finite rigid-instrument poses against represented anatomy. \texttt{skullbase-corridor} complements rather than replaces that literature: it evaluates a declared geometric model and does not infer operative exposure or maneuverability.
+Quantitative skull-base anatomy commonly compares area of exposure, corridor depth, angle of attack, surgical freedom, or working volume in cadaveric specimens \citep{roth2009,wilson2014,elhadi2014,lin2021,agosti2022}. Those measurements characterize named approaches and operative exposure rather than a patient-specific feasible set of finite rigid-instrument poses against represented anatomy. \texttt{skullbase-corridor} evaluates a declared geometric model and does not infer operative exposure or maneuverability.
 
 TotalSegmentator and its nnU-Net foundation can reduce the effort required to construct image-derived models \citep{totalsegmentator,nnunet}, but general-purpose labels do not supply all fine skull-base neurovascular boundaries. The software therefore preserves missing structures as unavailable instead of interpreting automated segmentation as complete anatomy.
 
@@ -159,6 +159,8 @@ skullbase-corridor doctor
 
 The output records normalized configuration, software and schema versions, source and result checksums, evaluated trajectories, coverage sets, and abstention reasons. The bundled desktop demonstration can be opened without patient data or network access. Changing an analysis parameter invalidates the displayed result until analysis is rerun.
 
+A researcher can rerun the same case while sweeping instrument diameter, instrument length, portal size, or reviewed bone removal and compare the resulting reached-target sets and retained paths.
+
 \subsection{Reviewed segmented workflow in 3D Slicer}
 
 In the reviewed-segment workflow, a user loads a CT and aligned segmentations, identifies target and entry geometry, selects target and protected-anatomy segments, optionally supplies approach-specific bone-removal masks, configures portal and instrument dimensions, and runs the external geometry engine. The output segmentation categorizes target samples as approach-only, shared, sampled-unreached, or unavailable. These categories are snapshots of the evaluated configuration, not live “safe corridor” volumes.
@@ -169,7 +171,7 @@ Slicer writes the selected CT to a private temporary workspace and starts the ma
 
 TotalSegmentator does not supply complete skull-base critical anatomy. Cranial nerves, cavernous-sinus contents, ophthalmic arteries, dura, and other structures can remain unavailable. The workflow displays these gaps as unavailable anatomy rather than treating them as free space.
 
-\section{Verification evidence and impact}
+\section{Verification and worked example}
 
 Verification uses deterministic fixtures, independent geometric references, cross-platform automated tests, and programmatic desktop interactions. The release CI passed on Ubuntu, macOS, and Windows with Python 3.11 and 3.12. Native integration of the exact version 0.2.1 tag passed in 3D Slicer 5.12.3 on macOS 15.4. The verification exercised landmark invalidation, rotated anisotropic KJI-to-IJK/RAS conversion, all five coverage categories, external engine execution, the asynchronous analysis dialog, and scene-reference save/reopen. The positive worked example was additionally verified programmatically. These tests establish bounded software execution, not independent usability or clinical validation.
 
@@ -191,7 +193,11 @@ Voxel-cell refinement was first checked with 530 synthetic and 120 queries from 
 
 NasalSeg v2 \citep{nasalseg} supplied the public P001--P003 cases and the 118-case replay cohort. Twelve of 130 image/label pairs were excluded because image and label physical geometry did not match. Its air-space labels provide no operative-corridor reference standard; the dataset is used only for file, coordinate, and execution tests.
 
-The software turns a corridor result from a single reachability label into an inspectable record: researchers can recover the finite path, insertion depth, represented obstruction state, target subset, and reason for rejection or abstention. This supports reproducible sensitivity studies of portal and instrument assumptions, direct comparison of alternative and simultaneous access without double counting target samples, and regression testing across geometry implementations. The Slicer integration places those records beside the images and segmentations from which inputs were derived. The immediate impact is methodological and educational: it provides a shared, auditable software substrate for phantom, cadaveric, and future clinically validated studies, rather than evidence that any approach is safe or superior.
+\section{Impact}
+
+The software turns a reachability label into an inspectable record containing the finite path, insertion depth, represented obstruction state, target subset, and reason for rejection or abstention. It enables sensitivity studies of how instrument dimensions, portal size, or reviewed bone removal change reachable target fractions, and it supports in-silico pre-specification and replication of exposure comparisons such as those in \citep{roth2009,wilson2014,elhadi2014,lin2021,agosti2022} with explicit instrument assumptions. Slicer places the records beside their source images and segmentations, reducing manual transfer between image review and geometric analysis.
+
+The release is new and has not yet enabled a separate scholarly publication or been evaluated as part of an ongoing clinical study. Its current impact is a shared, auditable substrate for phantom, cadaveric, and future validated studies. The numerical algorithms may support other rigid-access corridor research after replacing the skull-base labels and adapters, but only the cranial workflow is demonstrated here.
 
 \section{Limitations}
 
@@ -221,7 +227,13 @@ This work used only synthetic data and publicly available, deidentified data, an
 
 Images, predictions, temporary work products, Slicer scenes, and reports remain on the workstation unless the user explicitly exports them.
 
-Hashes support integrity and traceability, not anonymization. User-entered case and approach identifiers may be identifying. Local paths, reviewer identities, registration filenames, screenshots, Slicer scenes, and visible annotations must be reviewed before sharing. Dataset licensing does not authorize reidentification or clinical claims.
+\section{Conclusions}
+
+\texttt{skullbase-corridor} provides an open, inspectable implementation of finite-instrument corridor analysis with explicit aperture constraints, coverage sets, and unknown-anatomy states. The archived release passed cross-platform automated tests and release-bound native Slicer integration. Its outputs support reproducible geometric research but do not establish surgical safety or clinical effectiveness.
+
+\subsection{Future plans}
+
+Planned work includes supported mesh geometry, additional rigid and articulated instrument models, and comparison with cadaveric exposure measurements and independent user studies.
 
 \section{Author contributions}
 

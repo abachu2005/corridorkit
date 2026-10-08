@@ -197,6 +197,11 @@ def main() -> None:
     keywords = section(source, "Keywords", "Code metadata (mandatory)")
     body_start = source.index("## Code metadata (mandatory)")
     converted = markdown_to_latex(source[body_start:])
+    converted = converted.replace(
+        r"\section{Code metadata (mandatory)}",
+        r"\section*{Code metadata (mandatory)}",
+        1,
+    )
 
     tex = rf"""\documentclass[preprint,12pt]{{elsarticle}}
 
