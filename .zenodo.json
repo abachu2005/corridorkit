@@ -1,9 +1,18 @@
 {
-  "title": "skullbase-corridor: local-first finite-instrument corridor exploration in 3D Slicer",
-  "description": "Research software for local, surgeon-supervised exploration of finite rigid skull-base instrument corridors. This release is not clinically validated and provides no treatment recommendation or safety claim.",
+  "title": "skullbase-corridor: finite-instrument corridor geometry analysis for skull-base research in 3D Slicer",
+  "description": "Research software for surgeon-supervised exploration of finite rigid skull-base instrument corridors. This release is not clinically validated and provides no treatment recommendation or safety claim.",
   "creators": [
     {
-      "name": "Bachu, Abhinav"
+      "name": "Bachu, Abhinav",
+      "affiliation": "Loyola University Chicago Stritch School of Medicine"
+    },
+    {
+      "name": "Rajesh, Raghav",
+      "affiliation": "Loyola University Chicago Stritch School of Medicine"
+    },
+    {
+      "name": "Germanwala, Anand V.",
+      "affiliation": "Loyola University Chicago Stritch School of Medicine"
     }
   ],
   "license": "Apache-2.0",
@@ -26,5 +35,5 @@
       "resource_type": "software"
     }
   ],
-  "notes": "Public execution is local-first. The optional Azure deployment is retained only as an engineering benchmark. No clinical validation, safety, efficacy, or approach-superiority claim is made."
+  "notes": "No clinical validation, safety, efficacy, or approach-superiority claim is made."
 }

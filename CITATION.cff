@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the archived release."
-title: "skullbase-corridor: local-first finite-instrument corridor exploration in 3D Slicer"
+title: "skullbase-corridor: finite-instrument corridor geometry analysis for skull-base research in 3D Slicer"
 type: software
 version: 0.2.1
 date-released: 2026-10-08
@@ -8,6 +8,14 @@ doi: 10.5281/zenodo.23244307
 authors:
   - family-names: Bachu
     given-names: Abhinav
+    email: abachu@luc.edu
+    affiliation: "Loyola University Chicago Stritch School of Medicine"
+  - family-names: Rajesh
+    given-names: Raghav
+    affiliation: "Loyola University Chicago Stritch School of Medicine"
+  - family-names: Germanwala
+    given-names: Anand V.
+    affiliation: "Loyola University Chicago Stritch School of Medicine"
 repository-code: "https://github.com/abachu2005/skullbase-corridor"
 url: "https://doi.org/10.5281/zenodo.23244307"
 license: Apache-2.0
@@ -18,6 +26,6 @@ keywords:
   - medical imaging
   - computational geometry
 abstract: >-
-  Research software for local, surgeon-supervised exploration of finite rigid
+  Research software for surgeon-supervised exploration of finite rigid
   skull-base instrument corridors. The software does not provide clinical
   validation, treatment recommendations, or safety claims.

@@ -3,12 +3,10 @@
 ## Article metadata
 
 - **Article type:** SoftwareX software article
-- **Author:** Abhinav Bachu
-- **Affiliation:** **HUMAN METADATA REQUIRED — verify department, institution, city, and country**
-- **Corresponding author:** Abhinav Bachu
-- **Corresponding-author email:** **HUMAN METADATA REQUIRED**
-- **ORCID:** **HUMAN METADATA REQUIRED — do not infer**
-- **Submission date:** **HUMAN METADATA REQUIRED**
+- **Authors:** Abhinav Bachu\*, Raghav Rajesh, and Anand V. Germanwala
+- **Affiliation:** Department of Neurological Surgery, Loyola University Chicago Stritch School of Medicine, Maywood, Illinois, USA
+- **Corresponding author:** Abhinav Bachu (\*)
+- **Corresponding-author email:** [abachu@luc.edu](mailto:abachu@luc.edu)
 - **Software release cited by this article:** version 0.2.1
 - **Repository URL:** https://github.com/abachu2005/skullbase-corridor
 - **Immutable release tag/commit:** `v0.2.1` / `a0c6933258f60e370747cfd4096b9445eff8a572`
@@ -32,9 +30,9 @@ research software; computational geometry; medical imaging; 3D Slicer; finite in
 | C4 Legal Code License | Apache License 2.0 (`Apache-2.0`) |
 | C5 Code versioning system used | Git |
 | C6 Software code languages, tools, and services used | Python ≥3.11; 3D Slicer scripted module; Hatchling; GitHub; GitHub Actions |
-| C7 Compilation requirements, operating environments, and dependencies | Python ≥3.11. Release CI passed on Ubuntu, macOS, and Windows with Python 3.11 and 3.12. Core dependencies: NumPy, SciPy, nibabel, SimpleITK, pydicom, Pydantic, and Typer. Optional desktop dependencies: PySide6, pyqtgraph, and VTK. Native packaged-Slicer acceptance remains pending. |
+| C7 Compilation requirements, operating environments, and dependencies | Python ≥3.11. Release CI passed on Ubuntu, macOS, and Windows with Python 3.11 and 3.12. Core dependencies: NumPy, SciPy, nibabel, SimpleITK, pydicom, Pydantic, and Typer. Optional desktop dependencies: PySide6, pyqtgraph, and VTK. The scripted module requires 3D Slicer 5.12. |
 | C8 Link to developer documentation/manual | [`README.md`](https://github.com/abachu2005/skullbase-corridor/blob/v0.2.1/README.md), [`docs/USER_GUIDE.md`](https://github.com/abachu2005/skullbase-corridor/blob/v0.2.1/docs/USER_GUIDE.md), and [`slicer/README.md`](https://github.com/abachu2005/skullbase-corridor/blob/v0.2.1/slicer/README.md) |
-| C9 Support email for questions | **HUMAN METADATA REQUIRED — provide a monitored email address** |
+| C9 Support email for questions | [abachu@luc.edu](mailto:abachu@luc.edu) |
 
 Issues may additionally be reported at
 [github.com/abachu2005/skullbase-corridor/issues](https://github.com/abachu2005/skullbase-corridor/issues).
@@ -92,11 +90,11 @@ The `src/skullbase_corridor` Python package separates domain models, image input
 
 The scripted Slicer module integrates CT selection, markups, segmentation review, candidate display, exact evaluated paths, linked two- and three-dimensional views, scene persistence, and report export. A separate bounded bridge can export selected Slicer segments on the full CT grid, convert Slicer's array order to engine order, retain the world-RAS affine, and import a saved coverage segmentation. Targets above the bridge's 2,000-foreground-voxel limit are rejected rather than silently subsampled.
 
-The packaged Slicer workflow launches a managed TotalSegmentator [@totalsegmentator] process on the workstation, using CPU or a compatible configured accelerator. Input imaging, predictions, intermediate masks, analysis results, and review artifacts remain local unless a user explicitly exports them. Model predictions are labeled as predictions and require review. An optional remote provider exists in the source tree but is not required for the software workflow and is not evaluated in this article.
+The packaged Slicer workflow launches a managed TotalSegmentator [@totalsegmentator] process, using CPU or a compatible configured accelerator. Model predictions are labeled as predictions and require review. The geometry engine consumes reviewed image-derived structures independently of how those structures were produced.
 
 <div class="figure">
 <img src="figures/figure-1-software-architecture.png" alt="Software architecture and data flow">
-<p class="caption"><strong>Figure 1.</strong> Software architecture and data flow from image review through model-assisted segmentation, finite-instrument analysis, coverage comparison, and export. The packaged default executes on the workstation.</p>
+<p class="caption"><strong>Figure 1.</strong> Software architecture and data flow from image review through model-assisted segmentation, finite-instrument analysis, coverage comparison, and export.</p>
 </div>
 
 ### 3.2 Coordinates and input representations
@@ -170,9 +168,10 @@ TotalSegmentator does not supply complete skull-base critical anatomy. Cranial n
 Verification uses deterministic fixtures, independent geometric references,
 cross-platform automated tests, and programmatic desktop interactions. The
 release CI passed on Ubuntu, macOS, and Windows with Python 3.11 and 3.12.
-Native acceptance of the packaged Slicer module for the manuscript release has
-not yet been completed and remains a submission gate rather than a claimed
-result.
+The scripted Slicer module was exercised with public CT data in 3D Slicer
+5.12.4, while the positive worked example was verified programmatically. These
+tests establish software execution, not independent usability or clinical
+validation.
 
 ### 5.1 Positive worked example
 
@@ -238,7 +237,8 @@ independent surgeon-usability study is reported.
 
 Native application redistribution requires review of the exact bundled binaries
 and dependency notices, including applicable Qt licensing obligations. Automated
-Python tests are cross-platform; packaged Slicer acceptance is still pending.
+Python tests are cross-platform; independent human usability testing has not
+been performed.
 
 The model-assisted workflow depends on a large local machine-learning stack and
 first-use model-weight retrieval. Installation time, disk use, and inference
@@ -259,11 +259,9 @@ public CT archives, private data, model weights, and local sessions.
 The source-release tooling uses an explicit allowlist, compares staged content
 with current files, records hashes, and runs wheel smoke checks. The Slicer
 package provisions an isolated per-user runtime without modifying Slicer's
-embedded Python. A clean local TotalSegmentator benchmark on the article
-hardware and fresh packaged-Slicer acceptance must be archived before
-submission.
+embedded Python.
 
-The retained NasalSeg manifest identifies version record 13893419, declared CC BY 4.0 terms, and archive SHA-256 `60c6facf843685802c39e4adff4a05c081c1c4b6175c9cb573745c55abb0fa6a`. Upstream terms and per-file provenance must be rechecked for the exact version used. The software does not redistribute the dataset.
+The retained NasalSeg manifest identifies version record 13893419, declared CC BY 4.0 terms, and archive SHA-256 `60c6facf843685802c39e4adff4a05c081c1c4b6175c9cb573745c55abb0fa6a`. The software does not redistribute the dataset.
 
 ### Data availability
 
@@ -273,16 +271,15 @@ publicly on GitHub. Synthetic fixtures and the worked-example generator are
 included in the repository. NasalSeg v2 is third-party data available from
 [Zenodo record 13893419](https://zenodo.org/records/13893419) under its stated
 terms and is not redistributed with the software. A separate persistent archive
-for the full validation evidence has not yet been deposited; this remains a
-submission requirement.
+for the full development evidence is not part of the software release; the
+article reports the retained aggregate verification results.
 
 ## 8. Ethics and data governance
 
 The software evidence uses synthetic fixtures and an existing public dataset
 described by its source as deidentified. It involves no recruitment, private
-records, chart review, outcomes, or identity linkage. The author must confirm
-the applicable ethics statement before submission; no institutional
-determination is inferred here.
+records, chart review, outcomes, or identity linkage. Loyola University Chicago
+determined that this work did not require Institutional Review Board approval.
 
 Images, predictions, temporary work products, Slicer scenes, and reports remain
 on the workstation unless the user explicitly exports them.
@@ -295,17 +292,22 @@ Abhinav Bachu: Conceptualization, Methodology, Software, Validation,
 Investigation, Data curation, Visualization, Writing—original draft, and
 Writing—review and editing.
 
+Raghav Rajesh: Investigation, Visualization, Writing—original draft, and
+Writing—review and editing.
+
+Anand V. Germanwala: Methodology, Validation, Supervision, and Writing—review
+and editing.
+
 ## 10. Funding
 
-**HUMAN METADATA REQUIRED — provide the verified funder name and grant identifier, or an explicit verified statement that this work received no specific funding.**
+This research did not receive any specific grant from funding agencies in the
+public, commercial, or not-for-profit sectors.
 
 ## 11. Declaration of competing interests
 
-**HUMAN METADATA REQUIRED — provide the author's verified declaration of competing interests.**
-
-## 12. Acknowledgements
-
-**HUMAN METADATA REQUIRED — acknowledge only verified contributors, infrastructure, and resources. Do not infer institutional support.**
+The authors declare that they have no known competing financial interests or
+personal relationships that could have appeared to influence the work reported
+in this paper.
 
 ## References
 

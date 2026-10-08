@@ -2,8 +2,6 @@
 
 ## Abhinav Bachu
 
-The following role assignments are a submission draft and require Abhinav Bachu's explicit confirmation:
-
 - Conceptualization
 - Methodology
 - Software
@@ -16,10 +14,19 @@ The following role assignments are a submission draft and require Abhinav Bachu'
 - Visualization
 - Project administration
 
-## Roles requiring confirmation before submission
+## Raghav Rajesh
 
-- Resources
+- Investigation
+- Visualization
+- Writing — original draft
+- Writing — review and editing
+
+## Anand V. Germanwala
+
+- Methodology
+- Validation (clinical-domain review of the software and methodology)
 - Supervision
-- Funding acquisition
+- Writing — review and editing
 
-No role statement in this file establishes a clinical study, clinical validation, institutional determination, or contribution by an unnamed person. Add contributors or revise authorship only after the responsible people verify both contribution and authorship criteria.
+These assignments should be approved by all authors before submission. No role
+statement establishes clinical validation of the software.

@@ -67,7 +67,7 @@ def architecture_figure() -> None:
     ax.add_patch(Rectangle((0.08, 0.7), 10.84, 2.65, fill=False,
                            linestyle="--", linewidth=1.4, edgecolor=TEAL))
     ax.text(5.5, 0.25,
-            "The packaged default runs analysis on the workstation; deployment choice is not the scientific contribution.",
+            "Reviewed structures flow through explicit geometry, analysis, and export stages.",
             ha="center", fontsize=9, color=DARK)
     save(fig, "figure-1-software-architecture.png")
 
@@ -273,20 +273,13 @@ a { color: #176b87; text-decoration: none; }
 .figure { break-inside: avoid; margin: 13pt 0 16pt; text-align: center; }
 .figure img { max-width: 100%; max-height: 185mm; }
 .caption { font-size: 9pt; text-align: left; margin: 5pt 10pt; line-height: 1.3; }
-.draft-banner { border: 1.2px solid #d65a4a; color: #8b2f25; background: #fff4f1;
-  padding: 7pt; font: bold 9pt Arial, sans-serif; text-align: center; margin-bottom: 12pt; }
 .equation { text-align: center; font-style: italic; margin: 9pt; }
 .references { font-size: 9pt; break-before: avoid; }
 blockquote { color: #455a64; border-left: 3px solid #b0bec5; padding-left: 10pt; }
 """
-    banner = (
-        '<div class="draft-banner">INTERNAL REVIEW DRAFT — not in the mandatory SoftwareX template. '
-        "Runtime evidence and author metadata remain incomplete."
-        "</div>"
-    )
     html = (
         "<!doctype html><html><head><meta charset='utf-8'><title>skullbase-corridor "
-        f"SoftwareX draft</title><style>{css}</style></head><body>{banner}{body}</body></html>"
+        f"SoftwareX manuscript</title><style>{css}</style></head><body>{body}</body></html>"
     )
     html_path = PAPER / "softwarex.html"
     html_path.write_text(html)
