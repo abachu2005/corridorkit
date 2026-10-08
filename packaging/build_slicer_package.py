@@ -33,7 +33,7 @@ MODULE_FILES = (
 MODULE_RESOURCES = ("Resources/Icons/SkullBaseComparison.png",)
 SOURCE_DATE_EPOCH = 315532800  # 1980-01-01, the first date representable by ZIP.
 ZIP_TIME = (1980, 1, 1, 0, 0, 0)
-ARCHIVE_ROOT = "SkullBaseCorridor"
+ARCHIVE_ROOT = "CorridorKit"
 
 
 def sha256_bytes(data: bytes) -> str:
@@ -88,8 +88,8 @@ def validate_wheelhouse(wheelhouse: Path) -> list[Path]:
     wheels = sorted(wheelhouse.glob("*.whl"), key=lambda path: path.name.lower())
     if not wheels:
         raise ValueError(f"wheelhouse has no wheels: {wheelhouse}")
-    if not any(path.name.lower().startswith("skullbase_corridor-") for path in wheels):
-        raise ValueError("wheelhouse is missing the skullbase_corridor project wheel")
+    if not any(path.name.lower().startswith("corridorkit-") for path in wheels):
+        raise ValueError("wheelhouse is missing the corridorkit project wheel")
     names = [path.name.lower() for path in wheels]
     if len(names) != len(set(names)):
         raise ValueError("wheelhouse contains case-insensitive duplicate names")
@@ -113,8 +113,8 @@ def stage_payload(stage: Path, wheelhouse: Path) -> dict[str, object]:
 
     # SkullBaseComparison loads this small numerical core directly for its
     # in-process landmark measurements.
-    anatomical = ROOT / "src" / "skullbase_corridor" / "analysis" / "anatomical.py"
-    core_destination = package / "src" / "skullbase_corridor" / "analysis"
+    anatomical = ROOT / "src" / "corridorkit" / "analysis" / "anatomical.py"
+    core_destination = package / "src" / "corridorkit" / "analysis"
     core_destination.mkdir(parents=True)
     shutil.copyfile(anatomical, core_destination / anatomical.name)
 
@@ -128,7 +128,7 @@ def stage_payload(stage: Path, wheelhouse: Path) -> dict[str, object]:
     launcher = runtime / "bin" / "python"
     launcher.parent.mkdir()
     launcher.write_text(
-        '#!/bin/sh\nexec "${SKULLBASE_BOOTSTRAP_PYTHON:-python3}" '
+        '#!/bin/sh\nexec "${CORRIDORKIT_BOOTSTRAP_PYTHON:-python3}" '
         '"$(dirname "$0")/../bootstrap.py" "$@"\n',
         encoding="utf-8",
         newline="\n",
@@ -145,7 +145,7 @@ def stage_payload(stage: Path, wheelhouse: Path) -> dict[str, object]:
         "setup_requires_network": True,
         "model_weights_bundled": False,
         "import_check": [
-            "skullbase_corridor",
+            "corridorkit",
             "totalsegmentator",
             "numpy",
             "scipy",
@@ -177,11 +177,11 @@ def stage_payload(stage: Path, wheelhouse: Path) -> dict[str, object]:
         }
     manifest = {
         "schema_version": 1,
-        "product": "SkullBaseCorridor",
+        "product": "CorridorKit",
         "version": project_version(),
         "slicer_compatibility": "5.12",
-        "additional_module_path": "SkullBaseCorridor/slicer/SkullBaseComparison",
-        "runtime_entrypoint": "SkullBaseCorridor/slicer/runtime/bin/python",
+        "additional_module_path": "CorridorKit/slicer/SkullBaseComparison",
+        "runtime_entrypoint": "CorridorKit/slicer/runtime/bin/python",
         "files": files,
     }
     (package / "package-manifest.json").write_bytes(canonical_json(manifest))
@@ -212,7 +212,7 @@ def write_deterministic_zip(stage: Path, output: Path) -> None:
 
 
 def build(output: Path, wheelhouse: Path | None = None) -> dict[str, object]:
-    with tempfile.TemporaryDirectory(prefix="skullbase-slicer-package-") as temporary:
+    with tempfile.TemporaryDirectory(prefix="corridorkit-slicer-package-") as temporary:
         workspace = Path(temporary)
         if wheelhouse is None:
             wheelhouse = workspace / "wheelhouse"
@@ -234,7 +234,7 @@ def main() -> None:
     parser.add_argument(
         "--output",
         type=Path,
-        default=ROOT / "dist" / f"SkullBaseCorridor-Slicer-5.12-{project_version()}.zip",
+        default=ROOT / "dist" / f"CorridorKit-Slicer-5.12-{project_version()}.zip",
     )
     parser.add_argument(
         "--wheelhouse",

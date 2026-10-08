@@ -1,10 +1,9 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite the archived release."
-title: "skullbase-corridor: finite-instrument corridor geometry analysis for skull-base research in 3D Slicer"
+message: "If you use this software, please cite the versioned release."
+title: "CorridorKit: Open-source software for geometric comparison of skull-base surgical corridors"
 type: software
-version: 0.2.1
+version: 0.3.0
 date-released: 2026-10-08
-doi: 10.5281/zenodo.23244307
 authors:
   - family-names: Bachu
     given-names: Abhinav
@@ -16,8 +15,8 @@ authors:
   - family-names: Germanwala
     given-names: Anand V.
     affiliation: "Loyola University Chicago Stritch School of Medicine"
-repository-code: "https://github.com/abachu2005/skullbase-corridor"
-url: "https://doi.org/10.5281/zenodo.23244307"
+repository-code: "https://github.com/abachu2005/corridorkit"
+url: "https://github.com/abachu2005/corridorkit/releases/tag/v0.3.0"
 license: Apache-2.0
 keywords:
   - 3D Slicer
@@ -26,6 +25,7 @@ keywords:
   - medical imaging
   - computational geometry
 abstract: >-
-  Research software for surgeon-supervised exploration of finite rigid
-  skull-base instrument corridors. The software does not provide clinical
-  validation, treatment recommendations, or safety claims.
+  Open-source research software for geometric comparison of finite rigid
+  skull-base instrument corridors, with explicit aperture constraints,
+  retained trajectories, coverage sets, and unavailable-anatomy states.
+  Distributed as the corridorkit Python package and command-line tools.

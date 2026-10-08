@@ -3,8 +3,8 @@
 import numpy as np
 import pytest
 
-from skullbase_corridor.domain.models import VoxelGeometry
-from skullbase_corridor.geometry.voxel import VoxelMaskBackend
+from corridorkit.domain.models import VoxelGeometry
+from corridorkit.geometry.voxel import VoxelMaskBackend
 
 
 def backend(tmp_path, *, refine=True, budget=128, affine=None, indices=((3, 3, 3),)):
@@ -141,7 +141,7 @@ def test_sheared_anisotropic_fov_uses_physical_capsule_margin(tmp_path, axis, si
 
 
 def test_budget_is_checked_before_reference_construction(tmp_path, monkeypatch):
-    from skullbase_corridor.geometry import mesh_reference
+    from corridorkit.geometry import mesh_reference
 
     b = backend(tmp_path, budget=1, indices=((3, 3, 3), (3, 3, 4)))
 

@@ -24,8 +24,8 @@ import scipy
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from skullbase_corridor.domain.models import CorridorCase
-from skullbase_corridor.geometry.engine import analyze_case
+from corridorkit.domain.models import CorridorCase
+from corridorkit.geometry.engine import analyze_case
 
 
 def digest(data):
@@ -143,10 +143,10 @@ def main():
     original = json.loads((ROOT / "research/refined-angular/protocol.json").read_bytes())
     source_paths = [
         Path(__file__).resolve(),
-        ROOT / "src/skullbase_corridor/analysis/geometric_angular.py",
-        ROOT / "src/skullbase_corridor/geometry/engine.py",
-        ROOT / "src/skullbase_corridor/geometry/primitives.py",
-        ROOT / "src/skullbase_corridor/domain/models.py",
+        ROOT / "src/corridorkit/analysis/geometric_angular.py",
+        ROOT / "src/corridorkit/geometry/engine.py",
+        ROOT / "src/corridorkit/geometry/primitives.py",
+        ROOT / "src/corridorkit/domain/models.py",
         ROOT / "tests/test_geometric_angular.py",
     ]
     sources = {str(p.relative_to(ROOT)): p.read_bytes() for p in source_paths}

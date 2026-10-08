@@ -1,4 +1,8 @@
-# Reproducing the v0.2.1 software results
+# Reproducing CorridorKit software behavior
+
+The commands below target the current CorridorKit v0.3.0 source. Historical
+v0.2.1 results and frozen evidence retain their original versions and names;
+they do not establish testing of the renamed v0.3.0 release or tag.
 
 This protocol reproduces software behavior, not clinical validity. No private
 patient data are required. Public CTs and model weights are downloaded from
@@ -9,28 +13,30 @@ their original providers and are not redistributed by this repository.
 Use Python 3.11 or newer:
 
 ```bash
+git clone https://github.com/abachu2005/corridorkit.git
+cd corridorkit
 python -m venv .venv
 . .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -e '.[test]'
-skullbase-corridor synthetic example.case.json
-skullbase-corridor analyze example.case.json example.result.json
-skullbase-corridor doctor
+corridorkit synthetic example.case.json
+corridorkit analyze example.case.json example.result.json
+corridorkit doctor
 ```
 
 The synthetic command is deterministic and needs no image data, model weights,
 GPU, cloud account, or credentials.
 
-## Verified source and package build
+## Source and package verification commands
 
 ```bash
 python -m pip install -e '.[desktop,test]' build
 python packaging/verify_source_release.py --desktop --tests --build \
-  --output dist/source-release-v0.2.1 \
-  --report dist/source-release-v0.2.1-report.json
+  --output dist/source-release-v0.3.0 \
+  --report dist/source-release-v0.3.0-report.json
 python packaging/build_slicer_package.py
 python packaging/verify_slicer_package.py \
-  dist/SkullBaseCorridor-Slicer-5.12-0.2.1.zip
+  dist/CorridorKit-Slicer-5.12-0.3.0.zip
 ```
 
 GUI tests are intentionally isolated into separate processes by the source
@@ -39,11 +45,11 @@ verifier because a combined Qt test process can hang.
 ## Local model-assisted Slicer workflow
 
 1. Install 3D Slicer 5.12.
-2. Extract `SkullBaseCorridor-Slicer-5.12-0.2.1.zip`.
+2. Extract the locally built `CorridorKit-Slicer-5.12-0.3.0.zip`.
 3. Add the extracted
-   `SkullBaseCorridor/slicer/SkullBaseComparison` directory under Slicer's
+   `CorridorKit/slicer/SkullBaseComparison` directory under Slicer's
    **Edit → Application Settings → Modules → Additional module paths**.
-4. Restart Slicer and open **Skull-base approach comparison** under **IGT**.
+4. Restart Slicer and open **CorridorKit** under **IGT**.
 5. Load a CT, place the Target point, and click **Plan Corridors**.
 
 The first setup provisions an isolated Python 3.11+ runtime and installs

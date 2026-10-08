@@ -3,10 +3,10 @@ set -euo pipefail
 
 # Public/deidentified NasalSeg case only. Azure VM managed identity must have
 # blob contributor access; no storage keys or SAS tokens are accepted.
-work=${SKULLBASE_REAL_CT_DIR:-/mnt/skullbase-real-ct}
-account=${SKULLBASE_STORAGE_ACCOUNT:-autohijdra51cac1f2}
-input_blob=${SKULLBASE_INPUT_BLOB:-skullbase-corridor/nasalseg/P001_img.nrrd}
-output_prefix=${SKULLBASE_OUTPUT_PREFIX:-skullbase-corridor/real-ct-p001-20261007}
+work=${CORRIDORKIT_REAL_CT_DIR:-/mnt/skullbase-real-ct}
+account=${CORRIDORKIT_STORAGE_ACCOUNT:-autohijdra51cac1f2}
+input_blob=${CORRIDORKIT_INPUT_BLOB:-skullbase-corridor/nasalseg/P001_img.nrrd}
+output_prefix=${CORRIDORKIT_OUTPUT_PREFIX:-corridorkit/real-ct-p001-20261007}
 mkdir -p "$work"
 cd "$work"
 

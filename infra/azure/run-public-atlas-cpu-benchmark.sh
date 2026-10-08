@@ -4,7 +4,7 @@ set -euo pipefail
 # Runs inside a disposable/public-research Azure worker. It deliberately uses
 # only the public UW averaged atlas and emits observed timings; it does not
 # claim patient-level quality or GPU performance.
-work=${SKULLBASE_BENCHMARK_DIR:-"${HOME:-/tmp}/skullbase-corridor-benchmark"}
+work=${CORRIDORKIT_BENCHMARK_DIR:-"${HOME:-/tmp}/corridorkit-benchmark"}
 mkdir -p "$work"
 cd "$work"
 
@@ -36,7 +36,7 @@ preprocess_ms=$(( ($(date +%s%N) - stage_start) / 1000000 ))
 
 rm -rf masks
 stage_start=$(date +%s%N)
-timeout "${SKULLBASE_MODEL_TIMEOUT:-80m}" \
+timeout "${CORRIDORKIT_MODEL_TIMEOUT:-80m}" \
   venv/bin/TotalSegmentator \
   -i atlas.nii.gz \
   -o masks \

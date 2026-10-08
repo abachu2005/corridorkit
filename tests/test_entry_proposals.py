@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from skullbase_corridor.anatomy.entry_proposals import (
+from corridorkit.anatomy.entry_proposals import (
     AnatomyMask,
     ProposalStatus,
     TargetLaterality,

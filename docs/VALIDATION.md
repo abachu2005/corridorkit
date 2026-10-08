@@ -1,6 +1,8 @@
-# Engineering validation statement
+# CorridorKit engineering validation statement
 
-Version: 0.2.1 research software release; clinical release gates remain open.
+Historical evidence baseline: v0.2.1 research software release. The current
+source is CorridorKit v0.3.0; the records below are not verification of the
+renamed release or tag. Clinical release gates remain open.
 
 ## Established
 

@@ -67,7 +67,7 @@ class CorridorAnalysisDialog(qt.QDialog):
         layout.addWidget(self.complete)
         layout.addWidget(self.removals)
         self.python = qt.QLineEdit(os.environ.get(
-            "SKULLBASE_PYTHON", ""))
+            "CORRIDORKIT_PYTHON", ""))
         form.addRow("External engine Python", self.python)
         self.status = qt.QLabel("Full target grid; maximum 2,000 target voxels per analysis.")
         self.status.wordWrap = True

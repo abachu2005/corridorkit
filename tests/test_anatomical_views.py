@@ -7,9 +7,9 @@ import pytest
 from PySide6 import QtWidgets
 from PySide6.QtTest import QSignalSpy
 
-from skullbase_corridor.desktop.views import LinkedViewer, in_slice
-from skullbase_corridor.io.volumes import Volume
-from skullbase_corridor.synthetic.cases import analytical_case
+from corridorkit.desktop.views import LinkedViewer, in_slice
+from corridorkit.io.volumes import Volume
+from corridorkit.synthetic.cases import analytical_case
 
 
 @pytest.fixture(scope="module")

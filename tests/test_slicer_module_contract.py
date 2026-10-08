@@ -27,7 +27,7 @@ def test_atlas_loader_uses_downloader_cache_without_loading_on_import(monkeypatc
 
 def test_measurement_core_loads_without_slicer_or_application_dependencies():
     spec = importlib.util.spec_from_file_location(
-        "isolated_anatomical_core", ROOT / "src/skullbase_corridor/analysis/anatomical.py")
+        "isolated_anatomical_core", ROOT / "src/corridorkit/analysis/anatomical.py")
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     result = module.compare_landmarks(

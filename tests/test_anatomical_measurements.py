@@ -9,7 +9,7 @@ import sys
 import numpy as np
 import pytest
 
-from skullbase_corridor.analysis.anatomical import compare_landmarks
+from corridorkit.analysis.anatomical import compare_landmarks
 
 
 def landmarks():
@@ -203,13 +203,13 @@ def test_json_safe_inputs_definitions_and_limitations():
 
 def test_standalone_module_does_not_import_pydantic_or_engine():
     # Test the owned file independently of legacy package __init__ imports.
-    path = Path(__file__).parents[1] / "src/skullbase_corridor/analysis/anatomical.py"
+    path = Path(__file__).parents[1] / "src/corridorkit/analysis/anatomical.py"
     code = """
 import importlib.util
 import sys
 class BlockHeavyImports:
     def find_spec(self, fullname, path=None, target=None):
-        if fullname.split('.')[0] in {'pydantic', 'scipy', 'skullbase_corridor'}:
+        if fullname.split('.')[0] in {'pydantic', 'scipy', 'corridorkit'}:
             raise AssertionError('Unexpected heavy import: ' + fullname)
 sys.meta_path.insert(0, BlockHeavyImports())
 spec = importlib.util.spec_from_file_location('standalone_anatomical', sys.argv[1])

@@ -3,13 +3,13 @@ requires = ["hatchling>=1.25"]
 build-backend = "hatchling.build"
 
 [project]
-name = "skullbase-corridor"
-version = "0.2.1"
+name = "corridorkit"
+version = "0.3.0"
 description = "Geometry-first analysis of skull-base instrument corridors"
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.11"
-authors = [{ name = "Skullbase Corridor contributors" }]
+authors = [{ name = "CorridorKit contributors" }]
 dependencies = [
   "numpy>=1.26",
   "scipy>=1.11",
@@ -28,20 +28,20 @@ cloud = ["fastapi>=0.115", "uvicorn>=0.32"]
 local-inference = ["TotalSegmentator==2.11.0"]
 
 [project.scripts]
-skullbase-corridor = "skullbase_corridor.cli:app"
+corridorkit = "corridorkit.cli:app"
 
 [project.gui-scripts]
-skullbase-corridor-gui = "skullbase_corridor.desktop:main"
+corridorkit-gui = "corridorkit.desktop:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/skullbase_corridor"]
+packages = ["src/corridorkit"]
 
 [tool.hatch.build.targets.sdist]
 include = [
   "/src", "/tests", "/docs", "/packaging/*.py", "/packaging/*.command", "/packaging/*.md",
   "/README.md", "/LICENSE", "/CITATION.cff", "/.zenodo.json",
   "/pyproject.toml", "/CMakeLists.txt",
-  "/SkullBaseCorridor.s4ext", "/infra/azure",
+  "/CorridorKit.s4ext", "/infra/azure",
   "/paper",
   "/research/run_voxel_refinement.py",
   "/research/prepare_interactive_real_case.py",

@@ -4,7 +4,7 @@ Registry schema: **1.0.0**
 Evidence review date: **2026-10-07**
 
 The machine-readable authority is
-`src/skullbase_corridor/anatomy/resources.py`. This ledger records potential
+`src/corridorkit/anatomy/resources.py`. This ledger records potential
 anatomy resources, not installed integrations. `downloadable` means an upstream
 artifact was verified; it does **not** mean this application can run it. Every
 entry is currently `research_only` or `unavailable`, and none is a production

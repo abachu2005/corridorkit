@@ -3,8 +3,8 @@ import json
 import numpy as np
 import pytest
 
-from skullbase_corridor.application.slicer_bridge import run_request
-from skullbase_corridor.domain.models import (
+from corridorkit.application.slicer_bridge import run_request
+from corridorkit.domain.models import (
     ApproachConfig,
     ApproachKind,
     CorridorCase,
@@ -20,7 +20,7 @@ from skullbase_corridor.domain.models import (
     VirtualBoneRemoval,
     VoxelGeometry,
 )
-from skullbase_corridor.geometry.engine import analyze_case, evaluate_exact_path
+from corridorkit.geometry.engine import analyze_case, evaluate_exact_path
 
 
 def approach(*, allow_unknown=False, portal_radius=3.0, removals=None, center=(0, 0, 1)):

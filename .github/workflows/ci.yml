@@ -28,7 +28,7 @@ jobs:
           --ignore=tests/test_planning_layout.py
           --ignore=tests/test_planning_overlays.py
           --ignore=tests/test_trajectory_views.py
-      - run: python -m skullbase_corridor.cli doctor
+      - run: python -m corridorkit.cli doctor
 
   desktop:
     runs-on: ubuntu-latest

@@ -4,12 +4,12 @@ import nibabel as nib
 import numpy as np
 import pytest
 
-from skullbase_corridor.anatomy.entry_proposals import propose_entry_candidates
-from skullbase_corridor.anatomy.totalsegmentator_adapter import (
+from corridorkit.anatomy.entry_proposals import propose_entry_candidates
+from corridorkit.anatomy.totalsegmentator_adapter import (
     adapt_outputs,
     split_bilateral_mask,
 )
-from skullbase_corridor.io.volumes import Volume
+from corridorkit.io.volumes import Volume
 
 
 def _save(path: Path, data: np.ndarray, affine: np.ndarray) -> None:

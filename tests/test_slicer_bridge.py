@@ -8,14 +8,14 @@ import sys
 import numpy as np
 import pytest
 
-from skullbase_corridor.application.slicer_bridge import (
+from corridorkit.application.slicer_bridge import (
     BONE_NAME,
     UNKNOWN_NAME,
     SlicerBridgeRequest,
     build_case,
     run_request,
 )
-from skullbase_corridor.geometry.engine import analyze_case
+from corridorkit.geometry.engine import analyze_case
 
 
 @pytest.fixture
@@ -225,7 +225,7 @@ def test_cli_round_trip_and_invalid_request_exit_code(exported, tmp_path):
 
 
 def test_changed_input_rejected_before_export(exported, tmp_path, monkeypatch):
-    from skullbase_corridor.application import slicer_bridge
+    from corridorkit.application import slicer_bridge
 
     actual_analyze = slicer_bridge.analyze_case
 

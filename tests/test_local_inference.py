@@ -2,8 +2,8 @@ import asyncio
 import hashlib
 from pathlib import Path
 
-from skullbase_corridor.anatomy import local_inference
-from skullbase_corridor.anatomy.azure_provider import InferenceRequest
+from corridorkit.anatomy import local_inference
+from corridorkit.anatomy.azure_provider import InferenceRequest
 
 
 def test_local_inference_runs_each_task_and_hashes_artifacts(tmp_path, monkeypatch):

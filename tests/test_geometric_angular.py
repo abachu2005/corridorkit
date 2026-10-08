@@ -5,9 +5,9 @@ import math
 import numpy as np
 import pytest
 
-from skullbase_corridor.analysis.geometric_angular import integrate_unobstructed_solid_angle
-from skullbase_corridor.domain.models import CorridorCase
-from skullbase_corridor.geometry.engine import analyze_case
+from corridorkit.analysis.geometric_angular import integrate_unobstructed_solid_angle
+from corridorkit.domain.models import CorridorCase
+from corridorkit.geometry.engine import analyze_case
 
 
 def direction(tilt, azimuth):

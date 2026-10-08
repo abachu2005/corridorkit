@@ -8,16 +8,16 @@ import os
 import numpy as np
 import pytest
 
-from skullbase_corridor.analysis.coverage import (
+from corridorkit.analysis.coverage import (
     CoverageCategory, build_coverage_comparison, export_comparison,
 )
-from skullbase_corridor.domain.models import (
+from corridorkit.domain.models import (
     AnalysisStatus, ApproachConfig, ApproachKind, ApproachResult, CaseResult,
     CorridorCase, PortalDisk, RigidInstrument, SamplingConfig, TargetPointCloud,
     TrajectoryResult,
 )
-from skullbase_corridor.geometry.engine import analyze_case
-from skullbase_corridor.io.masks import target_from_mask
+from corridorkit.geometry.engine import analyze_case
+from corridorkit.io.masks import target_from_mask
 
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
@@ -284,7 +284,7 @@ def test_csv_unknown_membership_is_blank_not_false(tmp_path):
 @pytest.mark.skipif(importlib.util.find_spec("PySide6") is None, reason="Qt is optional")
 def test_panel_case_result_and_clear_lifecycle():
     from PySide6 import QtWidgets
-    from skullbase_corridor.desktop.comparison import ComparisonPanel
+    from corridorkit.desktop.comparison import ComparisonPanel
 
     app = QtWidgets.QApplication.instance() or QtWidgets.QApplication([])
     panel = ComparisonPanel()

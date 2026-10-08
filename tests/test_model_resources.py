@@ -2,7 +2,7 @@ from dataclasses import replace
 
 import pytest
 
-from skullbase_corridor.anatomy.resources import (
+from corridorkit.anatomy.resources import (
     ArtifactAvailability,
     LicenseStatus,
     Modality,

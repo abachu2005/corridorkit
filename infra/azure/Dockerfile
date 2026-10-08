@@ -2,7 +2,7 @@ FROM python:3.11-slim
 
 ENV PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=1 \
-    SKULLBASE_JOB_ROOT=/data
+    CORRIDORKIT_JOB_ROOT=/data
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends libgl1 libglib2.0-0 \
@@ -16,4 +16,4 @@ RUN python -m pip install \
     "TotalSegmentator==2.11.0"
 
 EXPOSE 8080
-CMD ["uvicorn", "skullbase_corridor.cloud.service:create_app", "--factory", "--host", "0.0.0.0", "--port", "8080", "--workers", "1"]
+CMD ["uvicorn", "corridorkit.cloud.service:create_app", "--factory", "--host", "0.0.0.0", "--port", "8080", "--workers", "1"]

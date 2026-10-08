@@ -42,7 +42,7 @@ class IntegratedPlanningController(qt.QObject):
             if not self.configured():
                 raise ValueError("Configure the optional Azure endpoint and token.")
             self.cancel(remove=False)
-            self.directory = Path(tempfile.mkdtemp(prefix="skullbase-integrated-"))
+            self.directory = Path(tempfile.mkdtemp(prefix="corridorkit-integrated-"))
             ct_path = self.directory / "ct.nii.gz"
             slicer.util.saveNode(volume, str(ct_path))
             request = {
@@ -54,7 +54,7 @@ class IntegratedPlanningController(qt.QObject):
                     "length_mm": self.planner.instrumentLength.value,
                 },
                 "cache_directory": str(
-                    Path.home() / ".skullbase-corridor" / "inference-cache"
+                    Path.home() / ".corridorkit" / "inference-cache"
                 ),
                 "inference_backend": (
                     "local" if self.planner.inferenceBackend.currentIndex == 0 else "azure"
@@ -85,7 +85,7 @@ class IntegratedPlanningController(qt.QObject):
             )
             self.planner.setPlanningBusy(True, status)
             self.process.start(str(python), [
-                "-m", "skullbase_corridor.application.e2e",
+                "-m", "corridorkit.application.e2e",
                 "--request", str(request_path), "--output", str(self.output),
             ])
         except (ValueError, OSError, RuntimeError) as error:

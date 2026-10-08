@@ -7,15 +7,15 @@ import numpy as np
 import pytest
 from pydantic import ValidationError
 
-from skullbase_corridor.domain.models import (
+from corridorkit.domain.models import (
     AnalysisStatus, ApproachConfig, CorridorCase, KnowledgeStatus, PortalDisk,
     ProtectedStructure, RigidInstrument, SampledMaskTarget, SamplingConfig,
     SphereGeometry, TargetPointCloud, VirtualBoneRemoval, VoxelGeometry,
 )
-from skullbase_corridor.geometry.engine import (
+from corridorkit.geometry.engine import (
     AnalysisCancelled, analyze_approach, analyze_case, analyze_simultaneous_pair,
 )
-from skullbase_corridor.geometry.voxel import VoxelMaskBackend
+from corridorkit.geometry.voxel import VoxelMaskBackend
 
 
 def approach(name="A", **updates):

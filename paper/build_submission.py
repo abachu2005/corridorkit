@@ -1,7 +1,11 @@
 """Generate the Elsevier/SoftwareX LaTeX submission source from softwarex.md."""
 from __future__ import annotations
 
+import argparse
 import re
+import shutil
+import subprocess
+import tempfile
 from pathlib import Path
 
 PAPER = Path(__file__).resolve().parent
@@ -18,16 +22,12 @@ def section(text: str, heading: str, next_heading: str) -> str:
 
 
 def latex_escape(value: str) -> str:
-    return (
-        value.replace("\\", r"\textbackslash{}")
-        .replace("&", r"\&")
-        .replace("%", r"\%")
-        .replace("$", r"\$")
-        .replace("#", r"\#")
-        .replace("_", r"\_")
-        .replace("{", r"\{")
-        .replace("}", r"\}")
-    )
+    replacements = {
+        "\\": r"\textbackslash{}", "&": r"\&", "%": r"\%",
+        "$": r"\$", "#": r"\#", "_": r"\_", "{": r"\{",
+        "}": r"\}", "~": r"\textasciitilde{}", "^": r"\textasciicircum{}",
+    }
+    return "".join(replacements.get(character, character) for character in value)
 
 
 def inline(value: str) -> str:
@@ -41,7 +41,7 @@ def inline(value: str) -> str:
         label, url = match.groups()
         if label.startswith("`") and label.endswith("`"):
             rendered = r"\texttt{" + latex_escape(label[1:-1]) + "}"
-        elif label.startswith(("http://", "https://")):
+        elif label.startswith(("http://", "https://", "github.com/")):
             rendered = r"\nolinkurl{" + label + "}"
         else:
             rendered = latex_escape(label)
@@ -84,19 +84,30 @@ def inline(value: str) -> str:
     value = latex_escape(value)
     for index, content in enumerate(tokens):
         value = value.replace(f"ZZTOKEN{index}ZZ", content)
-    return value.replace("—", "---").replace("–", "--").replace("≥", r"$\geq$")
+    return (
+        value.replace("—", "---").replace("–", "--").replace("≥", r"$\geq$")
+        .replace("“", "``").replace("”", "''").replace("‘", "`").replace("’", "'")
+    )
 
 
 def convert_table(lines: list[str]) -> str:
     rows = [[cell.strip() for cell in line.strip().strip("|").split("|")] for line in lines]
     rows = [row for index, row in enumerate(rows) if index != 1]
-    width = len(rows[0])
-    columns = r"@{}p{0.29\linewidth}@{\hspace{0.03\linewidth}}p{0.66\linewidth}@{}"
-    output = [rf"\begin{{longtable}}{{{columns}}}", r"\toprule"]
+    if any(len(row) != 2 for row in rows):
+        raise ValueError("Code metadata must have exactly two columns")
+    columns = (
+        r"@{}>{\raggedright\arraybackslash}p{0.29\linewidth}"
+        r"@{\hspace{0.05\linewidth}}"
+        r">{\raggedright\arraybackslash}p{0.65\linewidth}@{}"
+    )
+    output = [
+        r"\begingroup", r"\small", r"\renewcommand{\arraystretch}{1.2}",
+        rf"\begin{{longtable}}{{{columns}}}", r"\toprule",
+    ]
     for index, row in enumerate(rows):
         output.append(" & ".join(inline(cell) for cell in row) + r" \\")
-        output.append(r"\midrule" if index == 0 else "")
-    output.extend([r"\bottomrule", r"\end{longtable}"])
+        output.append(r"\midrule" if index == 0 else r"\addlinespace[4pt]")
+    output.extend([r"\bottomrule", r"\end{longtable}", r"\endgroup"])
     return "\n".join(output)
 
 
@@ -192,14 +203,22 @@ def markdown_to_latex(body: str) -> str:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--compile", action="store_true",
+        help="Compile with Tectonic to softwarex-submission.pdf",
+    )
+    args = parser.parse_args()
     source = SOURCE.read_text()
+    title = source.splitlines()[0].removeprefix("# ")
     abstract = section(source, "Abstract", "Keywords")
     keywords = section(source, "Keywords", "Code metadata (mandatory)")
+    latex_keywords = latex_escape(keywords).replace("; ", r" \sep ")
     body_start = source.index("## Code metadata (mandatory)")
     converted = markdown_to_latex(source[body_start:])
     converted = converted.replace(
         r"\section{Code metadata (mandatory)}",
-        r"\section*{Code metadata (mandatory)}",
+        "\\clearpage\n" + r"\section*{Code metadata (mandatory)}",
         1,
     )
 
@@ -208,6 +227,8 @@ def main() -> None:
 \usepackage{{amsmath,amssymb}}
 \usepackage{{booktabs,longtable,array}}
 \usepackage{{graphicx}}
+\usepackage[T1]{{fontenc}}
+\usepackage{{lmodern}}
 \usepackage{{hyperref}}
 \usepackage{{microtype}}
 \usepackage{{natbib}}
@@ -220,7 +241,7 @@ def main() -> None:
 \begin{{document}}
 \begin{{frontmatter}}
 
-\title{{skullbase-corridor: Finite-instrument corridor geometry analysis for skull-base research in 3D Slicer}}
+\title{{{inline(title)}}}
 
 \author[luc]{{Abhinav Bachu\corref{{cor1}}}}
 \ead{{abachu@luc.edu}}
@@ -237,7 +258,7 @@ def main() -> None:
 \end{{abstract}}
 
 \begin{{keyword}}
-{latex_escape(keywords).replace("; ", r" \sep ")}
+{latex_keywords}
 \end{{keyword}}
 
 \end{{frontmatter}}
@@ -251,6 +272,16 @@ def main() -> None:
 """
     OUTPUT.write_text(tex)
     print(OUTPUT)
+    if args.compile:
+        # Keep the Elsevier output distinct from the illustrated review PDF.
+        with tempfile.TemporaryDirectory(prefix="corridorkit-tex-") as directory:
+            subprocess.run(
+                ["tectonic", "--outdir", directory, OUTPUT.name],
+                cwd=PAPER, check=True,
+            )
+            destination = PAPER / "softwarex-submission.pdf"
+            shutil.copyfile(Path(directory) / "softwarex.pdf", destination)
+            print(destination)
 
 
 if __name__ == "__main__":

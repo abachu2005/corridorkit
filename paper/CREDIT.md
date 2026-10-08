@@ -5,14 +5,12 @@
 - Conceptualization
 - Methodology
 - Software
-- Validation (software and engineering verification only)
-- Formal analysis
+- Validation
 - Investigation
 - Data curation
 - Writing — original draft
 - Writing — review and editing
 - Visualization
-- Project administration
 
 ## Raghav Rajesh
 
@@ -24,9 +22,9 @@
 ## Anand V. Germanwala
 
 - Methodology
-- Validation (clinical-domain review of the software and methodology)
+- Validation
 - Supervision
 - Writing — review and editing
 
-These assignments should be approved by all authors before submission. No role
-statement establishes clinical validation of the software.
+These assignments match the manuscript and should be approved by all authors
+before submission.

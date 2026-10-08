@@ -8,8 +8,8 @@ from pathlib import Path
 
 from PySide6 import QtCore, QtWidgets
 
-from skullbase_corridor.desktop.app import MainWindow
-from skullbase_corridor.export.json import atomic_json_write
+from corridorkit.desktop.app import MainWindow
+from corridorkit.export.json import atomic_json_write
 
 
 def main():

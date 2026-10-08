@@ -1,6 +1,10 @@
-# Integrated Slicer product acceptance
+# CorridorKit integrated Slicer product acceptance history
 
 Acceptance date: **2026-10-08**
+
+This is a historical v0.2.1 acceptance record, not verification of the renamed
+CorridorKit v0.3.0 release or tag. The recorded image digest, timings and
+evidence paths are preserved unchanged.
 
 ## Product status
 
@@ -30,7 +34,7 @@ The manual label volumes were **not** supplied to anatomy inference or path
 evaluation. Exact checksums, targets, timings, and states are retained in
 `docs/evidence/multicase-integrated-acceptance-20261008.json`.
 
-The public v0.2.1 runtime is local-first: Slicer launches an isolated managed
+The public v0.2.1 runtime was local-first: Slicer launches an isolated managed
 Python worker and CT data remain on the workstation. The first setup installs
 the pinned TotalSegmentator stack and first model use downloads weights. The
 Azure deployment below is optional engineering infrastructure, not a public

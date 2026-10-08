@@ -20,13 +20,13 @@ sys.path.insert(0, str(ROOT / "src"))
 import nibabel as nib
 import numpy as np
 
-from skullbase_corridor.domain.models import (
+from corridorkit.domain.models import (
     ApproachConfig, ApproachKind, CorridorCase, ImageReference, KnowledgeStatus,
     PortalDisk, ProtectedStructure, RigidInstrument, SamplingConfig,
 )
-from skullbase_corridor.export.json import atomic_json_write, file_sha256
-from skullbase_corridor.io.masks import target_from_mask
-from skullbase_corridor.io.volumes import load_volume, validate_alignment, validate_labels
+from corridorkit.export.json import atomic_json_write, file_sha256
+from corridorkit.io.masks import target_from_mask
+from corridorkit.io.volumes import load_volume, validate_alignment, validate_labels
 
 CASE_FILENAME = "interactive-real-case.json"
 TARGET_FILENAME = "demonstration-roi-NOT-TUMOR.nii.gz"

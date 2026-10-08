@@ -38,7 +38,7 @@ def main() -> None:
         # Exclusive creation prevents deletion or overwrite of another run's file.
         with partial.open("xb") as output:
             try:
-                request = urllib.request.Request(URL, headers={"User-Agent": "skullbase-corridor-research/1"})
+                request = urllib.request.Request(URL, headers={"User-Agent": "corridorkit-research/1"})
                 with urllib.request.urlopen(request, timeout=120) as response:
                     total = 0
                     while chunk := response.read(1024 * 1024):

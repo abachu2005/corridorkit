@@ -24,10 +24,19 @@ def main():
         env = os.environ.copy()
         env.pop("PYTHONPATH", None)
         commands = [
-            [str(python), "-m", "pip", "install", "--no-deps", str(wheel)],
-            [str(python), "-m", "skullbase_corridor.cli", "doctor"],
-            [str(python), "-m", "skullbase_corridor.cli", "synthetic", "case.json"],
-            [str(python), "-m", "skullbase_corridor.cli", "analyze", "case.json", "result.json"],
+            [str(python), "-m", "pip", "install", "--no-deps", "--force-reinstall", str(wheel)],
+            [
+                str(python), "-c",
+                "import importlib.metadata, pathlib, sys, corridorkit; "
+                "assert pathlib.Path(corridorkit.__file__).is_relative_to(pathlib.Path(sys.prefix)); "
+                "assert importlib.metadata.version('corridorkit') == corridorkit.__version__; "
+                "eps = {e.name: e.value for e in importlib.metadata.distribution('corridorkit').entry_points}; "
+                "assert eps['corridorkit'] == 'corridorkit.cli:app'; "
+                "assert eps['corridorkit-gui'] == 'corridorkit.desktop:main'",
+            ],
+            [str(python), "-m", "corridorkit.cli", "doctor"],
+            [str(python), "-m", "corridorkit.cli", "synthetic", "case.json"],
+            [str(python), "-m", "corridorkit.cli", "analyze", "case.json", "result.json"],
         ]
         for command in commands:
             subprocess.run(command, cwd=root, env=env, check=True)

@@ -25,8 +25,8 @@ import nibabel as nib
 import numpy as np
 from scipy import ndimage
 
-from skullbase_corridor.anatomy.entry_proposals import AnatomyMask, propose_entry_candidates
-from skullbase_corridor.domain.models import (
+from corridorkit.anatomy.entry_proposals import AnatomyMask, propose_entry_candidates
+from corridorkit.domain.models import (
     ApproachConfig,
     ApproachKind,
     CorridorCase,
@@ -40,14 +40,14 @@ from skullbase_corridor.domain.models import (
     TargetPointCloud,
     VoxelGeometry,
 )
-from skullbase_corridor.export.json import (
+from corridorkit.export.json import (
     atomic_json_write,
     canonical_json,
     file_sha256,
     software_version,
 )
-from skullbase_corridor.geometry.engine import evaluate_exact_paths
-from skullbase_corridor.io.volumes import (
+from corridorkit.geometry.engine import evaluate_exact_paths
+from corridorkit.io.volumes import (
     Volume,
     load_volume,
     resample_to_grid,

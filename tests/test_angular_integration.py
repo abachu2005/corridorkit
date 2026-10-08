@@ -3,7 +3,7 @@ import math
 import numpy as np
 import pytest
 
-from skullbase_corridor.analysis.angular_integration import integrate_solid_angle
+from corridorkit.analysis.angular_integration import integrate_solid_angle
 
 
 @pytest.mark.parametrize("value", [False, True])

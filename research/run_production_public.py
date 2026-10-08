@@ -19,11 +19,11 @@ from scipy import ndimage
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from skullbase_corridor.data.audit import _load
-from skullbase_corridor.domain.models import CorridorCase
-from skullbase_corridor.geometry.engine import analyze_case
-from skullbase_corridor.export.json import atomic_json_write, file_sha256, checksum
-from skullbase_corridor.analysis.statistics import paired_summary
+from corridorkit.data.audit import _load
+from corridorkit.domain.models import CorridorCase
+from corridorkit.geometry.engine import analyze_case
+from corridorkit.export.json import atomic_json_write, file_sha256, checksum
+from corridorkit.analysis.statistics import paired_summary
 
 CONFIG = {
     "name": "production-public-airspace-v1",

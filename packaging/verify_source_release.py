@@ -50,7 +50,7 @@ def test_groups(root: Path) -> list[tuple[str, list[Path]]]:
     numerical, gui = [], []
     for path in sorted((root / "tests").rglob("test_*.py")):
         text = path.read_text()
-        markers = ("PySide6", "pyqtgraph", "skullbase_corridor.desktop", "QApplication")
+        markers = ("PySide6", "pyqtgraph", "corridorkit.desktop", "QApplication")
         (gui if any(marker in text for marker in markers) else numerical).append(path)
     groups = [("numerical", numerical)] if numerical else []
     return groups + [(f"isolated:{path.stem}", [path]) for path in gui]
@@ -61,7 +61,7 @@ def release_files(root: Path) -> list[Path]:
     files = [
         root / name for name in (
             "pyproject.toml", "README.md", "LICENSE", "CMakeLists.txt",
-            "SkullBaseCorridor.s4ext", "CITATION.cff", ".zenodo.json",
+            "CorridorKit.s4ext", "CITATION.cff", ".zenodo.json",
         )
     ]
     for directory, suffixes in (
@@ -109,8 +109,8 @@ def run_check(name, command, root, env, timeout):
 
 def verify_archives(output: Path, root: Path, files: list[Path], version: str):
     """Require byte-for-byte current code and reject unexpected archive content."""
-    wheel_name = f"skullbase_corridor-{version}-py3-none-any.whl"
-    sdist_name = f"skullbase_corridor-{version}.tar.gz"
+    wheel_name = f"corridorkit-{version}-py3-none-any.whl"
+    sdist_name = f"corridorkit-{version}.tar.gz"
     source = {p.relative_to(root).as_posix(): p.read_bytes() for p in files}
     with zipfile.ZipFile(output / wheel_name) as archive:
         wheel = {name: archive.read(name) for name in archive.namelist()
@@ -118,10 +118,10 @@ def verify_archives(output: Path, root: Path, files: list[Path], version: str):
     expected_code = {name[4:]: value for name, value in source.items()
                      if name.startswith("src/")}
     actual_code = {name: value for name, value in wheel.items()
-                   if name.startswith("skullbase_corridor/")}
+                   if name.startswith("corridorkit/")}
     if actual_code != expected_code:
         raise ValueError("Wheel code differs from current source")
-    metadata_prefix = f"skullbase_corridor-{version}.dist-info/"
+    metadata_prefix = f"corridorkit-{version}.dist-info/"
     if any(not (name in expected_code or name.startswith(metadata_prefix)) for name in wheel):
         raise ValueError("Unexpected wheel payload")
     metadata = wheel[metadata_prefix + "METADATA"].decode()
@@ -131,7 +131,7 @@ def verify_archives(output: Path, root: Path, files: list[Path], version: str):
         members = archive.getmembers()
         if any(not (member.isfile() or member.isdir()) for member in members):
             raise ValueError("Unexpected sdist link or special file")
-        prefix = f"skullbase_corridor-{version}/"
+        prefix = f"corridorkit-{version}/"
         payload = {}
         for member in members:
             if member.isfile():
@@ -196,18 +196,18 @@ def main(argv=None) -> int:
     modules = CORE_MODULES + (DESKTOP_MODULES if args.desktop else ())
     code = (
         "import importlib, importlib.metadata, pathlib; "
-        "import skullbase_corridor as package; "
+        "import corridorkit as package; "
         f"assert package.__version__ == {project['version']!r}; "
-        f"assert pathlib.Path(package.__file__).resolve() == pathlib.Path({str(root / 'src/skullbase_corridor/__init__.py')!r}); "
-        f"assert importlib.metadata.version('skullbase-corridor') == {project['version']!r}; "
-        "eps = {e.name: e.value for e in importlib.metadata.distribution('skullbase-corridor').entry_points}; "
-        "assert eps['skullbase-corridor'] == 'skullbase_corridor.cli:app'; "
-        "assert eps['skullbase-corridor-gui'] == 'skullbase_corridor.desktop:main'; "
-        f"[importlib.import_module('skullbase_corridor.' + name) for name in {modules!r}]; "
+        f"assert pathlib.Path(package.__file__).resolve() == pathlib.Path({str(root / 'src/corridorkit/__init__.py')!r}); "
+        f"assert importlib.metadata.version('corridorkit') == {project['version']!r}; "
+        "eps = {e.name: e.value for e in importlib.metadata.distribution('corridorkit').entry_points}; "
+        "assert eps['corridorkit'] == 'corridorkit.cli:app'; "
+        "assert eps['corridorkit-gui'] == 'corridorkit.desktop:main'; "
+        f"[importlib.import_module('corridorkit.' + name) for name in {modules!r}]; "
         "print('source imports, installed version metadata and entry points agree')"
     )
     records = [run_check("imports and metadata", [sys.executable, "-c", code], root, env, args.timeout)]
-    records.append(run_check("CLI help", [sys.executable, "-m", "skullbase_corridor.cli", "--help"],
+    records.append(run_check("CLI help", [sys.executable, "-m", "corridorkit.cli", "--help"],
                              root, env, args.timeout))
     if args.tests:
         groups = test_groups(root)

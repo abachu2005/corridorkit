@@ -1,4 +1,4 @@
-# skullbase-corridor: Finite-instrument corridor geometry analysis for skull-base research in 3D Slicer
+# CorridorKit: Open-source software for geometric comparison of skull-base surgical corridors
 
 ## Article metadata
 
@@ -7,14 +7,14 @@
 - **Affiliation:** Department of Neurological Surgery, Loyola University Chicago Stritch School of Medicine, Maywood, Illinois, USA
 - **Corresponding author:** Abhinav Bachu (\*)
 - **Corresponding-author email:** [abachu@luc.edu](mailto:abachu@luc.edu)
-- **Software release cited by this article:** version 0.2.1
-- **Repository URL:** https://github.com/abachu2005/skullbase-corridor
-- **Immutable release tag/commit:** `v0.2.1` / `a0c6933258f60e370747cfd4096b9445eff8a572`
-- **Archived software identifier/DOI:** [10.5281/zenodo.23244307](https://doi.org/10.5281/zenodo.23244307)
+- **Software release cited by this article:** version 0.3.0
+- **Repository URL:** https://github.com/abachu2005/corridorkit
+- **Release tag:** `v0.3.0`
+- **Versioned software source:** [CorridorKit v0.3.0](https://github.com/abachu2005/corridorkit/tree/v0.3.0)
 
 ## Abstract
 
-`skullbase-corridor` is open research software for reproducible, surgeon-supervised exploration of rigid skull-base approach corridors in physical image coordinates. It represents target samples, protected structures, finite circular portals, and finite rigid instruments, and records evaluated trajectories, insertion depths, clearances, coverage set operations, and explicit rejection or abstention reasons. The package combines a typed Python geometry engine, command-line and desktop interfaces, and a 3D Slicer module for image, segmentation, markup, linked-slice, three-dimensional, and report workflows. A deterministic worked example demonstrates feasible trajectories and distinct sampled coverage for two configured approaches. Verification includes analytical fixtures, independent geometric references, cross-platform automated tests, synthetic desktop workflows, and bounded public-data execution. The software supports research and method development; it is not clinically validated.
+CorridorKit is open-source research software for analyzing rigid surgical access corridors in physical image coordinates. It models finite instruments, circular portals, target samples, and protected structures, retaining every evaluated trajectory with its insertion depth, clearance, and rejection or abstention reason. Missing anatomy is reported as unavailable rather than treated as free space, and approach coverage is compared with exact set operations. A typed Python engine supports command-line, desktop, and 3D Slicer interfaces. Skull-base surgery motivates the application; the numerical geometry is anatomy-agnostic. Verification combines analytical fixtures, cross-platform tests, native Slicer integration, and public-data replay.
 
 ## Keywords
 
@@ -24,26 +24,26 @@ research software; computational geometry; medical imaging; 3D Slicer; finite in
 
 | Field | Value |
 |---|---|
-| C1 Current code version | `v0.2.1` |
-| C2 Permanent link to code/repository used for this code version | Source repository: [https://github.com/abachu2005/skullbase-corridor](https://github.com/abachu2005/skullbase-corridor); archived release: [https://doi.org/10.5281/zenodo.23244307](https://doi.org/10.5281/zenodo.23244307) |
+| C1 Current code version | `v0.3.0` |
+| C2 Permanent link to code/repository used for this code version | Versioned source: [CorridorKit v0.3.0](https://github.com/abachu2005/corridorkit/tree/v0.3.0) |
 | C3 Permanent link to Reproducible Capsule | N/A; no executable reproducible capsule has been deposited |
 | C4 Legal Code License | Apache License 2.0 (`Apache-2.0`) |
 | C5 Code versioning system used | Git |
 | C6 Software code languages, tools, and services used | Python ≥3.11; 3D Slicer scripted module; Hatchling; GitHub; GitHub Actions |
-| C7 Compilation requirements, operating environments, and dependencies | Python ≥3.11. Release CI passed on Ubuntu, macOS, and Windows with Python 3.11 and 3.12. Core dependencies: NumPy, SciPy, nibabel, SimpleITK, pydicom, Pydantic, and Typer. Optional desktop dependencies: PySide6, pyqtgraph, and VTK. The scripted module requires 3D Slicer 5.12. |
-| C8 Link to developer documentation/manual | [`README.md`](https://github.com/abachu2005/skullbase-corridor/blob/v0.2.1/README.md), [`docs/USER_GUIDE.md`](https://github.com/abachu2005/skullbase-corridor/blob/v0.2.1/docs/USER_GUIDE.md), and [`slicer/README.md`](https://github.com/abachu2005/skullbase-corridor/blob/v0.2.1/slicer/README.md) |
+| C7 Compilation requirements, operating environments, and dependencies | Python ≥3.11. CI covers Ubuntu, macOS, and Windows with Python 3.11 and 3.12. Core dependencies: NumPy, SciPy, nibabel, SimpleITK, pydicom, Pydantic, and Typer. Optional desktop dependencies: PySide6, pyqtgraph, and VTK. The scripted module requires 3D Slicer 5.12. |
+| C8 Link to developer documentation/manual | [`README.md`](https://github.com/abachu2005/corridorkit/blob/v0.3.0/README.md), [`docs/USER_GUIDE.md`](https://github.com/abachu2005/corridorkit/blob/v0.3.0/docs/USER_GUIDE.md), and [`slicer/README.md`](https://github.com/abachu2005/corridorkit/blob/v0.3.0/slicer/README.md) |
 | C9 Support email for questions | [abachu@luc.edu](mailto:abachu@luc.edu) |
 
-Issues may additionally be reported at
-[github.com/abachu2005/skullbase-corridor/issues](https://github.com/abachu2005/skullbase-corridor/issues).
+Issues may additionally be reported through the
+[GitHub issue tracker](https://github.com/abachu2005/corridorkit/issues).
 
 ## 1. Motivation and significance
 
 Computational descriptions of a surgical corridor can obscure distinctions that materially change a geometric result. An infinitely thin ray is not a finite-width instrument; an instrument has finite length; an oblique instrument must fit through an aperture; an alternative route is not necessarily available simultaneously with another route; and an unrepresented structure is not demonstrated free space. A sampled failure to reach a target is also not proof of physical or operative inaccessibility.
 
-`skullbase-corridor` was developed to make these assumptions explicit and inspectable. Skull-base surgery is the motivating application, and the model-assisted adapter, entry proposals, approach labels, and public-data evaluation are cranial-specific. The numerical geometry engine contains no imaging thresholds or landmark logic: it operates on declared physical-space targets, portals, instruments, and protected geometry. Its algorithms could therefore be generalized to other rigid-access corridor studies by replacing the approach labels and cranial adapters, although no non-cranial use is evaluated here.
+CorridorKit makes these assumptions explicit and inspectable. Skull-base surgery is the motivating application, and the model-assisted adapter, entry proposals, approach labels, and public-data evaluation are cranial-specific. The numerical geometry engine contains no imaging thresholds or landmark logic: it operates on declared physical-space targets, portals, instruments, and protected geometry. Reuse in other rigid-access corridor studies requires replacing the approach labels and cranial adapters.
 
-The intended users are technically supported surgeons and researchers. Existing image review functions are provided through 3D Slicer [@slicer]; the package adds finite insertion and aperture constraints, retained path witnesses, set-based approach comparisons, incomplete-anatomy abstention, and checksummed exports. Inputs still require human review, and geometric feasibility is not clinical safety.
+The intended users are technically supported surgeons and researchers. Existing image review functions are provided through 3D Slicer [@slicer]; the package adds finite insertion and aperture constraints, retained path witnesses, set-based approach comparisons, incomplete-anatomy abstention, and checksummed exports.
 
 ## 2. Related work
 
@@ -71,7 +71,7 @@ depth, angle of attack, surgical freedom, or working volume in cadaveric
 specimens [@roth2009; @wilson2014; @elhadi2014; @lin2021; @agosti2022]. Those
 measurements characterize named approaches and operative exposure rather than
 a patient-specific feasible set of finite rigid-instrument poses against
-represented anatomy. `skullbase-corridor` evaluates a declared geometric model
+represented anatomy. CorridorKit evaluates a declared geometric model
 and does not infer operative exposure or maneuverability.
 
 TotalSegmentator and its nnU-Net foundation can reduce the effort required to
@@ -84,16 +84,15 @@ automated segmentation as complete anatomy.
 
 ### 3.1 Components and data flow
 
-The `src/skullbase_corridor` Python package separates domain models, image input/output, geometry primitives and engines, analysis, application services, desktop views, anatomy adapters, and exports. Typed Pydantic contracts define cases and results. The command-line interface supports synthetic-case generation, analysis, and environment reporting. The optional Qt/VTK desktop application provides linked anatomical slices, three-dimensional inspection, editable configuration, asynchronous analysis, and export.
+The `corridorkit` Python package separates domain models, image input/output, geometry primitives and engines, analysis, application services, desktop views, anatomy adapters, and exports. Typed Pydantic contracts define cases and results. The command-line interface supports synthetic-case generation, analysis, and environment reporting. The optional Qt/VTK desktop application provides linked anatomical slices, three-dimensional inspection, editable configuration, asynchronous analysis, and export.
 
 The scripted Slicer module integrates CT selection, markups, segmentation review, candidate display, exact evaluated paths, linked two- and three-dimensional views, scene persistence, and report export. A separate bounded bridge can export selected Slicer segments on the full CT grid, convert Slicer's array order to engine order, retain the world-RAS affine, and import a saved coverage segmentation. Targets above the bridge's 2,000-foreground-voxel limit are rejected rather than silently subsampled.
 
 The packaged Slicer workflow launches a managed TotalSegmentator [@totalsegmentator] process, using CPU or a compatible configured accelerator. Model predictions are labeled as predictions and require review. The geometry engine consumes reviewed image-derived structures independently of how those structures were produced.
 
-Anand V. Germanwala, a cranial-base neurosurgeon, reviewed
-the software's corridor model, intended research workflow, and limits on
-clinical interpretation. This expert review informed the methodology and
-presentation but was not a formal usability or clinical-validation study.
+A co-author (A.V.G.), a skull-base neurosurgeon, reviewed the software's
+corridor model, research workflow, and interpretation of geometric results,
+informing the methodology and presentation.
 
 <div class="figure">
 <img src="figures/figure-1-software-architecture.png" alt="Software architecture and data flow">
@@ -102,9 +101,9 @@ presentation but was not a formal usability or clinical-validation study.
 
 ### 3.2 Coordinates and input representations
 
-All engine geometry is represented in millimetres in a declared physical frame. Affine matrices map voxel indices to physical positions. Image loaders normalize declared RAS/LPS conventions and spatial units to RAS millimetres, and incompatible frames are rejected rather than silently aligned. Registration and resampling are explicit review operations.
+All engine geometry is represented in millimeters in a declared physical frame. Affine matrices map voxel indices to physical positions. Image loaders normalize declared RAS/LPS conventions and spatial units to RAS millimeters, and incompatible frames are rejected rather than silently aligned. Registration and resampling are explicit review operations.
 
-Targets can be supplied as physical-coordinate points or mask-derived voxel centres. Complete voxel representations may carry physical cell weights computed from the affine determinant. Sparse samples support count-based coverage only and are not interpreted as tumour-volume percentages. Protected geometry can be represented by analytical spheres or affine voxel masks. Unsupported geometry, including the current unsupported mesh input route, causes abstention rather than being treated as empty space.
+Targets can be supplied as physical-coordinate points or mask-derived voxel centers. Complete voxel representations may carry physical cell weights computed from the affine determinant. Sparse samples support count-based coverage only and are not interpreted as tumor-volume percentages. Protected geometry can be represented by analytical spheres or affine voxel masks. Unsupported geometry, including the current unsupported mesh input route, causes abstention rather than being treated as empty space.
 
 ### 3.3 Finite-instrument reach and aperture model
 
@@ -122,7 +121,7 @@ and perpendicular distance from the trajectory is
 
 A target sample is a reach candidate only when insertion is nonnegative, does not exceed instrument length, and the perpendicular distance is no greater than the working-tip radius plus configured target tolerance. Shaft radius is not added to target tolerance.
 
-The inserted instrument is modeled as a finite capsule from the entry point to the insertion depth required for the target. Collision and aperture checks conservatively use the larger of shaft radius and working-tip radius. A portal is a finite circular disk with a declared forward normal. The software checks forward traversal and conservatively tests whether the oblique shaft footprint fits the aperture. This is not a manufacturer-specific, articulated, deformable, or tissue-interacting instrument model.
+The inserted instrument is modeled as a finite capsule from the entry point to the insertion depth required for the target. Collision and aperture checks conservatively use the larger of shaft radius and working-tip radius. A portal is a finite circular disk with a declared forward normal. The software checks forward traversal and conservatively tests whether the oblique shaft footprint fits the aperture.
 
 <div class="figure">
 <img src="figures/figure-2-finite-instrument-geometry.png" alt="Synthetic finite-instrument geometry schematic">
@@ -139,7 +138,7 @@ The engine evaluates a configured angular grid and may add target-directed and b
 
 Reached target-index sets are retained separately by approach. Union, intersection, and incremental coverage are computed as set operations to avoid double counting. Simultaneous-access analysis additionally enforces angular separation and finite capsule-to-capsule clearance. Alternative-path union coverage is not interpreted as simultaneous feasibility.
 
-Supported unobstructed centre-entry cases use geometry-aware interval-union integration for feasible solid angle. Protected-structure cases use spherical-cap grid quadrature with Voronoi area weights; added target-directed and adaptive witnesses receive no quadrature weight. Unsupported or nonconverged measurements are omitted. The software makes no general one-percent angular-accuracy claim.
+Supported unobstructed center-entry cases use geometry-aware interval-union integration for feasible solid angle. Protected-structure cases use spherical-cap grid quadrature with Voronoi area weights; added target-directed and adaptive witnesses receive no quadrature weight. Unsupported or nonconverged measurements are omitted.
 
 ## 4. Illustrative examples
 
@@ -149,20 +148,21 @@ A reader can generate and analyze a deterministic synthetic configuration:
 
 ```bash
 python -m pip install -e '.[desktop,test]'
-skullbase-corridor synthetic case.json
-skullbase-corridor analyze case.json result.json
-skullbase-corridor doctor
+corridorkit synthetic case.json
+corridorkit analyze case.json result.json
+corridorkit doctor
 ```
 
 The output records normalized configuration, software and schema versions, source and result checksums, evaluated trajectories, coverage sets, and abstention reasons. The bundled desktop demonstration can be opened without patient data or network access. Changing an analysis parameter invalidates the displayed result until analysis is rerun.
 
-A researcher can rerun the same case while sweeping instrument diameter,
-instrument length, portal size, or reviewed bone removal and compare the
-resulting reached-target sets and retained paths.
+A researcher can perform a parameter sweep by manually editing the case JSON
+and rerunning the analysis for each instrument diameter, instrument length,
+portal size, or reviewed bone-removal configuration, then comparing the
+reached-target sets and retained paths.
 
 ### 4.2 Reviewed segmented workflow in 3D Slicer
 
-In the reviewed-segment workflow, a user loads a CT and aligned segmentations, identifies target and entry geometry, selects target and protected-anatomy segments, optionally supplies approach-specific bone-removal masks, configures portal and instrument dimensions, and runs the external geometry engine. The output segmentation categorizes target samples as approach-only, shared, sampled-unreached, or unavailable. These categories are snapshots of the evaluated configuration, not live “safe corridor” volumes.
+In the reviewed-segment workflow, a user loads a CT and aligned segmentations, identifies target and entry geometry, selects target and protected-anatomy segments, optionally supplies approach-specific bone-removal masks, configures portal and instrument dimensions, and runs the external geometry engine. The output segmentation categorizes target samples as approach-only, shared, sampled-unreached, or unavailable. These categories describe the evaluated configuration.
 
 ### 4.3 Model-assisted workflow
 
@@ -173,23 +173,20 @@ TotalSegmentator does not supply complete skull-base critical anatomy. Cranial n
 ## 5. Verification and worked example
 
 Verification uses deterministic fixtures, independent geometric references,
-cross-platform automated tests, and programmatic desktop interactions. The
-release CI passed on Ubuntu, macOS, and Windows with Python 3.11 and 3.12.
-Native integration of the exact version 0.2.1 tag passed in 3D Slicer 5.12.3 on
-macOS 15.4. The verification exercised landmark invalidation, rotated
+cross-platform automated tests, and programmatic desktop interactions.
+The CI matrix covers Ubuntu, macOS, and Windows with Python 3.11 and 3.12.
+The native Slicer integration protocol exercises landmark invalidation, rotated
 anisotropic KJI-to-IJK/RAS conversion, all five coverage categories, external
 engine execution, the asynchronous analysis dialog, and scene-reference
 save/reopen. The positive worked example was additionally verified
-programmatically. These tests establish bounded software execution, not
-independent usability or clinical validation.
+programmatically.
 
 ### 5.1 Positive worked example
 
 The deterministic planning phantom contains an invented CT-like volume, a
 413-sample ellipsoidal target, two finite portals, and three analytical protected
-spheres. It contains no patient data and is not an anatomical model. “EEA” and
-“transmaxillary” are nominal labels for synthetic Portal A and Portal B,
-respectively; they do not establish anatomically valid approaches. The same case
+spheres. “EEA” and “transmaxillary” are nominal labels for synthetic Portal A
+and Portal B, respectively. The same case
 was analyzed through the desktop workflow used for image-linked review. Portal A
 produced 27 feasible sampled trajectories reaching 94 target samples; Portal B
 produced 77 trajectories reaching 267 samples. Set comparison assigned 59
@@ -199,7 +196,7 @@ trajectory witnesses and invalidated them when configuration state changed.
 
 <div class="figure">
 <img src="figures/figure-3-positive-worked-example.png" alt="Positive synthetic worked example">
-<p class="caption"><strong>Figure 3.</strong> Positive synthetic worked example. (A) Linked-slice planning workspace. (B–C) Inspectable trajectories through Portal A (nominal EEA) and Portal B (nominal transmaxillary). (D) Sampled target-set comparison. All geometry and approach labels are invented for software demonstration; the result is not anatomical evidence.</p>
+<p class="caption"><strong>Figure 3.</strong> Positive synthetic worked example. (A) Linked-slice planning workspace. (B–C) Inspectable trajectories through Portal A (nominal EEA) and Portal B (nominal transmaxillary). (D) Sampled target-set comparison. Synthetic geometry and nominal approach labels demonstrate the software workflow.</p>
 </div>
 
 ### 5.2 Numerical verification
@@ -245,26 +242,20 @@ of exposure comparisons such as those in [@roth2009; @wilson2014; @elhadi2014;
 records beside their source images and segmentations, reducing manual transfer
 between image review and geometric analysis.
 
-The release is new and has not yet enabled a separate scholarly publication or
-been evaluated as part of an ongoing clinical study. Its current impact is a
-shared, auditable substrate for phantom, cadaveric, and future validated
-studies. The numerical algorithms may support other rigid-access corridor
-research after replacing the skull-base labels and adapters, but only the
-cranial workflow is demonstrated here.
+The release provides a shared, auditable foundation for phantom and cadaveric
+study design, with reusable physical-space geometry algorithms. Adoption in
+independent scholarly publications has not yet been documented.
 
 ## 7. Limitations
 
-The model omits tissue deformation, dissection planes, endoscopic optics, handle access, hemostasis, reconstruction, staged debulking, and other operative factors. It neither infers complete neurovascular anatomy nor measures safe resectability. Results depend on target and portal definitions, registration, segmentation quality, target sampling, finite direction sampling, instrument parameters, fields of view, and conservative voxel approximations.
+The model represents rigid instruments and omits tissue deformation, dissection planes, endoscopic optics, handle access, hemostasis, reconstruction, staged debulking, and other operative factors. It neither infers complete neurovascular anatomy nor measures safe resectability. Results depend on target and portal definitions, registration, segmentation quality, target sampling, finite direction sampling, instrument parameters, fields of view, and conservative voxel approximations.
 
 The public dataset does not provide operative-corridor reference annotations.
 TotalSegmentator predictions require review and do not represent all relevant
-anatomy. No cadaveric, tracked-instrument, operative-video, clinical-outcome, or
-independent surgeon-usability study is reported.
-
-Native application redistribution requires review of the exact bundled binaries
-and dependency notices, including applicable Qt licensing obligations. Automated
-Python tests are cross-platform; independent human usability testing has not
-been performed.
+anatomy. Evaluation covers software and numerical verification, not clinical
+validation: no cadaveric, tracked-instrument, operative-video, clinical-outcome,
+or independent surgeon-usability study is reported. Non-cranial applications
+have not been evaluated.
 
 The model-assisted workflow depends on a large local machine-learning stack and
 first-use model-weight retrieval. Installation time, disk use, and inference
@@ -272,13 +263,12 @@ latency vary substantially by platform and accelerator. The managed runtime
 isolates these dependencies from Slicer's embedded Python, but does not remove
 their upstream compatibility constraints.
 
-## 8. Reproducibility and availability
+## 8. Reproducibility and data availability
 
 The source code is licensed under Apache-2.0. Dependencies retain their own
-licenses. Version 0.2.1 is archived at
-[10.5281/zenodo.23244307](https://doi.org/10.5281/zenodo.23244307) and corresponds
-to Git tag `v0.2.1` at commit
-`a0c6933258f60e370747cfd4096b9445eff8a572`. The archive contains source, tests,
+licenses. Version 0.3.0 is identified by Git tag
+[`v0.3.0`](https://github.com/abachu2005/corridorkit/tree/v0.3.0).
+The distribution contains source, tests,
 documentation, packaging scripts, and deterministic fixtures; it excludes
 public CT archives, private data, model weights, and local sessions.
 
@@ -287,18 +277,15 @@ with current files, records hashes, and runs wheel smoke checks. The Slicer
 package provisions an isolated per-user runtime without modifying Slicer's
 embedded Python.
 
-The retained NasalSeg manifest identifies version record 13893419, declared CC BY 4.0 terms, and archive SHA-256 `60c6facf843685802c39e4adff4a05c081c1c4b6175c9cb573745c55abb0fa6a`. The software does not redistribute the dataset.
-
-### Data availability
-
-Source code version 0.2.1 is archived on Zenodo under DOI
-[10.5281/zenodo.23244307](https://doi.org/10.5281/zenodo.23244307) and developed
-publicly on GitHub. Synthetic fixtures and the worked-example generator are
-included in the repository. NasalSeg v2 is third-party data available from
-[Zenodo record 13893419](https://zenodo.org/records/13893419) under its stated
-terms and is not redistributed with the software. A separate persistent archive
-for the full development evidence is not part of the software release; the
-article reports the retained aggregate verification results.
+Synthetic fixtures and the worked-example generator are included in the
+repository. NasalSeg v2 is third-party data available from
+[Zenodo record 13893419](https://zenodo.org/records/13893419) under declared
+CC BY 4.0 terms; it is not redistributed with the software. The retained
+manifest records archive SHA-256
+`60c6facf843685802c39e4adff4a05c081c1c4b6175c9cb573745c55abb0fa6a`.
+Verification summaries and protocols are tracked in the public repository.
+Full historical benchmark outputs and caches are retained in the local
+development checkout and are not included in the archived software release.
 
 ## 9. Ethics and data governance
 
@@ -311,12 +298,11 @@ on the workstation unless the user explicitly exports them.
 
 ## 10. Conclusions
 
-`skullbase-corridor` provides an open, inspectable implementation of
+CorridorKit provides an open, inspectable implementation of
 finite-instrument corridor analysis with explicit aperture constraints,
-coverage sets, and unknown-anatomy states. The archived release passed
-cross-platform automated tests and release-bound native Slicer integration.
-Its outputs support reproducible geometric research but do not establish
-surgical safety or clinical effectiveness.
+coverage sets, and unknown-anatomy states.
+Its retained trajectories and coverage sets support reproducible comparison
+of declared instrument and portal configurations.
 
 ### Future plans
 

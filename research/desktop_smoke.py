@@ -8,8 +8,8 @@ import time
 
 from PySide6 import QtWidgets, QtCore
 
-from skullbase_corridor.desktop.app import MainWindow
-from skullbase_corridor.export.json import atomic_json_write, export_result
+from corridorkit.desktop.app import MainWindow
+from corridorkit.export.json import atomic_json_write, export_result
 
 
 def main():
@@ -37,14 +37,14 @@ def main():
     if args.case:
         window.open_case(args.case)
         if args.labels:
-            from skullbase_corridor.io.volumes import load_volume
+            from corridorkit.io.volumes import load_volume
             window.viewer.set_mask("Supporting labels", load_volume(args.labels))
         window.viewer.reset_view()
         window.start_analysis()
     elif args.image:
         window.import_ct(args.image)
         if args.labels:
-            from skullbase_corridor.io.volumes import load_volume
+            from corridorkit.io.volumes import load_volume
             window.viewer.set_mask("Public supporting labels — not critical anatomy",
                                    load_volume(args.labels))
         pump()

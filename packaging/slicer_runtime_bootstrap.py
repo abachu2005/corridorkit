@@ -1,4 +1,4 @@
-"""Verify and provision the packaged SkullBaseCorridor runtime on demand."""
+"""Verify and provision the packaged CorridorKit runtime on demand."""
 
 from __future__ import annotations
 
@@ -40,7 +40,7 @@ def load_manifest() -> dict:
 
 
 def cache_root() -> Path:
-    configured = os.environ.get("SKULLBASE_RUNTIME_CACHE")
+    configured = os.environ.get("CORRIDORKIT_RUNTIME_CACHE")
     if configured:
         return Path(configured).expanduser().resolve()
     if sys.platform == "win32":
@@ -49,7 +49,7 @@ def cache_root() -> Path:
         base = Path.home() / "Library/Caches"
     else:
         base = Path(os.environ.get("XDG_CACHE_HOME", Path.home() / ".cache"))
-    return base / "SkullBaseCorridor"
+    return base / "CorridorKit"
 
 
 def runtime_python(environment: Path) -> Path:
@@ -97,7 +97,7 @@ def provision(manifest: dict) -> Path:
 
 def main() -> None:
     if sys.version_info < (3, 11):
-        raise SystemExit("SkullBaseCorridor managed runtime requires Python 3.11 or newer")
+        raise SystemExit("CorridorKit managed runtime requires Python 3.11 or newer")
     manifest = load_manifest()
     python = provision(manifest)
     completed = subprocess.run([str(python), *sys.argv[1:]])

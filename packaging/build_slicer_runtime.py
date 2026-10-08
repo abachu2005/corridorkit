@@ -34,7 +34,7 @@ def build(destination: Path):
     shutil.rmtree(wheels, ignore_errors=True)
     wheels.mkdir(parents=True)
     run([sys.executable, "-m", "pip", "wheel", "--no-deps", "-w", wheels, ROOT])
-    wheel = next(wheels.glob("skullbase_corridor-*.whl"))
+    wheel = next(wheels.glob("corridorkit-*.whl"))
     venv.EnvBuilder(with_pip=True, clear=True).create(destination)
     python = destination / ("Scripts/python.exe" if sys.platform == "win32" else "bin/python")
     run([
@@ -42,8 +42,8 @@ def build(destination: Path):
         "--disable-pip-version-check", f"{wheel}[cloud]",
     ])
     check = (
-        "import skullbase_corridor, numpy, scipy, nibabel, SimpleITK, pydantic; "
-        "from skullbase_corridor.application.e2e import run_workflow"
+        "import corridorkit, numpy, scipy, nibabel, SimpleITK, pydantic; "
+        "from corridorkit.application.e2e import run_workflow"
     )
     run([python, "-c", check])
     manifest = {

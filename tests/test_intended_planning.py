@@ -5,10 +5,10 @@ import pytest
 
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
-from skullbase_corridor.analysis.intended import assess_intended_path
-from skullbase_corridor.application.session import IntendedPath, ReviewDocument
-from skullbase_corridor.domain.models import ProtectedStructure, SphereGeometry
-from skullbase_corridor.synthetic.cases import analytical_case
+from corridorkit.analysis.intended import assess_intended_path
+from corridorkit.application.session import IntendedPath, ReviewDocument
+from corridorkit.domain.models import ProtectedStructure, SphereGeometry
+from corridorkit.synthetic.cases import analytical_case
 
 
 def make_path(case):
@@ -71,8 +71,8 @@ def test_forged_path_and_coordinate_mismatch_rejected():
 def test_draw_save_reopen_export_with_abstention(tmp_path, monkeypatch):
     from PySide6 import QtWidgets
 
-    from skullbase_corridor.desktop.app import MainWindow
-    from skullbase_corridor.export.json import write_case
+    from corridorkit.desktop.app import MainWindow
+    from corridorkit.export.json import write_case
     app = QtWidgets.QApplication.instance() or QtWidgets.QApplication([])
     case = analytical_case().model_copy(update={"protected_structures": [
         ProtectedStructure(name="carotid", status="unknown"),

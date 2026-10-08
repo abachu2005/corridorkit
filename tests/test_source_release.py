@@ -25,7 +25,7 @@ def test_groups_partition_every_test_and_isolate_mixed_modules(verifier, tmp_pat
     for name, text in {
         "test_math.py": "import numpy",
         "test_gui.py": "from PySide6 import QtWidgets",
-        "test_mixed.py": "from skullbase_corridor.desktop.comparison import ComparisonPanel",
+        "test_mixed.py": "from corridorkit.desktop.comparison import ComparisonPanel",
     }.items():
         (tests / name).write_text(text)
     groups = verifier.test_groups(tmp_path)
@@ -108,19 +108,19 @@ def test_report_overwrite_rejected(verifier, tmp_path):
 
 def test_archive_verifier_requires_exact_source(verifier, tmp_path):
     root, output = tmp_path / "source", tmp_path / "output"
-    code = root / "src/skullbase_corridor/__init__.py"
+    code = root / "src/corridorkit/__init__.py"
     code.parent.mkdir(parents=True)
     code.write_text('__version__ = "0.1.0"\n')
     output.mkdir()
-    wheel = output / "skullbase_corridor-0.1.0-py3-none-any.whl"
+    wheel = output / "corridorkit-0.1.0-py3-none-any.whl"
     with zipfile.ZipFile(wheel, "w") as archive:
-        archive.writestr("skullbase_corridor/__init__.py", code.read_bytes())
-        archive.writestr("skullbase_corridor-0.1.0.dist-info/METADATA", "Name: skullbase-corridor\nVersion: 0.1.0\n")
-    with tarfile.open(output / "skullbase_corridor-0.1.0.tar.gz", "w:gz") as archive:
+        archive.writestr("corridorkit/__init__.py", code.read_bytes())
+        archive.writestr("corridorkit-0.1.0.dist-info/METADATA", "Name: corridorkit\nVersion: 0.1.0\n")
+    with tarfile.open(output / "corridorkit-0.1.0.tar.gz", "w:gz") as archive:
         for name, content in {
-            "src/skullbase_corridor/__init__.py": code.read_bytes(), "PKG-INFO": b"metadata",
+            "src/corridorkit/__init__.py": code.read_bytes(), "PKG-INFO": b"metadata",
         }.items():
-            item = tarfile.TarInfo("skullbase_corridor-0.1.0/" + name)
+            item = tarfile.TarInfo("corridorkit-0.1.0/" + name)
             item.size = len(content)
             archive.addfile(item, io.BytesIO(content))
     assert len(verifier.verify_archives(output, root, [code], "0.1.0")) == 2

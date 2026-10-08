@@ -4,8 +4,8 @@ import numpy as np
 
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
-from skullbase_corridor.desktop.corridor_overlay import capsule_union_slice
-from skullbase_corridor.desktop.trajectory_geometry import SelectedTrajectory
+from corridorkit.desktop.corridor_overlay import capsule_union_slice
+from corridorkit.desktop.trajectory_geometry import SelectedTrajectory
 
 
 def test_union_preserves_gap_between_feasible_paths():

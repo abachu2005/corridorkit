@@ -1,4 +1,4 @@
-"""Verify the exact contents and hashes of a SkullBaseCorridor Slicer package."""
+"""Verify the exact contents and hashes of a CorridorKit Slicer package."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ import zipfile
 from pathlib import Path, PurePosixPath
 
 
-ROOT = "SkullBaseCorridor"
+ROOT = "CorridorKit"
 REQUIRED_MODULE_FILES = {
     "CorridorAnalysis.py",
     "EntryProposals.py",
@@ -67,7 +67,7 @@ def verify(archive_path: Path) -> dict[str, object]:
         if manifest.get("slicer_compatibility") != "5.12":
             raise ValueError("package does not declare Slicer 5.12 compatibility")
         if manifest.get("additional_module_path") != (
-            "SkullBaseCorridor/slicer/SkullBaseComparison"
+            "CorridorKit/slicer/SkullBaseComparison"
         ):
             raise ValueError("unexpected Additional module path")
 
@@ -113,7 +113,7 @@ def verify(archive_path: Path) -> dict[str, object]:
             if metadata["sha256"] != item["sha256"] or metadata["size"] != item["size"]:
                 raise ValueError(f"runtime/package manifest disagreement: {relative}")
         if not any(
-            PurePosixPath(item["path"]).name.lower().startswith("skullbase_corridor-")
+            PurePosixPath(item["path"]).name.lower().startswith("corridorkit-")
             for item in wheel_records
         ):
             raise ValueError("project wheel is missing")

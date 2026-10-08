@@ -20,9 +20,9 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 
 from download_nasalseg import EXPECTED_MD5, URL, checksums
-from skullbase_corridor.analysis.airspace import CONFIG, evaluate_airspace
-from skullbase_corridor.analysis.statistics import paired_summary, subject_split
-from skullbase_corridor.data.audit import _load, _sha256, audit_pair, index_cases
+from corridorkit.analysis.airspace import CONFIG, evaluate_airspace
+from corridorkit.analysis.statistics import paired_summary, subject_split
+from corridorkit.data.audit import _load, _sha256, audit_pair, index_cases
 
 
 def canonical(value):
@@ -67,9 +67,9 @@ def main():
         # Freeze exact identifiers and engineering grid BEFORE loading any image.
         code_paths = [
             Path(__file__), ROOT / "research/tools/download_nasalseg.py",
-            ROOT / "src/skullbase_corridor/analysis/airspace.py",
-            ROOT / "src/skullbase_corridor/analysis/statistics.py",
-            ROOT / "src/skullbase_corridor/data/audit.py",
+            ROOT / "src/corridorkit/analysis/airspace.py",
+            ROOT / "src/corridorkit/analysis/statistics.py",
+            ROOT / "src/corridorkit/data/audit.py",
             ROOT / "research/AIRSPACE_BENCHMARK_PROTOCOL.md",
         ]
         manifest = {

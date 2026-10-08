@@ -28,8 +28,8 @@ def main():
                            ("labels", manifest["label_members"][identifier])]:
             (destination / f"{role}.nrrd").write_bytes(archive.read(name))
     import nibabel as nib
-    from skullbase_corridor.io.volumes import load_volume
-    from skullbase_corridor.export.json import atomic_json_write, file_sha256
+    from corridorkit.io.volumes import load_volume
+    from corridorkit.export.json import atomic_json_write, file_sha256
     conversions = []
     for role in ("ct", "labels"):
         source = destination / f"{role}.nrrd"
@@ -46,8 +46,8 @@ def main():
     import gzip
     import numpy as np
     from scipy import ndimage
-    from skullbase_corridor.domain.models import CorridorCase
-    from skullbase_corridor.export.json import write_case
+    from corridorkit.domain.models import CorridorCase
+    from corridorkit.export.json import write_case
     records = ROOT / "research/results/production-public-v2/per-case.jsonl.gz"
     if records.exists():
         with gzip.open(records, "rt") as stream:

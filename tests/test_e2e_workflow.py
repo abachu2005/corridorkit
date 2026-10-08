@@ -6,12 +6,12 @@ from datetime import datetime, timezone
 import nibabel as nib
 import numpy as np
 
-from skullbase_corridor.anatomy.azure_provider import (
+from corridorkit.anatomy.azure_provider import (
     GeometryArtifact,
     InferenceProvenance,
     InferenceResult,
 )
-from skullbase_corridor.application import e2e
+from corridorkit.application import e2e
 
 
 def _save(path, data, affine):

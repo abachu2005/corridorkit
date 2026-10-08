@@ -28,7 +28,7 @@ def wait(gui, window):
 
 def test_real_ct_import_target_edit_save_reopen_and_abstain(gui, tmp_path):
     import nibabel as nib
-    from skullbase_corridor.desktop.app import MainWindow
+    from corridorkit.desktop.app import MainWindow
     path = tmp_path / "ct.nii.gz"
     image = nib.Nifti1Image(np.zeros((20, 22, 24), np.int16), np.diag([1, 2, 3, 1]))
     image.header.set_xyzt_units("mm")
@@ -59,7 +59,7 @@ def test_real_ct_import_target_edit_save_reopen_and_abstain(gui, tmp_path):
 
 
 def test_cancel_interrupts_and_no_stale_result(gui):
-    from skullbase_corridor.desktop.app import MainWindow
+    from corridorkit.desktop.app import MainWindow
     window = MainWindow()
     window.open_synthetic()
     window.cancel_analysis()
@@ -70,9 +70,9 @@ def test_cancel_interrupts_and_no_stale_result(gui):
 
 
 def test_mask_stroke_undo_invalidates_review(gui):
-    from skullbase_corridor.desktop.app import MainWindow
-    from skullbase_corridor.desktop.editing import MaskEditor
-    from skullbase_corridor.io.volumes import Volume
+    from corridorkit.desktop.app import MainWindow
+    from corridorkit.desktop.editing import MaskEditor
+    from corridorkit.io.volumes import Volume
     window = MainWindow()
     window.open_synthetic()
     wait(gui, window)
@@ -97,7 +97,7 @@ def test_mask_stroke_undo_invalidates_review(gui):
 
 def test_pending_mask_blocks_case_save(gui, tmp_path, monkeypatch):
     from PySide6 import QtWidgets
-    from skullbase_corridor.desktop.app import MainWindow
+    from corridorkit.desktop.app import MainWindow
     warnings = []
     monkeypatch.setattr(QtWidgets.QMessageBox, "warning", lambda *a: warnings.append(a[-1]))
     window = MainWindow()
@@ -113,9 +113,9 @@ def test_pending_mask_blocks_case_save(gui, tmp_path, monkeypatch):
 
 def test_same_ct_layers_survive_configuration_but_follow_anatomy(gui, tmp_path):
     import nibabel as nib
-    from skullbase_corridor.desktop.app import MainWindow
-    from skullbase_corridor.domain.models import CorridorCase
-    from skullbase_corridor.io.volumes import Volume
+    from corridorkit.desktop.app import MainWindow
+    from corridorkit.domain.models import CorridorCase
+    from corridorkit.io.volumes import Volume
     path = tmp_path / "ct.nii.gz"
     image = nib.Nifti1Image(np.zeros((10, 10, 10), np.int16), np.eye(4))
     image.header.set_xyzt_units("mm")

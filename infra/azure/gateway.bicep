@@ -163,7 +163,7 @@ resource gateway 'Microsoft.App/containerApps@2024-03-01' = {
               secretRef: 'endpoint-token'
             }
             {
-              name: 'SKULLBASE_JOB_ROOT'
+              name: 'CORRIDORKIT_JOB_ROOT'
               value: '/data'
             }
           ]

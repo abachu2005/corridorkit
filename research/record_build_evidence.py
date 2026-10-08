@@ -10,7 +10,7 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from skullbase_corridor.export.json import atomic_json_write, file_sha256
+from corridorkit.export.json import atomic_json_write, file_sha256
 
 
 def main():

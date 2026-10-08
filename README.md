@@ -1,13 +1,15 @@
-# skullbase-corridor
+# CorridorKit
 
-`skullbase-corridor` is an Apache-2.0 research software package for
+CorridorKit is an Apache-2.0 research software package for
 surgeon-supervised geometric exploration of rigid skull-base approach
-corridors in physical image coordinates (millimetres). It samples finite rigid
+corridors in physical image coordinates (millimeters). It samples finite rigid
 instruments through declared portals and reports reach, insertion depth,
 clearance, target-set coverage, retained path witnesses, and explicit
 abstention states.
 
-Archived release: [v0.2.1, DOI 10.5281/zenodo.23244307](https://doi.org/10.5281/zenodo.23244307).
+Version 0.3.0 uses `corridorkit` for the repository, Python distribution,
+import package, and command-line tool, and `corridorkit-gui` for the desktop.
+See the [v0.3.0 release](https://github.com/abachu2005/corridorkit/releases/tag/v0.3.0).
 
 ## Quickstart
 
@@ -15,9 +17,9 @@ Generate and analyze a deterministic case without patient data:
 
 ```bash
 python -m pip install -e '.[desktop,test]' build
-skullbase-corridor synthetic case.json
-skullbase-corridor analyze case.json result.json
-skullbase-corridor doctor
+corridorkit synthetic case.json
+corridorkit analyze case.json result.json
+corridorkit doctor
 ```
 
 For image-linked review, install the packaged
@@ -41,14 +43,16 @@ and public-data evaluation are cranial-specific. This is research software,
 not autonomous planning software, a validated navigation system, or a treatment
 recommendation.
 
-The publication evidence uses only synthetic data and publicly available,
-deidentified data and does not involve human subjects research. No private
-patient data or outcomes are used. See the
+This work used only synthetic data and publicly available, deidentified data,
+and did not involve human subjects research. It involved no recruitment,
+private records, chart review, outcomes, or identity linkage. See the
 [SoftwareX manuscript](paper/softwarex.md), [validation summary](docs/VALIDATION.md),
 and [source-release checklist](docs/SOFTWARE_RELEASE_CHECKLIST.md).
 
-The `research/` directory contains reproducibility protocols and retained
-engineering evidence; `infra/azure/` contains optional historical benchmark
+The public `research/` directory contains reproducibility scripts and protocols;
+`docs/evidence/` contains tracked verification summaries. Full historical
+benchmark outputs and caches remain in the local development checkout.
+`infra/azure/` contains optional historical benchmark
 infrastructure. Neither is required for the public workstation workflow, and
 cloud benchmarking is not part of the SoftwareX evaluation.
 
@@ -68,7 +72,7 @@ acceptance. A core-only install can use `.[test]` and run the verifier without
 Launch the desktop with:
 
 ```bash
-skullbase-corridor-gui
+corridorkit-gui
 ```
 
 The dark PACS-style workspace contains linked anatomical RAS-mm slices,
@@ -149,7 +153,7 @@ or incomplete anatomy suppresses the affected measurement.
 ```bash
 python packaging/verify_source_release.py --desktop --tests --build \
   --output dist/source-release-new --report dist/source-release-new-report.json
-python packaging/verify_wheel.py dist/source-release-new/skullbase_corridor-0.2.1-py3-none-any.whl
+python packaging/verify_wheel.py dist/source-release-new/corridorkit-0.3.0-py3-none-any.whl
 ```
 
 Use a fresh output/report path for each attempt. The verifier builds from a
@@ -163,7 +167,7 @@ No command above publishes packages or builds a frozen application.
 ## Coordinate convention
 
 All geometry uses an explicit affine mapping array indices `(i, j, k)` to
-physical points in millimetres. Image loaders explicitly convert declared
+physical points in millimeters. Image loaders explicitly convert declared
 LPS/RAS and spatial units into RAS mm. Domain cases require a single declared
 frame across their target/image/masks; mismatches are rejected, not aligned silently.
 

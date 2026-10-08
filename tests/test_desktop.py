@@ -8,8 +8,8 @@ import numpy as np
 import pytest
 import SimpleITK as sitk
 
-from skullbase_corridor.domain.models import CorridorCase, ImageReference
-from skullbase_corridor.synthetic.cases import analytical_case
+from corridorkit.domain.models import CorridorCase, ImageReference
+from corridorkit.synthetic.cases import analytical_case
 
 pytestmark = pytest.mark.skipif(
     importlib.util.find_spec("PySide6") is None or importlib.util.find_spec("pyqtgraph") is None,
@@ -37,7 +37,7 @@ def wait_for_analysis(app, window, timeout_ms: int = 5000) -> None:
 
 
 def test_landing_and_synthetic_analysis(app):
-    from skullbase_corridor.desktop.app import MainWindow
+    from corridorkit.desktop.app import MainWindow
 
     window = MainWindow()
     assert window.stack.currentIndex() == 0
@@ -53,8 +53,8 @@ def test_landing_and_synthetic_analysis(app):
 def test_edit_stale_undo_save_reopen_export(app, tmp_path: Path):
     from PySide6 import QtWidgets
 
-    from skullbase_corridor.desktop.app import MainWindow
-    from skullbase_corridor.export.json import export_result, read_case, write_case
+    from corridorkit.desktop.app import MainWindow
+    from corridorkit.export.json import export_result, read_case, write_case
 
     window = MainWindow()
     window.open_synthetic()
@@ -89,8 +89,8 @@ def test_edit_stale_undo_save_reopen_export(app, tmp_path: Path):
 
 
 def test_attached_volume_populates_linked_slice_controls(app, tmp_path: Path):
-    from skullbase_corridor.desktop.app import MainWindow
-    from skullbase_corridor.export.json import write_case
+    from corridorkit.desktop.app import MainWindow
+    from corridorkit.export.json import write_case
 
     image_path = tmp_path / "ct.nrrd"
     image = sitk.GetImageFromArray(np.arange(9 * 10 * 11).reshape(9, 10, 11).astype("int16"))

@@ -15,8 +15,8 @@ verifier treats a missing/invalid seal as failure. If the local ad-hoc signing
 step reports a transient Code Signing subsystem error, repair and recheck it:
 
 ```sh
-codesign --force --deep --sign - --timestamp=none dist/SkullBaseCorridor.app
-codesign --verify --deep --strict dist/SkullBaseCorridor.app
+codesign --force --deep --sign - --timestamp=none dist/CorridorKit.app
+codesign --verify --deep --strict dist/CorridorKit.app
 python packaging/verify_macos.py --output research/native-bundle-evidence/new-verification
 ```
 
@@ -26,7 +26,7 @@ Allow at least 5 GiB free before building. The build excludes alternative Qt
 bindings and unrelated optional scientific/notebook stacks so a broad
 development environment cannot introduce multiple Qt runtimes.
 
-Output: `dist/SkullBaseCorridor.app`.
+Output: `dist/CorridorKit.app`.
 
 The verifier runs the actual frozen executable outside the source checkout with
 Python, Conda, Qt and dynamic-library environment overrides removed. It requires

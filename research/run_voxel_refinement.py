@@ -27,8 +27,8 @@ from scipy.optimize import lsq_linear
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from skullbase_corridor.domain.models import VoxelGeometry
-from skullbase_corridor.geometry.voxel import VoxelMaskBackend
+from corridorkit.domain.models import VoxelGeometry
+from corridorkit.geometry.voxel import VoxelMaskBackend
 
 SEED = 20261001
 TOLERANCE_MM = 1e-8
@@ -203,7 +203,7 @@ def synthetic(output, temporary, draws):
 
 
 def public_cases(output, temporary, count, all_eligible=False):
-    from skullbase_corridor.data.audit import _load
+    from corridorkit.data.audit import _load
     source = ROOT / "research/results/airspace-v1"
     manifest = json.loads((source / "frozen-manifest.json").read_text())
     summary = json.loads((source / "summary.json").read_text())
@@ -317,9 +317,9 @@ def main():
     if args.random_per_family < 1 or not 0 <= args.public_cases <= (118 if args.all_eligible else 3):
         parser.error("Use positive random count and 0..3 public cases")
     args.output.mkdir(parents=True, exist_ok=False)
-    sources = [Path(__file__), ROOT / "src/skullbase_corridor/geometry/voxel.py",
-               ROOT / "src/skullbase_corridor/geometry/mesh_reference.py",
-               ROOT / "src/skullbase_corridor/domain/models.py",
+    sources = [Path(__file__), ROOT / "src/corridorkit/geometry/voxel.py",
+               ROOT / "src/corridorkit/geometry/mesh_reference.py",
+               ROOT / "src/corridorkit/domain/models.py",
                ROOT / "tests/test_voxel_refinement.py",
                ROOT / "tests/test_voxel_refinement_oracle.py"]
     for path in sources:

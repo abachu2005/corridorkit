@@ -3,14 +3,14 @@ import math
 import numpy as np
 import pytest
 
-from skullbase_corridor.domain.models import VoxelGeometry
-from skullbase_corridor.geometry.mesh_reference import (
+from corridorkit.domain.models import VoxelGeometry
+from corridorkit.geometry.mesh_reference import (
     VoxelCellReference,
     segment_mesh_distance,
     segment_triangle_distance,
     triangulate_voxel_cells,
 )
-from skullbase_corridor.geometry.voxel import VoxelMaskBackend
+from corridorkit.geometry.voxel import VoxelMaskBackend
 
 
 @pytest.mark.parametrize(("start", "end", "expected"), [

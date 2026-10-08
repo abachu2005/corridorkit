@@ -5,7 +5,7 @@ from collections import deque
 import pytest
 from pydantic import ValidationError
 
-from skullbase_corridor.anatomy.azure_provider import (
+from corridorkit.anatomy.azure_provider import (
     AzureConfigurationError,
     AzureMLHttpProvider,
     DeterministicFakeProvider,

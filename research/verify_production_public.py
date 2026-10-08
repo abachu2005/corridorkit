@@ -8,8 +8,8 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from skullbase_corridor.export.json import file_sha256, atomic_json_write
-from skullbase_corridor.analysis.statistics import paired_summary
+from corridorkit.export.json import file_sha256, atomic_json_write
+from corridorkit.analysis.statistics import paired_summary
 
 
 def main():

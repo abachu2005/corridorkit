@@ -4,7 +4,7 @@ import nibabel as nib
 import numpy as np
 import pytest
 
-from skullbase_corridor.data.audit import _load, _pair, audit_dataset, inspect_arrays
+from corridorkit.data.audit import _load, _pair, audit_dataset, inspect_arrays
 
 
 def save(path: Path, data: np.ndarray, affine: np.ndarray) -> None:

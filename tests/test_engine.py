@@ -1,6 +1,6 @@
 import numpy as np
 
-from skullbase_corridor.domain.models import (
+from corridorkit.domain.models import (
     AnalysisStatus,
     ApproachConfig,
     ApproachKind,
@@ -13,7 +13,7 @@ from skullbase_corridor.domain.models import (
     SphereGeometry,
     TargetPointCloud,
 )
-from skullbase_corridor.geometry.engine import analyze_case
+from corridorkit.geometry.engine import analyze_case
 
 
 def approach(name: str, center=(0.0, 0.0, 0.0), direction=(0.0, 0.0, 1.0), length=20.0):

@@ -8,7 +8,7 @@ if importlib.util.find_spec("fastapi") is None:
 
 from fastapi.testclient import TestClient
 
-from skullbase_corridor.cloud import service
+from corridorkit.cloud import service
 
 
 def _payload(content=b"nifti"):
@@ -30,7 +30,7 @@ def _payload(content=b"nifti"):
 @pytest.fixture
 def client(tmp_path, monkeypatch):
     monkeypatch.setenv("ENDPOINT_TOKEN", "test-token")
-    monkeypatch.setenv("SKULLBASE_JOB_ROOT", str(tmp_path))
+    monkeypatch.setenv("CORRIDORKIT_JOB_ROOT", str(tmp_path))
     monkeypatch.setattr(service.CpuWorker, "start", lambda self: None)
     monkeypatch.setattr(service.CpuWorker, "wake", lambda self: None)
     return TestClient(service.create_app())

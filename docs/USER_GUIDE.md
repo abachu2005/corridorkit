@@ -1,10 +1,14 @@
-# User guide
+# CorridorKit user guide
+
+These instructions target CorridorKit v0.3.0 from
+[the CorridorKit repository](https://github.com/abachu2005/corridorkit).
+The Python package/import name and CLI are `corridorkit`.
 
 ## Start
 
 ```bash
 python -m pip install -e '.[desktop,test]'
-skullbase-corridor-gui
+corridorkit-gui
 ```
 
 Open a version 1.1 corridor case or select **Open synthetic demonstration**.
@@ -14,7 +18,7 @@ If a public image omits spatial units, inspect its documentation and make an
 explicit, recorded assumption before import; do not silently accept it:
 
 ```bash
-skullbase-corridor convert-volume source.nrrd ct-mm.nii.gz --assume-spatial-unit mm
+corridorkit convert-volume source.nrrd ct-mm.nii.gz --assume-spatial-unit mm
 ```
 
 Use the same conversion for its aligned label map. This records a provenance
@@ -79,7 +83,7 @@ Removal is a static preparation assumption, not a simulated operation.
 Threshold suggestions can be generated with:
 
 ```bash
-skullbase-corridor suggest-ct ct.nii.gz suggestions/
+corridorkit suggest-ct ct.nii.gz suggestions/
 ```
 
 These depend on calibrated HU, miss thin bone, include artifacts/exterior air,
@@ -90,10 +94,10 @@ be presented as a validated tumor-volume measurement.
 ## MRI registration review
 
 ```bash
-skullbase-corridor register-mri ct.nii.gz mr.nii.gz ct-to-mr.tfm
-skullbase-corridor review-registration ct-to-mr.registration.json landmarks.json \
+corridorkit register-mri ct.nii.gz mr.nii.gz ct-to-mr.tfm
+corridorkit review-registration ct-to-mr.registration.json landmarks.json \
   ReviewerName 2.0 --overlays-reviewed
-skullbase-corridor resample-mri ct-to-mr.registration.json reviewed-mr.nii.gz
+corridorkit resample-mri ct-to-mr.registration.json reviewed-mr.nii.gz
 ```
 
 Choose the landmark tolerance *before* review; `2.0` above is an example, not a
@@ -105,7 +109,7 @@ changes invalidate review. Optimizer convergence alone does not approve registra
 ## Public-data audit
 
 ```bash
-skullbase-corridor audit-dataset images labels audit.json \
+corridorkit audit-dataset images labels audit.json \
   --source-version DATASET_VERSION
 ```
 
@@ -116,8 +120,8 @@ an imported case.
 ## Numerical analyses
 
 ```bash
-skullbase-corridor convergence case.json convergence.json
-skullbase-corridor sensitivity case.json sensitivity.json \
+corridorkit convergence case.json convergence.json
+corridorkit sensitivity case.json sensitivity.json \
   --repeats 200 --portal-sigma-mm 1
 ```
 

@@ -25,7 +25,7 @@ def load_script(name: str):
 def wheelhouse(tmp_path):
     directory = tmp_path / "wheels"
     directory.mkdir()
-    (directory / "skullbase_corridor-0.1.0-py3-none-any.whl").write_bytes(b"project-wheel")
+    (directory / "corridorkit-0.1.0-py3-none-any.whl").write_bytes(b"project-wheel")
     (directory / "numpy-1.0-py3-none-any.whl").write_bytes(b"dependency-wheel")
     return directory
 
@@ -46,7 +46,7 @@ def test_builder_is_byte_reproducible_and_verifier_accepts_it(tmp_path, wheelhou
     assert result["additional_module_path"].endswith("slicer/SkullBaseComparison")
 
     with zipfile.ZipFile(first) as archive:
-        manifest = json.loads(archive.read("SkullBaseCorridor/package-manifest.json"))
+        manifest = json.loads(archive.read("CorridorKit/package-manifest.json"))
         assert set(
             name.removeprefix("slicer/SkullBaseComparison/")
             for name in manifest["files"]
@@ -65,7 +65,7 @@ def test_verifier_rejects_undeclared_file(tmp_path, wheelhouse):
     with zipfile.ZipFile(original) as source, zipfile.ZipFile(tampered, "w") as destination:
         for item in source.infolist():
             destination.writestr(item, source.read(item.filename))
-        destination.writestr("SkullBaseCorridor/secrets/token.txt", "credential")
+        destination.writestr("CorridorKit/secrets/token.txt", "credential")
 
     with pytest.raises(ValueError, match="forbidden"):
         verifier.verify(tampered)
@@ -78,7 +78,7 @@ def test_verifier_rejects_hash_mismatch(tmp_path, wheelhouse):
     tampered = tmp_path / "tampered.zip"
     builder.build(original, wheelhouse)
 
-    target = "SkullBaseCorridor/slicer/SkullBaseComparison/IntegratedPlanning.py"
+    target = "CorridorKit/slicer/SkullBaseComparison/IntegratedPlanning.py"
     with zipfile.ZipFile(original) as source, zipfile.ZipFile(tampered, "w") as destination:
         for item in source.infolist():
             content = b"tampered\n" if item.filename == target else source.read(item.filename)

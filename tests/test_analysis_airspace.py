@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 from scipy.spatial import cKDTree
 
-from skullbase_corridor.analysis.airspace import (
+from corridorkit.analysis.airspace import (
     accelerated_clearance, contained, evaluate_airspace, reference_clearance,
 )
 

@@ -3,15 +3,15 @@ import math
 import numpy as np
 import pytest
 
-from skullbase_corridor.analysis.baselines import (
+from corridorkit.analysis.baselines import (
     analytic_cap_solid_angle,
     off_axis_target_solid_angle,
     optimized_capsule_sphere_clearance,
     parameter_hash,
     run_engine_ablations,
 )
-from skullbase_corridor.domain.models import CorridorCase
-from skullbase_corridor.geometry.primitives import capsule_sphere_clearance
+from corridorkit.domain.models import CorridorCase
+from corridorkit.geometry.primitives import capsule_sphere_clearance
 
 
 def small_case():
@@ -69,7 +69,7 @@ def test_shared_and_disjoint_portals_keep_pair_outcomes():
 
 
 def test_pure_off_axis_quadrature_against_analytic_cap():
-    from skullbase_corridor.geometry.engine import analyze_case
+    from corridorkit.geometry.engine import analyze_case
 
     data = small_case().model_dump(mode="json")
     data["protected_structures"] = []

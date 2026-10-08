@@ -3,7 +3,7 @@ import math
 import numpy as np
 import pytest
 
-from skullbase_corridor.geometry.primitives import spherical_cap_sample_weights
+from corridorkit.geometry.primitives import spherical_cap_sample_weights
 
 
 @pytest.mark.parametrize("polar,azimuth", [(1, 1), (3, 8), (9, 48), (17, 96)])

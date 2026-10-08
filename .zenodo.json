@@ -1,6 +1,6 @@
 {
-  "title": "skullbase-corridor: finite-instrument corridor geometry analysis for skull-base research in 3D Slicer",
-  "description": "Research software for surgeon-supervised exploration of finite rigid skull-base instrument corridors. This release is not clinically validated and provides no treatment recommendation or safety claim.",
+  "title": "CorridorKit: Open-source software for geometric comparison of skull-base surgical corridors",
+  "description": "CorridorKit is open-source research software for analyzing finite rigid instruments, circular portals, targets, and protected geometry in physical image coordinates. It provides the corridorkit Python package and command-line interface, a desktop application, and a 3D Slicer extension. Retained trajectories, coverage sets, and unavailable-anatomy states support reproducible geometric comparison.",
   "creators": [
     {
       "name": "Bachu, Abhinav",
@@ -18,8 +18,7 @@
   "license": "Apache-2.0",
   "upload_type": "software",
   "access_right": "open",
-  "doi": "10.5281/zenodo.23244307",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "publication_date": "2026-10-08",
   "keywords": [
     "3D Slicer",
@@ -30,7 +29,7 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "https://github.com/abachu2005/skullbase-corridor",
+      "identifier": "https://github.com/abachu2005/corridorkit",
       "relation": "isSupplementTo",
       "resource_type": "software"
     }

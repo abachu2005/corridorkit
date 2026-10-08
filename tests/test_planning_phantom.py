@@ -7,13 +7,13 @@ import nibabel as nib
 import numpy as np
 import pytest
 
-from skullbase_corridor.analysis.coverage import build_coverage_comparison
-from skullbase_corridor.domain.models import AnalysisStatus, KnowledgeStatus, SampledMaskTarget
-from skullbase_corridor.export.json import file_sha256, read_case
-from skullbase_corridor.geometry.engine import analyze_case
-from skullbase_corridor.geometry.primitives import capsule_sphere_clearance
-from skullbase_corridor.io.masks import target_from_mask
-from skullbase_corridor.synthetic.planning import (
+from corridorkit.analysis.coverage import build_coverage_comparison
+from corridorkit.domain.models import AnalysisStatus, KnowledgeStatus, SampledMaskTarget
+from corridorkit.export.json import file_sha256, read_case
+from corridorkit.geometry.engine import analyze_case
+from corridorkit.geometry.primitives import capsule_sphere_clearance
+from corridorkit.io.masks import target_from_mask
+from corridorkit.synthetic.planning import (
     CT_FILENAME,
     SYNTHETIC_WARNING,
     TARGET_FILENAME,

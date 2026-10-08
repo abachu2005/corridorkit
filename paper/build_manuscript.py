@@ -1,4 +1,4 @@
-"""Build the illustrated SoftwareX draft as HTML and PDF.
+"""Build the illustrated SoftwareX review manuscript as HTML and PDF.
 
 Figures are generated from synthetic geometry or repository evidence only.
 No patient images or private data are used.
@@ -295,6 +295,13 @@ code { font: 8.5pt Menlo, monospace; color: #37474f; }
 pre { background: #f4f7f8; border-left: 3px solid #2a9d8f; padding: 8pt;
   white-space: pre-wrap; }
 a { color: #176b87; text-decoration: none; }
+table { width: 100%; border-collapse: collapse; table-layout: fixed;
+  font-size: 9pt; margin: 10pt 0; }
+th, td { text-align: left; vertical-align: top; padding: 6pt 9pt;
+  border-bottom: 0.5pt solid #d8e1e5; overflow-wrap: anywhere; }
+th:first-child, td:first-child { width: 29%; }
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
 .figure { break-inside: avoid; margin: 13pt 0 16pt; text-align: center; }
 .figure img { max-width: 100%; max-height: 185mm; }
 .caption { font-size: 9pt; text-align: left; margin: 5pt 10pt; line-height: 1.3; }
@@ -303,7 +310,7 @@ a { color: #176b87; text-decoration: none; }
 blockquote { color: #455a64; border-left: 3px solid #b0bec5; padding-left: 10pt; }
 """
     html = (
-        "<!doctype html><html><head><meta charset='utf-8'><title>skullbase-corridor "
+        "<!doctype html><html><head><meta charset='utf-8'><title>CorridorKit "
         f"SoftwareX manuscript</title><style>{css}</style></head><body>{body}</body></html>"
     )
     html_path = PAPER / "softwarex.html"

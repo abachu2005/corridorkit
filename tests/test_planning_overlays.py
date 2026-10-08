@@ -9,7 +9,7 @@ import pytest
 from PySide6 import QtCore, QtWidgets
 import pyqtgraph as pg
 
-from skullbase_corridor.desktop.planning_overlays import (
+from corridorkit.desktop.planning_overlays import (
     CATEGORY_CODES,
     CATEGORY_COLORS,
     capsule_contains,
@@ -22,8 +22,8 @@ from skullbase_corridor.desktop.planning_overlays import (
     sample_capsule_slice,
     sample_target_slice,
 )
-from skullbase_corridor.domain.models import SampledMaskTarget, TargetPointCloud
-from skullbase_corridor.io.masks import target_from_mask
+from corridorkit.domain.models import SampledMaskTarget, TargetPointCloud
+from corridorkit.io.masks import target_from_mask
 
 
 @pytest.fixture(scope="module")

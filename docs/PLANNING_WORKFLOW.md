@@ -89,7 +89,7 @@ The occupancy image is rasterized and is not an additional collision test.
 
 Double-click `packaging/Open Planning Demo.command` or run it from Terminal.
 It opens the existing public computational case and starts analysis. It uses
-the local scientific Python environment; `SKULLBASE_PYTHON` can override the
+the local scientific Python environment; `CORRIDORKIT_PYTHON` can override the
 interpreter. It is not the frozen native application.
 
 The public example contains a real CT but computational target points and

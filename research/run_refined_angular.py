@@ -18,7 +18,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from skullbase_corridor.analysis.angular_integration import integrate_solid_angle
+from corridorkit.analysis.angular_integration import integrate_solid_angle
 
 OUTPUT = ROOT / "research/refined-angular"
 PROTOCOL = OUTPUT / "protocol.json"
@@ -69,7 +69,7 @@ def main():
     protocol = json.loads(protocol_bytes)
     paths = [
         Path(__file__).resolve(),
-        ROOT / "src/skullbase_corridor/analysis/angular_integration.py",
+        ROOT / "src/corridorkit/analysis/angular_integration.py",
         ROOT / "tests/test_angular_integration.py",
     ]
     source_bytes = {str(p.relative_to(ROOT)): p.read_bytes() for p in paths}

@@ -5,8 +5,8 @@ import numpy as np
 import pytest
 import SimpleITK as sitk
 
-from skullbase_corridor.desktop.editing import MaskEditor
-from skullbase_corridor.io.volumes import (
+from corridorkit.desktop.editing import MaskEditor
+from corridorkit.io.volumes import (
     Volume,
     inspect_dicom_series,
     load_volume,

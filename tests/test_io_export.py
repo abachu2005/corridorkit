@@ -3,10 +3,10 @@ import json
 import numpy as np
 import pytest
 
-from skullbase_corridor.export.json import checksum, export_result, read_case, write_case
-from skullbase_corridor.geometry.engine import analyze_case
-from skullbase_corridor.io.masks import indices_to_physical, target_from_mask, voxel_volume_mm3
-from skullbase_corridor.synthetic.cases import analytical_case
+from corridorkit.export.json import checksum, export_result, read_case, write_case
+from corridorkit.geometry.engine import analyze_case
+from corridorkit.io.masks import indices_to_physical, target_from_mask, voxel_volume_mm3
+from corridorkit.synthetic.cases import analytical_case
 
 
 def test_affine_orientation_and_anisotropic_volume():

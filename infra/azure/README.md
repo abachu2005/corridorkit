@@ -19,7 +19,7 @@ Never commit either value. The service behind the URL must implement:
 - `GET /jobs/{job_id}` -> `{"job_id": "...", "state": "queued|running|succeeded|failed|cancelled"}`
 - `DELETE /jobs/{job_id}` -> the same status shape
 - `GET /jobs/{job_id}/result` -> the `InferenceResult` JSON schema in
-  `src/skullbase_corridor/anatomy/azure_provider.py`
+  `src/corridorkit/anatomy/azure_provider.py`
 
 The service must treat the `Idempotency-Key` header as unique and durable.
 Repeated submissions with the same key must return the original job instead of

@@ -2,15 +2,15 @@
 import os
 
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
-os.environ.setdefault("SKULLBASE_DISABLE_VTK", "1")
+os.environ.setdefault("CORRIDORKIT_DISABLE_VTK", "1")
 
 import numpy as np
 import pyqtgraph as pg
 from PySide6 import QtWidgets
 
-from skullbase_corridor.desktop.app import MainWindow
-from skullbase_corridor.io.volumes import Volume
-from skullbase_corridor.synthetic.cases import analytical_case
+from corridorkit.desktop.app import MainWindow
+from corridorkit.io.volumes import Volume
+from corridorkit.synthetic.cases import analytical_case
 
 
 def test_inspector_controls_fit_and_scan_annotations_stay_outside_image():

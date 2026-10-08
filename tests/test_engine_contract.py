@@ -3,7 +3,7 @@ import math
 import numpy as np
 import pytest
 
-from skullbase_corridor.domain.models import (
+from corridorkit.domain.models import (
     AnalysisStatus,
     ApproachConfig,
     ApproachKind,
@@ -17,13 +17,13 @@ from skullbase_corridor.domain.models import (
     TargetPointCloud,
     VoxelGeometry,
 )
-from skullbase_corridor.geometry.engine import analyze_case
-from skullbase_corridor.geometry.primitives import (
+from corridorkit.geometry.engine import analyze_case
+from corridorkit.geometry.primitives import (
     capsule_sphere_clearance,
     portal_allows_direction,
     segment_segment_distance,
 )
-from skullbase_corridor.geometry.reference import (
+from corridorkit.geometry.reference import (
     sampled_capsule_sphere_clearance,
     sampled_segment_distance,
 )

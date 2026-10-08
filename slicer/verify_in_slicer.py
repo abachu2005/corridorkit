@@ -17,7 +17,7 @@ import vtk
 from vtk.util.numpy_support import vtk_to_numpy
 
 ROOT = Path(__file__).resolve().parents[1]
-ENGINE_PYTHON = Path(os.environ.get("SKULLBASE_PYTHON", "/opt/anaconda3/bin/python3"))
+ENGINE_PYTHON = Path(os.environ.get("CORRIDORKIT_PYTHON", "/opt/anaconda3/bin/python3"))
 CATEGORIES = ("eea_only", "tm_only", "both", "not_reached", "unavailable")
 TITLES = (
     "EEA only (sampled)", "CTM only (sampled)", "Both (sampled)",
@@ -359,7 +359,7 @@ def run():
     widget = module.SkullBaseComparisonWidget()
     cleaned = False
     try:
-        with tempfile.TemporaryDirectory(prefix="skullbase-slicer-verification-") as temporary:
+        with tempfile.TemporaryDirectory(prefix="corridorkit-slicer-verification-") as temporary:
             directory = Path(temporary)
             ct = verify_landmarks(widget)
             dialog, _, masks, affine = synthetic_segments(widget, ct)

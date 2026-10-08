@@ -14,13 +14,13 @@ import tempfile
 def main() -> None:
     parser = argparse.ArgumentParser()
     root = Path(__file__).resolve().parents[1]
-    parser.add_argument("--app", type=Path, default=root / "dist/SkullBaseCorridor.app")
+    parser.add_argument("--app", type=Path, default=root / "dist/CorridorKit.app")
     parser.add_argument("--output", type=Path, default=root / "research/native-bundle-evidence/frozen")
     args = parser.parse_args()
     bundle = args.app.resolve()
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=True)
-    executable = bundle / "Contents/MacOS/SkullBaseCorridor"
+    executable = bundle / "Contents/MacOS/CorridorKit"
     if not executable.is_file():
         raise SystemExit(f"Missing frozen executable: {executable}")
     environment = {

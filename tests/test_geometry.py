@@ -3,14 +3,14 @@ import math
 import numpy as np
 import pytest
 
-from skullbase_corridor.geometry.primitives import (
+from corridorkit.geometry.primitives import (
     angle_degrees,
     capsule_capsule_clearance,
     capsule_sphere_clearance,
     portal_allows_direction,
     sample_spherical_cap,
 )
-from skullbase_corridor.geometry.reference import sampled_capsule_sphere_clearance
+from corridorkit.geometry.reference import sampled_capsule_sphere_clearance
 
 
 def test_angles_and_deterministic_sampling():

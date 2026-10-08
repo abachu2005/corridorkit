@@ -1,10 +1,13 @@
-# Native Slicer verification — 2026-10-07
+# CorridorKit native Slicer verification history
+
+The checks below record historical executions on 2026-10-07 and 2026-10-08.
+They are not verification of the renamed CorridorKit v0.3.0 release or tag.
 
 Slicer 5.12.4 (Intel build under Rosetta), macOS 15.4. External engine:
 `/opt/anaconda3/bin/python3`. This is local software verification, not clinical
 validation, independent usability acceptance, or cross-platform certification.
 
-## Release-bound rerun
+## Historical v0.2.1 release-bound rerun
 
 On 2026-10-08, the integration protocol was rerun from a detached checkout of
 tag `v0.2.1` at commit
@@ -54,17 +57,20 @@ slot by storing its JSON response as `proposalResult`.
 
 ## Reproduce
 
-Run from the repository root, with Slicer installed and engine dependencies:
+Run the current CorridorKit source from the repository root, with Slicer
+installed and engine dependencies. These commands use the current
+`CORRIDORKIT_PYTHON` override; they do not reproduce the old package naming or
+constitute evidence of a new execution:
 
 ```sh
-SKULLBASE_PYTHON=/opt/anaconda3/bin/python3 \
- ~/Applications/Slicer-5.12.4.app/Contents/MacOS/Slicer \
+CORRIDORKIT_PYTHON=/opt/anaconda3/bin/python3 \
+ ~/Applications/Slicer-5.12.3.app/Contents/MacOS/Slicer \
  --no-splash --python-script "$PWD/slicer/verify_in_slicer.py"
-~/Applications/Slicer-5.12.4.app/Contents/MacOS/Slicer \
+~/Applications/Slicer-5.12.3.app/Contents/MacOS/Slicer \
  --additional-module-paths "$PWD/slicer/SkullBaseComparison" \
  --no-splash --python-script "$PWD/slicer/verify_atlas_in_slicer.py"
-SKULLBASE_PYTHON="$PWD/.venv/bin/python" \
- arch -x86_64 ~/Applications/Slicer-5.12.4.app/Contents/MacOS/Slicer \
+CORRIDORKIT_PYTHON="$PWD/.venv/bin/python" \
+ arch -x86_64 ~/Applications/Slicer-5.12.3.app/Contents/MacOS/Slicer \
  --disable-settings --disable-cli-modules --no-splash --no-main-window \
  --python-script "$PWD/slicer/verify_target_proposals_in_slicer.py"
 ```

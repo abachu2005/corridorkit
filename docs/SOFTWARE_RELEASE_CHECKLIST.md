@@ -1,4 +1,8 @@
-# Software-publication and source-release checklist
+# CorridorKit software-publication and source-release checklist
+
+Current source target: CorridorKit v0.3.0,
+<https://github.com/abachu2005/corridorkit>. Historical reports do not establish
+verification of this renamed release or tag.
 
 Scope: surgeon-supervised geometric research software, synthetic fixtures and
 existing public deidentified data. No private patient data, outcomes or clinical
@@ -83,7 +87,7 @@ combined Qt-suite hang; it does not claim the lifecycle cause is fixed.
 python packaging/verify_source_release.py --desktop --tests --build \
   --output dist/source-release-new --report dist/source-release-new-report.json
 python packaging/verify_wheel.py \
-  dist/source-release-new/skullbase_corridor-0.2.1-py3-none-any.whl
+  dist/source-release-new/corridorkit-0.3.0-py3-none-any.whl
 ```
 
 Choose fresh output/report paths; existing evidence is not overwritten.

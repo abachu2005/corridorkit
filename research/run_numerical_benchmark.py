@@ -23,15 +23,15 @@ import scipy
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from skullbase_corridor.analysis.baselines import (
+from corridorkit.analysis.baselines import (
     analytic_cap_solid_angle, off_axis_target_solid_angle,
     optimized_capsule_sphere_clearance, parameter_hash, run_engine_ablations,
 )
-from skullbase_corridor.domain.models import CorridorCase, VoxelGeometry
-from skullbase_corridor.geometry.engine import analyze_case
-from skullbase_corridor.geometry.mesh_reference import VoxelCellReference
-from skullbase_corridor.geometry.primitives import capsule_sphere_clearance
-from skullbase_corridor.geometry.voxel import VoxelMaskBackend
+from corridorkit.domain.models import CorridorCase, VoxelGeometry
+from corridorkit.geometry.engine import analyze_case
+from corridorkit.geometry.mesh_reference import VoxelCellReference
+from corridorkit.geometry.primitives import capsule_sphere_clearance
+from corridorkit.geometry.voxel import VoxelMaskBackend
 
 SEED = 20261001
 
@@ -39,7 +39,7 @@ SEED = 20261001
 def hashes():
     paths = [
         Path(__file__).resolve(),
-        *(ROOT / "src/skullbase_corridor" / path for path in (
+        *(ROOT / "src/corridorkit" / path for path in (
             "analysis/baselines.py", "geometry/mesh_reference.py", "geometry/engine.py",
             "geometry/voxel.py", "geometry/primitives.py", "domain/models.py")),
         ROOT / "tests/test_baselines.py", ROOT / "tests/test_mesh_reference.py",

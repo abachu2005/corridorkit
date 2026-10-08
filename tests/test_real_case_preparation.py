@@ -9,12 +9,12 @@ import sys
 import numpy as np
 import pytest
 
-from skullbase_corridor.application.session import ReviewDocument
-from skullbase_corridor.domain.models import AnalysisStatus, KnowledgeStatus, SampledMaskTarget
-from skullbase_corridor.export.json import export_result, file_sha256, read_case
-from skullbase_corridor.geometry.engine import analyze_case
-from skullbase_corridor.io.masks import target_from_mask
-from skullbase_corridor.io.volumes import load_volume, validate_alignment
+from corridorkit.application.session import ReviewDocument
+from corridorkit.domain.models import AnalysisStatus, KnowledgeStatus, SampledMaskTarget
+from corridorkit.export.json import export_result, file_sha256, read_case
+from corridorkit.geometry.engine import analyze_case
+from corridorkit.io.masks import target_from_mask
+from corridorkit.io.volumes import load_volume, validate_alignment
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "research/prepare_interactive_real_case.py"

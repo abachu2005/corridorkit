@@ -4,12 +4,12 @@ import numpy as np
 import pytest
 import SimpleITK as sitk
 
-from skullbase_corridor.application.session import ReviewDocument
-from skullbase_corridor.export.json import atomic_json_write, file_sha256, read_case, input_manifest
-from skullbase_corridor.io.masks import target_from_mask
-from skullbase_corridor.io.registration import landmark_errors, review_registration, resample_reviewed_mri
-from skullbase_corridor.anatomy.suggestions import suggest_ct_masks
-from skullbase_corridor.synthetic.cases import analytical_case
+from corridorkit.application.session import ReviewDocument
+from corridorkit.export.json import atomic_json_write, file_sha256, read_case, input_manifest
+from corridorkit.io.masks import target_from_mask
+from corridorkit.io.registration import landmark_errors, review_registration, resample_reviewed_mri
+from corridorkit.anatomy.suggestions import suggest_ct_masks
+from corridorkit.synthetic.cases import analytical_case
 
 
 def test_review_invalidated_by_edit_and_roundtrip(tmp_path):
@@ -90,7 +90,7 @@ def test_registration_approval_hash_guard_and_resampling(tmp_path):
 
 
 def test_hash_mismatch_blocks_analysis(tmp_path):
-    from skullbase_corridor.domain.models import CorridorCase
+    from corridorkit.domain.models import CorridorCase
     path = tmp_path / "source.nii.gz"
     path.write_bytes(b"first")
     data = analytical_case().model_dump(mode="json")
@@ -103,9 +103,9 @@ def test_hash_mismatch_blocks_analysis(tmp_path):
 
 
 def test_shareable_export_has_geometry_without_local_paths(tmp_path):
-    from skullbase_corridor.domain.models import CorridorCase
-    from skullbase_corridor.geometry.engine import analyze_case
-    from skullbase_corridor.export.json import export_result
+    from corridorkit.domain.models import CorridorCase
+    from corridorkit.geometry.engine import analyze_case
+    from corridorkit.export.json import export_result
     path = tmp_path / "private-patient-name.npy"
     np.save(path, np.zeros((3, 3, 3)))
     data = analytical_case().model_dump(mode="json")
@@ -121,7 +121,7 @@ def test_shareable_export_has_geometry_without_local_paths(tmp_path):
 
 
 def test_anatomy_approval_binds_external_mask_bytes(tmp_path):
-    from skullbase_corridor.domain.models import CorridorCase
+    from corridorkit.domain.models import CorridorCase
     path = tmp_path / "mask.npy"
     np.save(path, np.zeros((10, 10, 10), np.uint8))
     data = analytical_case().model_dump(mode="json")

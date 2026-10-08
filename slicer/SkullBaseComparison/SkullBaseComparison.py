@@ -24,7 +24,7 @@ import slicer
 def measurement_function():
     # Load only the numpy-based core, without installing the standalone app or
     # changing Slicer's scientific Python dependencies.
-    path = Path(__file__).resolve().parents[2] / "src/skullbase_corridor/analysis/anatomical.py"
+    path = Path(__file__).resolve().parents[2] / "src/corridorkit/analysis/anatomical.py"
     spec = importlib.util.spec_from_file_location("corridor_anatomical_measurements", path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
@@ -34,9 +34,9 @@ def measurement_function():
 class SkullBaseComparison(ScriptedLoadableModule):
     def __init__(self, parent):
         super().__init__(parent)
-        self.parent.title = "Skull-base approach comparison"
+        self.parent.title = "CorridorKit"
         self.parent.categories = ["IGT"]
-        self.parent.contributors = ["Skullbase Corridor contributors"]
+        self.parent.contributors = ["CorridorKit contributors"]
         self.parent.helpText = (
             "Select an anatomical CT and place EEA entry, contralateral maxillary entry, "
             "a common target, and a two-point petrous ICA reference axis. "
@@ -289,7 +289,7 @@ class SkullBaseComparisonWidget(ScriptedLoadableModuleWidget, VTKObservationMixi
 
     def externalPython(self):
         configured = self.runtimePath.text if hasattr(self, "runtimePath") else ""
-        configured = configured or os.environ.get("SKULLBASE_PYTHON", "")
+        configured = configured or os.environ.get("CORRIDORKIT_PYTHON", "")
         if configured:
             return Path(configured)
         bundled = Path(__file__).resolve().parents[1] / "runtime/bin/python"

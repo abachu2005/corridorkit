@@ -1,10 +1,10 @@
 import numpy as np
 import pytest
 
-from skullbase_corridor.analysis import convergence_study, paired_summary
-from skullbase_corridor.analysis.robustness import perturbation_study
-from skullbase_corridor.analysis.statistics import repeated_paired_summary, subject_split
-from skullbase_corridor.synthetic.cases import analytical_case
+from corridorkit.analysis import convergence_study, paired_summary
+from corridorkit.analysis.robustness import perturbation_study
+from corridorkit.analysis.statistics import repeated_paired_summary, subject_split
+from corridorkit.synthetic.cases import analytical_case
 
 
 def test_convergence_is_deterministic_and_records_deltas():

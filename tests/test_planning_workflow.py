@@ -12,7 +12,7 @@ pytestmark = pytest.mark.skipif(importlib.util.find_spec("PySide6") is None,
 def test_planning_path_selection_and_stale_invalidation(monkeypatch):
     from PySide6 import QtCore, QtWidgets
 
-    from skullbase_corridor.desktop.app import MainWindow
+    from corridorkit.desktop.app import MainWindow
     app = QtWidgets.QApplication.instance() or QtWidgets.QApplication([])
     monkeypatch.setattr(QtWidgets.QMessageBox, "critical",
                         lambda *a: pytest.fail(f"Unexpected GUI error: {a[-1]}"))
@@ -71,9 +71,9 @@ def test_planning_export_includes_point_categories(tmp_path, monkeypatch):
 
     from PySide6 import QtWidgets
 
-    from skullbase_corridor.desktop.app import MainWindow
-    from skullbase_corridor.geometry.engine import analyze_case
-    from skullbase_corridor.synthetic.cases import analytical_case
+    from corridorkit.desktop.app import MainWindow
+    from corridorkit.geometry.engine import analyze_case
+    from corridorkit.synthetic.cases import analytical_case
     app = QtWidgets.QApplication.instance() or QtWidgets.QApplication([])
     window = MainWindow()
     window.case = analytical_case()
@@ -94,9 +94,9 @@ def test_planning_export_includes_point_categories(tmp_path, monkeypatch):
 def test_conditional_paths_are_not_selectable(monkeypatch):
     from PySide6 import QtWidgets
 
-    from skullbase_corridor.desktop.app import MainWindow
-    from skullbase_corridor.geometry.engine import analyze_case
-    from skullbase_corridor.synthetic.cases import analytical_case
+    from corridorkit.desktop.app import MainWindow
+    from corridorkit.geometry.engine import analyze_case
+    from corridorkit.synthetic.cases import analytical_case
     app = QtWidgets.QApplication.instance() or QtWidgets.QApplication([])
     window = MainWindow()
     # Obtain the same fixture through the public factory, without UI threads.
@@ -121,7 +121,7 @@ def test_conditional_paths_are_not_selectable(monkeypatch):
 def test_target_import_volume_is_explicit(monkeypatch):
     from PySide6 import QtWidgets
 
-    from skullbase_corridor.desktop.app import MainWindow
+    from corridorkit.desktop.app import MainWindow
     app = QtWidgets.QApplication.instance() or QtWidgets.QApplication([])
     window = MainWindow()
     assert window._choose_target_stride(20) == 1

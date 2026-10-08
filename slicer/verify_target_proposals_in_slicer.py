@@ -17,7 +17,7 @@ import vtk
 import slicer
 
 ROOT = Path(__file__).resolve().parents[1]
-ENGINE_PYTHON = Path(os.environ.get("SKULLBASE_PYTHON", "/opt/anaconda3/bin/python3"))
+ENGINE_PYTHON = Path(os.environ.get("CORRIDORKIT_PYTHON", "/opt/anaconda3/bin/python3"))
 
 
 def load_widget():

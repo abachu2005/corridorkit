@@ -8,16 +8,16 @@ import numpy as np
 import pytest
 from PySide6 import QtCore, QtWidgets
 
-from skullbase_corridor.desktop.trajectory_geometry import (
+from corridorkit.desktop.trajectory_geometry import (
     clip_segment_to_slab,
     feasible_paths,
     project_segment,
     resample_path_plane,
 )
-from skullbase_corridor.desktop.views import LinkedViewer
-from skullbase_corridor.domain.models import ApproachResult, CaseResult, TrajectoryResult
-from skullbase_corridor.io.volumes import Volume
-from skullbase_corridor.synthetic.cases import analytical_case
+from corridorkit.desktop.views import LinkedViewer
+from corridorkit.domain.models import ApproachResult, CaseResult, TrajectoryResult
+from corridorkit.io.volumes import Volume
+from corridorkit.synthetic.cases import analytical_case
 
 
 @pytest.fixture(scope="module")

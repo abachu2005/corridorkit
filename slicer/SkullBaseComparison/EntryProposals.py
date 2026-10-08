@@ -54,7 +54,7 @@ def load_request(request_path):
     for name, item in request.get("masks", {}).items():
         path = item["path"] if isinstance(item, dict) else item
         masks[name] = np.load(path, allow_pickle=False)
-    module = importlib.import_module("skullbase_corridor.anatomy.entry_proposals")
+    module = importlib.import_module("corridorkit.anatomy.entry_proposals")
     parameters = request.get("parameters", {})
     return module.propose_entries(
         target_ras_mm=request["target_ras_mm"],
@@ -104,7 +104,7 @@ class EntryProposalDialog(qt.QDialog if qt else object):
             selector.connect("currentSegmentChanged(QString)", self.inputsChanged)
             form.addRow(title, selector)
             self.segments[role] = selector
-        self.python = qt.QLineEdit(os.environ.get("SKULLBASE_PYTHON", ""))
+        self.python = qt.QLineEdit(os.environ.get("CORRIDORKIT_PYTHON", ""))
         form.addRow("External package Python", self.python)
         self.suggest = qt.QPushButton("Suggest entries")
         self.suggest.connect("clicked()", self.start)
@@ -245,7 +245,7 @@ class EntryProposalDialog(qt.QDialog if qt else object):
                 raise ValueError("Select the external Python containing the corridor package.")
             self.invalidate("Exporting full-grid masks…")
             self.workDirectory = Path(output_directory or tempfile.mkdtemp(
-                prefix="skullbase-entry-proposals-"))
+                prefix="corridorkit-entry-proposals-"))
             self.workDirectory.mkdir(parents=True, exist_ok=True)
             request = self.buildRequest(self.workDirectory)
             request_path = self.workDirectory / "request.json"
@@ -348,7 +348,7 @@ class EntryProposalDialog(qt.QDialog if qt else object):
             node.RemoveObserver(tag)
         self.anatomyObservers = []
         if self.workDirectory and self.workDirectory.name.startswith(
-                "skullbase-entry-proposals-"):
+                "corridorkit-entry-proposals-"):
             shutil.rmtree(self.workDirectory, ignore_errors=True)
 
 

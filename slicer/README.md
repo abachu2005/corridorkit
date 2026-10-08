@@ -1,4 +1,4 @@
-# Anatomical EEA–CTM comparison in 3D Slicer
+# CorridorKit in 3D Slicer
 
 This is the focused replacement workflow for the standalone interaction demo.
 It uses Slicer's existing image loading, linked slices, segmentation editor,
@@ -29,7 +29,7 @@ The selected image/landmark references and diameter persist in a Slicer scene.
 1. Install 3D Slicer from https://download.slicer.org/ if not already available.
 2. In **Edit → Application Settings → Modules → Additional module paths**, add
    `slicer/SkullBaseComparison` from this repository. Restart Slicer.
-3. Open **Skull-base approach comparison** under **IGT**.
+3. Open **CorridorKit** under **IGT**.
 4. Load a suitable CT and its segmentation using Slicer's normal Add Data tools.
    Preserve `.seg.nrrd` files as segmentation nodes, including overlapping layers.
 5. Select the CT. **Show full CT in linked views** fits the supplied image extent;
@@ -49,21 +49,21 @@ root:
 ```sh
 python packaging/build_slicer_package.py
 python packaging/verify_slicer_package.py \
-  dist/SkullBaseCorridor-Slicer-5.12-0.2.1.zip
+  dist/CorridorKit-Slicer-5.12-0.3.0.zip
 ```
 
 Extract the archive to a permanent directory. In Slicer 5.12, open
 **Edit → Application Settings → Modules → Additional module paths**, add the
-extracted `SkullBaseCorridor/slicer/SkullBaseComparison` directory, and restart
+extracted `CorridorKit/slicer/SkullBaseComparison` directory, and restart
 Slicer. Do not add the ZIP itself.
 
 The package includes a pinned wheelhouse, its exact SHA-256 manifest, and a
-managed-runtime launcher at `SkullBaseCorridor/slicer/runtime/bin/python`.
+managed-runtime launcher at `CorridorKit/slicer/runtime/bin/python`.
 The first planning run verifies every wheel and installs them into an immutable,
 manifest-keyed per-user cache. It does not modify Slicer's Python packages and
 keeps CT inference on the local workstation by default. Initial model-weight
 retrieval requires network access; later runs can reuse the local model and
-content-hash caches. Set `SKULLBASE_BOOTSTRAP_PYTHON` only if
+content-hash caches. Set `CORRIDORKIT_BOOTSTRAP_PYTHON` only if
 `python3` is not Python 3.11 or newer. The archive contains no endpoint token,
 patient data, build cache, or provisioned virtual environment.
 
@@ -73,7 +73,7 @@ No atlas-transferred segmentation should be treated as reviewed patient anatomy.
 
 The acquired originals are in `data-cache/skullbase-atlas/`. From Slicer's
 Python console, use `import runpy` followed by
-`runpy.run_path("/absolute/path/to/skullbase-corridor/slicer/load_anatomical_case.py")`.
+`runpy.run_path("/absolute/path/to/corridorkit/slicer/load_anatomical_case.py")`.
 This loads the original CT and independent segmentation components without
 flattening their overlaps or creating entry/target landmarks.
 
@@ -87,7 +87,7 @@ Do not use this partial mask to claim artery clearance along an entire route.
 
 Install the core dependencies in a separate Python 3.11+ environment with
 `python -m pip install -e .` from this checkout. Set the dialog's external Python
-path to that environment's interpreter (or set `SKULLBASE_PYTHON` before launch).
+path to that environment's interpreter (or set `CORRIDORKIT_PYTHON` before launch).
 Slicer's bundled scientific packages are not modified.
 
 1. Establish the anatomical landmarks above, then open **Compare segmented target access…**.
@@ -121,7 +121,7 @@ studies. A sampled failure is not proof of anatomical inaccessibility.
 Pure measurements have headless tests in `tests/test_anatomical_measurements.py`.
 Run `Slicer --no-splash --python-script slicer/verify_in_slicer.py` for native
 integration verification. Syntax checks alone do not establish Slicer compatibility.
-Native integration **passed on 2026-10-08 for the exact v0.2.1 tag**, using the
+Historical native integration **passed on 2026-10-08 for the exact v0.2.1 tag**, using the
 official signed and notarized Slicer 5.12.3 macOS amd64 distribution on macOS
 15.4 under Rosetta. Verified landmark invalidation, rotated anisotropic
 full-grid exports, all five coverage categories, external engine execution,
@@ -135,12 +135,12 @@ expert anatomy review or clinical validation. Do not use `--no-main-window`
 for these tests: linked views require Slicer's main-window layout manager.
 
 On this workstation Slicer is installed at
-`~/Applications/Slicer-5.12.4.app`. To open the module without changing global
+`~/Applications/Slicer-5.12.3.app`. To open the module without changing global
 module-path settings:
 
 ```sh
-SKULLBASE_PYTHON=/opt/anaconda3/bin/python3 \
- ~/Applications/Slicer-5.12.4.app/Contents/MacOS/Slicer \
+CORRIDORKIT_PYTHON=/opt/anaconda3/bin/python3 \
+ ~/Applications/Slicer-5.12.3.app/Contents/MacOS/Slicer \
  --additional-module-paths "$PWD/slicer/SkullBaseComparison"
 ```
 
