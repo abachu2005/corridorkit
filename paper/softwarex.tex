@@ -51,7 +51,7 @@ Field & Value \\
 \midrule
 C1 Current code version & \texttt{v0.3.0} \\
 \addlinespace[4pt]
-C2 Permanent link to code/repository used for this code version & Versioned source: \href{https://github.com/abachu2005/corridorkit/tree/v0.3.0}{CorridorKit v0.3.0} \\
+C2 Permanent link to code/repository used for this code version & Archived release: \href{https://doi.org/10.5281/zenodo.23249277}{10.5281/zenodo.23249277}; versioned source: \href{https://github.com/abachu2005/corridorkit/tree/v0.3.0}{CorridorKit v0.3.0} \\
 \addlinespace[4pt]
 C3 Permanent link to Reproducible Capsule & N/A; no executable reproducible capsule has been deposited \\
 \addlinespace[4pt]
@@ -182,6 +182,8 @@ TotalSegmentator does not supply complete skull-base critical anatomy. Cranial n
 
 Verification uses deterministic fixtures, independent geometric references, cross-platform automated tests, and programmatic desktop interactions. The CI matrix covers Ubuntu, macOS, and Windows with Python 3.11 and 3.12. The native Slicer integration protocol exercises landmark invalidation, rotated anisotropic KJI-to-IJK/RAS conversion, all five coverage categories, external engine execution, the asynchronous analysis dialog, and scene-reference save/reopen. The positive worked example was additionally verified programmatically.
 
+For the exact \texttt{v0.3.0} tag, all eight CI jobs passed. A clean detached checkout passed 652 local tests; five public-cache tests were skipped because their local data were absent. Wheel installation, packaged-extension checks, native desktop interaction, and native Slicer 5.12.3 integration also passed. The release-bound summary is tracked in \texttt{docs/evidence/corridorkit-v0.3.0-verification.json}.
+
 \subsection{Positive worked example}
 
 The deterministic planning phantom contains an invented CT-like volume, a 413-sample ellipsoidal target, two finite portals, and three analytical protected spheres. ``EEA'' and ``transmaxillary'' are nominal labels for synthetic Portal A and Portal B, respectively. The same case was analyzed through the desktop workflow used for image-linked review. Portal A produced 27 feasible sampled trajectories reaching 94 target samples; Portal B produced 77 trajectories reaching 267 samples. Set comparison assigned 59 samples to Portal A only, 232 to Portal B only, 35 to both, 87 to sampled-unreached, and none to unavailable. The interface exposed 104 selectable trajectory witnesses and invalidated them when configuration state changed.
@@ -216,7 +218,7 @@ The model-assisted workflow depends on a large local machine-learning stack and 
 
 \section{Reproducibility and data availability}
 
-The source code is licensed under Apache-2.0. Dependencies retain their own licenses. Version 0.3.0 is identified by Git tag \href{https://github.com/abachu2005/corridorkit/tree/v0.3.0}{\texttt{v0.3.0}}. The distribution contains source, tests, documentation, packaging scripts, and deterministic fixtures; it excludes public CT archives, private data, model weights, and local sessions.
+The source code is licensed under Apache-2.0. Dependencies retain their own licenses. Version 0.3.0 is identified by Git tag \href{https://github.com/abachu2005/corridorkit/tree/v0.3.0}{\texttt{v0.3.0}} at commit \texttt{db27dd0f\allowbreak c8c4a551\allowbreak 7d955626\allowbreak 9fdf7202\allowbreak e8659ec2}. The archived release DOI is \href{https://doi.org/10.5281/zenodo.23249277}{10.5281/zenodo.23249277}. The distribution contains source, tests, documentation, packaging scripts, and deterministic fixtures; it excludes public CT archives, private data, model weights, and local sessions.
 
 The source-release tooling uses an explicit allowlist, compares staged content with current files, records hashes, and runs wheel smoke checks. The Slicer package provisions an isolated per-user runtime without modifying Slicer's embedded Python.
 

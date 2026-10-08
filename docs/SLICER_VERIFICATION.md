@@ -1,7 +1,20 @@
-# CorridorKit native Slicer verification history
+# CorridorKit native Slicer verification
+
+## CorridorKit v0.3.0
+
+Native integration passed on 2026-10-08 from the exact `v0.3.0` tag at
+`db27dd0fc8c4a5517d9556269fdf7202e8659ec2`, using Slicer 5.12.3 on macOS 15.4.
+Landmark invalidation, rotated full-grid coordinate conversion, all five
+coverage categories, external engine execution, the asynchronous dialog,
+and scene-reference save/reopen passed. The tested source remained unchanged.
+Wheel installation, Slicer package integrity, and native desktop worked-example
+checks also passed. See
+[`corridorkit-v0.3.0-verification.json`](evidence/corridorkit-v0.3.0-verification.json)
+and [the exact-tag CI run](https://github.com/abachu2005/corridorkit/actions/runs/37847343247).
+
+## Earlier verification history
 
 The checks below record historical executions on 2026-10-07 and 2026-10-08.
-They are not verification of the renamed CorridorKit v0.3.0 release or tag.
 
 Slicer 5.12.4 (Intel build under Rosetta), macOS 15.4. External engine:
 `/opt/anaconda3/bin/python3`. This is local software verification, not clinical

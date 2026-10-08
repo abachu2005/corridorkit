@@ -121,6 +121,11 @@ studies. A sampled failure is not proof of anatomical inaccessibility.
 Pure measurements have headless tests in `tests/test_anatomical_measurements.py`.
 Run `Slicer --no-splash --python-script slicer/verify_in_slicer.py` for native
 integration verification. Syntax checks alone do not establish Slicer compatibility.
+CorridorKit native integration **passed on 2026-10-08 for the exact v0.3.0 tag**
+at commit `db27dd0fc8c4a5517d9556269fdf7202e8659ec2` in Slicer 5.12.3 on
+macOS 15.4. The release-bound results, including all checks listed below, are
+in `docs/evidence/corridorkit-v0.3.0-verification.json`.
+
 Historical native integration **passed on 2026-10-08 for the exact v0.2.1 tag**, using the
 official signed and notarized Slicer 5.12.3 macOS amd64 distribution on macOS
 15.4 under Rosetta. Verified landmark invalidation, rotated anisotropic

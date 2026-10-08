@@ -3,6 +3,7 @@ message: "If you use this software, please cite the versioned release."
 title: "CorridorKit: Open-source software for geometric comparison of skull-base surgical corridors"
 type: software
 version: 0.3.0
+doi: "10.5281/zenodo.23249277"
 date-released: 2026-10-08
 authors:
   - family-names: Bachu

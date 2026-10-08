@@ -10,6 +10,8 @@
 - **Software release cited by this article:** version 0.3.0
 - **Repository URL:** https://github.com/abachu2005/corridorkit
 - **Release tag:** `v0.3.0`
+- **Release commit:** `db27dd0fc8c4a5517d9556269fdf7202e8659ec2`
+- **Version DOI:** [10.5281/zenodo.23249277](https://doi.org/10.5281/zenodo.23249277)
 - **Versioned software source:** [CorridorKit v0.3.0](https://github.com/abachu2005/corridorkit/tree/v0.3.0)
 
 ## Abstract
@@ -25,7 +27,7 @@ research software; computational geometry; medical imaging; 3D Slicer; finite in
 | Field | Value |
 |---|---|
 | C1 Current code version | `v0.3.0` |
-| C2 Permanent link to code/repository used for this code version | Versioned source: [CorridorKit v0.3.0](https://github.com/abachu2005/corridorkit/tree/v0.3.0) |
+| C2 Permanent link to code/repository used for this code version | Archived release: [10.5281/zenodo.23249277](https://doi.org/10.5281/zenodo.23249277); versioned source: [CorridorKit v0.3.0](https://github.com/abachu2005/corridorkit/tree/v0.3.0) |
 | C3 Permanent link to Reproducible Capsule | N/A; no executable reproducible capsule has been deposited |
 | C4 Legal Code License | Apache License 2.0 (`Apache-2.0`) |
 | C5 Code versioning system used | Git |
@@ -181,6 +183,13 @@ engine execution, the asynchronous analysis dialog, and scene-reference
 save/reopen. The positive worked example was additionally verified
 programmatically.
 
+For the exact `v0.3.0` tag, all eight CI jobs passed. A clean detached
+checkout passed 652 local tests; five public-cache tests were skipped because
+their local data were absent. Wheel installation, packaged-extension checks,
+native desktop interaction, and native Slicer 5.12.3 integration also passed.
+The release-bound summary is tracked in
+`docs/evidence/corridorkit-v0.3.0-verification.json`.
+
 ### 5.1 Positive worked example
 
 The deterministic planning phantom contains an invented CT-like volume, a
@@ -267,7 +276,10 @@ their upstream compatibility constraints.
 
 The source code is licensed under Apache-2.0. Dependencies retain their own
 licenses. Version 0.3.0 is identified by Git tag
-[`v0.3.0`](https://github.com/abachu2005/corridorkit/tree/v0.3.0).
+[`v0.3.0`](https://github.com/abachu2005/corridorkit/tree/v0.3.0)
+at commit `db27dd0fc8c4a5517d9556269fdf7202e8659ec2`.
+The archived release DOI is
+[10.5281/zenodo.23249277](https://doi.org/10.5281/zenodo.23249277).
 The distribution contains source, tests,
 documentation, packaging scripts, and deterministic fixtures; it excludes
 public CT archives, private data, model weights, and local sessions.

@@ -26,3 +26,18 @@ the new software version. Public-data caches and model weights are not bundled.
 Verification records are published separately from the immutable source tag.
 The software is for research use; numerical and integration verification do
 not constitute clinical validation.
+
+## Verified release
+
+- Source commit: `db27dd0fc8c4a5517d9556269fdf7202e8659ec2`.
+- [Exact-tag CI](https://github.com/abachu2005/corridorkit/actions/runs/37847343247):
+  all eight jobs passed, including Ubuntu, macOS, and Windows on Python 3.11/3.12.
+- Clean-checkout tests: 652 passed; five tests requiring local public-data
+  caches skipped. Native desktop and Slicer 5.12.3 integration passed on macOS.
+- Verified wheel, source distribution, Slicer ZIP, and release evidence are
+  attached below. The source tag remains unchanged after verification.
+- Version DOI: [10.5281/zenodo.23249277](https://doi.org/10.5281/zenodo.23249277).
+
+The final DOI-linked manuscripts and post-release verification evidence are
+published as release assets and on `main`; they are not retroactive changes to
+the archived source tag.

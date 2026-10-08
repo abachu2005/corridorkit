@@ -4,7 +4,7 @@
   "errors": [],
   "full_target_contours_verified": true,
   "limitations": "Synthetic or public computational targets/portals, not validated operative anatomy. Programmatic desktop verification, not clinician acceptance.",
-  "native_vtk": false,
+  "native_vtk": true,
   "passed": true,
   "selectable_paths": 104,
   "selected_paths": [

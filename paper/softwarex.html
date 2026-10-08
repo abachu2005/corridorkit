@@ -37,6 +37,8 @@ blockquote { color: #455a64; border-left: 3px solid #b0bec5; padding-left: 10pt;
 <li><strong>Software release cited by this article:</strong> version 0.3.0</li>
 <li><strong>Repository URL:</strong> https://github.com/abachu2005/corridorkit</li>
 <li><strong>Release tag:</strong> <code>v0.3.0</code></li>
+<li><strong>Release commit:</strong> <code>db27dd0fc8c4a5517d9556269fdf7202e8659ec2</code></li>
+<li><strong>Version DOI:</strong> <a href="https://doi.org/10.5281/zenodo.23249277">10.5281/zenodo.23249277</a></li>
 <li><strong>Versioned software source:</strong> <a href="https://github.com/abachu2005/corridorkit/tree/v0.3.0">CorridorKit v0.3.0</a></li>
 </ul>
 <h2>Abstract</h2>
@@ -58,7 +60,7 @@ blockquote { color: #455a64; border-left: 3px solid #b0bec5; padding-left: 10pt;
 </tr>
 <tr>
 <td>C2 Permanent link to code/repository used for this code version</td>
-<td>Versioned source: <a href="https://github.com/abachu2005/corridorkit/tree/v0.3.0">CorridorKit v0.3.0</a></td>
+<td>Archived release: <a href="https://doi.org/10.5281/zenodo.23249277">10.5281/zenodo.23249277</a>; versioned source: <a href="https://github.com/abachu2005/corridorkit/tree/v0.3.0">CorridorKit v0.3.0</a></td>
 </tr>
 <tr>
 <td>C3 Permanent link to Reproducible Capsule</td>
@@ -188,6 +190,12 @@ anisotropic KJI-to-IJK/RAS conversion, all five coverage categories, external
 engine execution, the asynchronous analysis dialog, and scene-reference
 save/reopen. The positive worked example was additionally verified
 programmatically.</p>
+<p>For the exact <code>v0.3.0</code> tag, all eight CI jobs passed. A clean detached
+checkout passed 652 local tests; five public-cache tests were skipped because
+their local data were absent. Wheel installation, packaged-extension checks,
+native desktop interaction, and native Slicer 5.12.3 integration also passed.
+The release-bound summary is tracked in
+<code>docs/evidence/corridorkit-v0.3.0-verification.json</code>.</p>
 <h3>5.1 Positive worked example</h3>
 <p>The deterministic planning phantom contains an invented CT-like volume, a
 413-sample ellipsoidal target, two finite portals, and three analytical protected
@@ -259,7 +267,10 @@ their upstream compatibility constraints.</p>
 <h2>8. Reproducibility and data availability</h2>
 <p>The source code is licensed under Apache-2.0. Dependencies retain their own
 licenses. Version 0.3.0 is identified by Git tag
-<a href="https://github.com/abachu2005/corridorkit/tree/v0.3.0"><code>v0.3.0</code></a>.
+<a href="https://github.com/abachu2005/corridorkit/tree/v0.3.0"><code>v0.3.0</code></a>
+at commit <code>db27dd0fc8c4a5517d9556269fdf7202e8659ec2</code>.
+The archived release DOI is
+<a href="https://doi.org/10.5281/zenodo.23249277">10.5281/zenodo.23249277</a>.
 The distribution contains source, tests,
 documentation, packaging scripts, and deterministic fixtures; it excludes
 public CT archives, private data, model weights, and local sessions.</p>
