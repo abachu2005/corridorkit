@@ -4,6 +4,21 @@ Slicer 5.12.4 (Intel build under Rosetta), macOS 15.4. External engine:
 `/opt/anaconda3/bin/python3`. This is local software verification, not clinical
 validation, independent usability acceptance, or cross-platform certification.
 
+## Release-bound rerun
+
+On 2026-10-08, the integration protocol was rerun from a detached checkout of
+tag `v0.2.1` at commit
+`a0c6933258f60e370747cfd4096b9445eff8a572`. It passed in the official signed
+and notarized Slicer 5.12.3 macOS amd64 distribution under Rosetta 2 on macOS
+15.4. The machine-readable provenance and results are retained in
+`docs/evidence/native-slicer-v0.2.1-20261008.json`.
+
+The initial 5.12.4 application used for attempted reruns was damaged
+(`codesign --verify --deep --strict` reported a missing or invalid sealed
+resource). The clean 5.12.3 distribution passed signature and Gatekeeper
+verification. Its first launch required several minutes for Rosetta translation
+of Slicer's module graph; this was not a project-code failure.
+
 The official installer SHA-512 matched upstream:
 `122c5c33d68189cd5b8212ad489c7fa319ae2ba8126014bfb7c4ed1a4a02475fe1b78d45d71b22685be255e22cdb1ae7e696d05ee34b031795187f0a1c38a6e1`.
 

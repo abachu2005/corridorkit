@@ -171,7 +171,7 @@ TotalSegmentator does not supply complete skull-base critical anatomy. Cranial n
 
 \section{Verification evidence and impact}
 
-Verification uses deterministic fixtures, independent geometric references, cross-platform automated tests, and programmatic desktop interactions. The release CI passed on Ubuntu, macOS, and Windows with Python 3.11 and 3.12. A source-workflow run preceding version 0.2.1 exercised public CT loading and generated masks in 3D Slicer 5.12.4. Two fresh native rerun attempts for version 0.2.1 did not complete because Slicer stalled during startup under Rosetta; therefore, the earlier run is not presented as release-specific acceptance. The positive worked example was verified programmatically. These tests establish bounded software execution, not independent usability or clinical validation.
+Verification uses deterministic fixtures, independent geometric references, cross-platform automated tests, and programmatic desktop interactions. The release CI passed on Ubuntu, macOS, and Windows with Python 3.11 and 3.12. Native integration of the exact version 0.2.1 tag passed in 3D Slicer 5.12.3 on macOS 15.4. The verification exercised landmark invalidation, rotated anisotropic KJI-to-IJK/RAS conversion, all five coverage categories, external engine execution, the asynchronous analysis dialog, and scene-reference save/reopen. The positive worked example was additionally verified programmatically. These tests establish bounded software execution, not independent usability or clinical validation.
 
 \subsection{Positive worked example}
 

@@ -1,0 +1,56 @@
+{
+  "evidence_type": "native_3d_slicer_release_integration",
+  "date": "2026-10-08",
+  "software": {
+    "version": "0.2.1",
+    "git_tag": "v0.2.1",
+    "git_commit": "a0c6933258f60e370747cfd4096b9445eff8a572",
+    "runtime_files_unchanged_on_main_at_verification": true
+  },
+  "environment": {
+    "slicer_version": "5.12.3",
+    "slicer_distribution": "Official signed and notarized macOS amd64 application",
+    "slicer_signing_authority": "Developer ID Application: Kitware Inc. (W38PE5Y733)",
+    "slicer_installer_sha256": "7904d7aa6aadc5ee5ea855ec7d28b33c24444daddd98684a8673a14f4c37d794",
+    "operating_system": "macOS 15.4 (24E248)",
+    "host_architecture": "arm64",
+    "translation": "Rosetta 2",
+    "external_engine_python": "3.11.7"
+  },
+  "protocol": {
+    "script": "slicer/verify_in_slicer.py",
+    "script_sha256": "304eabe0ed7dddaf58ec33adba073742e5d93b0b980e264ac09c64f2ca997c4f",
+    "checkout": "Detached worktree at the exact v0.2.1 tag",
+    "slicer_arguments": [
+      "--disable-settings",
+      "--disable-cli-modules",
+      "--no-splash",
+      "--python-script",
+      "slicer/verify_in_slicer.py"
+    ]
+  },
+  "result": {
+    "passed": true,
+    "slicer_integration_passed": true,
+    "landmark_invalidation_passed": true,
+    "kji_to_ijk_and_ras_passed": true,
+    "five_category_overlay_passed": true,
+    "external_engine_passed": true,
+    "asynchronous_dialog_passed": true,
+    "scene_reference_round_trip_passed": true,
+    "engine_counts": {
+      "both": 2,
+      "eea_only": 0,
+      "not_reached": 0,
+      "tm_only": 0,
+      "unavailable": 0
+    },
+    "result_sha256": "550912eec036d9318d824cb3bd77258ba07a14352f5b5d5718a6b26fb7e5448b"
+  },
+  "limitations": [
+    "The verification used synthetic geometry, not patient anatomy.",
+    "It is software integration evidence, not independent usability or clinical validation.",
+    "The macOS Slicer build runs under Rosetta 2 on the arm64 host.",
+    "Native Slicer verification on Windows and Linux was not performed."
+  ]
+}

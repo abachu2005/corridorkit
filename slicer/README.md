@@ -121,11 +121,13 @@ studies. A sampled failure is not proof of anatomical inaccessibility.
 Pure measurements have headless tests in `tests/test_anatomical_measurements.py`.
 Run `Slicer --no-splash --python-script slicer/verify_in_slicer.py` for native
 integration verification. Syntax checks alone do not establish Slicer compatibility.
-Native integration **passed on 2026-10-07**, using Slicer 5.12.4 on macOS 15.4
-under Rosetta. Verified landmark invalidation, rotated anisotropic full-grid
-exports, all five coverage categories, external engine execution, the real
-asynchronous dialog, and scene-reference save/reopen. Tests found and fixed
-missing landmark-deletion observers and two PythonQt compatibility errors.
+Native integration **passed on 2026-10-08 for the exact v0.2.1 tag**, using the
+official signed and notarized Slicer 5.12.3 macOS amd64 distribution on macOS
+15.4 under Rosetta. Verified landmark invalidation, rotated anisotropic
+full-grid exports, all five coverage categories, external engine execution,
+the real asynchronous dialog, and scene-reference save/reopen. Machine-readable
+release-bound evidence is in
+`docs/evidence/native-slicer-v0.2.1-20261008.json`.
 `slicer/verify_atlas_in_slicer.py` also passed: original 367 × 449 × 304 CT and
 all 14 segmentation components loaded and rendered. Evidence is retained in
 `research/slicer-verification/`. This is software integration evidence, not
