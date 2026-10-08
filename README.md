@@ -85,17 +85,18 @@ recalculated.
 See `docs/USER_GUIDE.md` for the complete workflow and
 `docs/VALIDATION.md` for the current evidence boundary.
 
-Recorded engineering evidence: full 130-case public accounting (118 computational cases,
-12 geometry exclusions), independent reference and production-engine runs,
-and native macOS Qt/VTK smoke. Historical build evidence is not proof that an
-old application bundle contains current source. This is **not surgical
-validation**. Protected-anatomy angular accuracy, expert anatomy review and
-human usability acceptance remain open in `docs/RELEASE_GATES.md`. Those
-clinical/translation gates are separate from the bounded software-publication
-criteria in `docs/SOFTWARE_RELEASE_CHECKLIST.md`; neither checklist is entirely
-complete. Do not interpret public computational openings as anatomical EEA or
-Caldwell–Luc routes. Frozen evidence is retained under `research/` in the
-development checkout, but is not bundled with the lightweight source release.
+Recorded engineering evidence includes numerical verification, public-data
+replay, cross-platform CI, and native desktop and Slicer integration.
+Verification summaries and protocols are tracked in the public repository;
+full historical benchmark outputs and caches remain local and are not included
+in the archived software release, as described in Section 8 of the
+[manuscript](paper/softwarex.md).
+
+A co-author, Anand V. Germanwala, a skull-base neurosurgeon, reviewed the
+corridor model, research workflow, and interpretation of geometric results.
+Formal independent anatomical validation and clinician usability testing remain
+future work, distinct from that co-author review; see
+[research and translation gates](docs/RELEASE_GATES.md).
 
 The JSON export embeds the schema/software version, normalized configuration,
 source checksum, and result checksum. Synthetic data generation is local and

@@ -1,7 +1,18 @@
-# Research-alpha release gates
+# Research and translation gates
 
-This file tracks evidence, not intent. The implementation plan is unchanged.
+This file distinguishes completed software verification and co-author review
+from future independent anatomical validation and clinician usability testing.
+Software-publication criteria are tracked separately in
+[`SOFTWARE_RELEASE_CHECKLIST.md`](SOFTWARE_RELEASE_CHECKLIST.md).
 Passing computational tests does not establish anatomical or operative validity.
+
+## Co-author review
+
+Anand V. Germanwala, a skull-base neurosurgeon and co-author, reviewed the
+software's corridor model, research workflow, and interpretation of geometric
+results, informing the methodology and presentation. This is the review
+reported in Section 3.1 of the manuscript; it is distinct from the formal
+independent anatomical validation and clinician usability studies listed below.
 
 ## Implemented and exercised
 
@@ -15,7 +26,9 @@ Passing computational tests does not establish anatomical or operative validity.
   a convex envelope. These are visualization/phantom checks, not anatomical
   or clinical validation; shell/air-space phantom geometry is display-only.
 
-- Standalone Apache-2.0 Python package; no changes to AutoHijdra and no publishing.
+- Standalone Apache-2.0 Python package, published as
+  [CorridorKit v0.3.0](https://github.com/abachu2005/corridorkit/releases/tag/v0.3.0);
+  no changes to AutoHijdra.
 - Finite insertion capsules, aperture constraints, target-directed witnesses,
   budgeted adaptive sampling, portal offsets, conservative voxel collision,
   approach-specific reviewed bone removal, separate union/pair feasibility.
@@ -45,9 +58,11 @@ Passing computational tests does not establish anatomical or operative validity.
   See `docs/PLANNING_WORKFLOW.md` and native real-CT execution evidence in
   `research/planning-evidence`. This does not establish operative necessity.
 
-## Evidence boundaries / unfinished acceptance gates
+## Evidence boundaries and future validation
 
-- **Expert anatomical review is not complete.** NasalSeg has no tumor, carotid,
+- **Formal independent anatomical validation remains future work.**
+  The co-author model/workflow review above does not establish case-level
+  anatomical accuracy. NasalSeg has no tumor, carotid,
   cranial-nerve or operative corridor reference. No automatically manufactured
   target or portal can substitute for review. Full EEA/CTM anatomical comparison
   on this cohort is not established.
@@ -75,8 +90,12 @@ Passing computational tests does not establish anatomical or operative validity.
   must not be described as containing these features; no current `dist/` bundle
   is present. Rebuilding requires the packaging script's 5 GiB staging reserve.
   The local `.command` demo launcher runs current source, not a frozen binary.
-- **Native cross-platform CI has not run.** Workflow definitions are local;
-  the repository has not been published. Do not describe them as passing.
+- **Exact-tag cross-platform CI passed for v0.3.0.**
+  [All eight jobs passed](https://github.com/abachu2005/corridorkit/actions/runs/37847343247),
+  including core tests on Ubuntu, macOS, and Windows with Python 3.11/3.12.
+  Native desktop and Slicer 5.12.3 integration were separately verified on
+  macOS; this does not establish native GUI acceptance on every platform.
+  See [`evidence/corridorkit-v0.3.0-verification.json`](evidence/corridorkit-v0.3.0-verification.json).
 - **Physical/operative error tolerances and reference validation are absent.**
   Computational tolerances and independent phantom checks are not surgical
   measurement tolerances. No endoscopic optics, handle access, deformation,
@@ -130,5 +149,6 @@ oracle shares broad-phase candidate selection and does not independently prove
 that selection complete.
 Full-cohort replay passed with byte-identical synthetic and public query records.
 
-Do not mark the complete plan or a publication-ready release as finished while
-these acceptance gates remain open.
+These remaining research and translation gates do not imply that the published
+software release is unfinished. They delimit future anatomical, operative, and
+independent usability claims.

@@ -45,6 +45,11 @@ def check() -> None:
     assert "skullbase-corridor" not in source
     assert "skullbase_corridor" not in source
     assert "| C1 Current code version | `v0.3.0` |" in source
+    c2 = next(line for line in source.splitlines() if line.startswith("| C2 "))
+    for url in ("https://github.com/abachu2005/corridorkit",
+                "https://doi.org/10.5281/zenodo.23249277"):
+        assert f"[{url}]({url})" in c2, "C2 must display the actual URL"
+    assert not re.search(r"\b(TODO|TBD|FIXME|XXX|placeholder)\b", source, re.I)
     assert not re.search(r"\b(millimetres|centres|tumour|centre-entry)\b", source)
     assert source.count("60c6facf843685802c39e4adff4a05c081c1c4b6175c9cb573745c55abb0fa6a") == 1
     assert "manually editing the case JSON" in source

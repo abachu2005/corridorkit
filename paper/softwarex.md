@@ -27,7 +27,7 @@ research software; computational geometry; medical imaging; 3D Slicer; finite in
 | Field | Value |
 |---|---|
 | C1 Current code version | `v0.3.0` |
-| C2 Permanent link to code/repository used for this code version | Archived release: [10.5281/zenodo.23249277](https://doi.org/10.5281/zenodo.23249277); versioned source: [CorridorKit v0.3.0](https://github.com/abachu2005/corridorkit/tree/v0.3.0) |
+| C2 Permanent link to code/repository used for this code version | [https://github.com/abachu2005/corridorkit](https://github.com/abachu2005/corridorkit) (tag v0.3.0); archived release: [https://doi.org/10.5281/zenodo.23249277](https://doi.org/10.5281/zenodo.23249277) |
 | C3 Permanent link to Reproducible Capsule | N/A; no executable reproducible capsule has been deposited |
 | C4 Legal Code License | Apache License 2.0 (`Apache-2.0`) |
 | C5 Code versioning system used | Git |

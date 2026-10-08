@@ -23,6 +23,12 @@ def check_pdf(path: Path) -> fitz.Document:
     for field in range(1, 10):
         assert f"C{field} " in text, f"Missing C{field}"
     links = [link.get("uri", "") for page in document for link in page.get_links()]
+    # Verify printed C2 addresses as well as their clickable destinations.
+    c2 = text.split("C2 Permanent", 1)[1].split("C3 Permanent", 1)[0]
+    for url in ("https://github.com/abachu2005/corridorkit",
+                "https://doi.org/10.5281/zenodo.23249277"):
+        assert url in "".join(c2.split()), f"{path.name}: C2 hides {url}"
+        assert url in links, f"{path.name}: missing clickable C2 URL"
     assert "https://github.com/abachu2005/corridorkit/issues" in links
     assert not any("github.com/abachu2005/skullbase-corridor" in link for link in links)
     assert sum(len(page.get_images()) for page in document) >= 3
