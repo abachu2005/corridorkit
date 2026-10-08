@@ -63,16 +63,18 @@ def test_nifti_units_and_affine_conflicts(tmp_path):
     affine = np.diag([0.001, 0.002, 0.003, 1])
     image = nib.Nifti1Image(np.zeros((3, 4, 5), np.float32), affine)
     image.header.set_xyzt_units("meter")
-    path = tmp_path / "image.nii"
+    path = tmp_path / "meter.nii"
     nib.save(image, path)
     volume = load_volume(path)
     np.testing.assert_allclose(volume.spacing, [1, 2, 3])
     assert volume.intensity_unit == "unknown"
+    path = tmp_path / "unknown.nii"
     image.header.set_xyzt_units("unknown")
     nib.save(image, path)
     with pytest.raises(ValueError, match="Unknown spatial units"):
         load_volume(path)
     assert load_volume(path, assume_spatial_unit="mm").metadata["spatial_units_assumed"]
+    path = tmp_path / "conflicting-forms.nii"
     image.set_qform(np.eye(4), code=1)
     image.set_sform(affine, code=1)
     image.header.set_xyzt_units("mm")

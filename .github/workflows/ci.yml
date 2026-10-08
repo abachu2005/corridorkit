@@ -47,6 +47,24 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          run_gui_test() {
+            local test_file="$1"
+            local log_file
+            log_file="$(mktemp)"
+            set +e
+            python -m pytest -q "$test_file" 2>&1 | tee "$log_file"
+            local pytest_status="${PIPESTATUS[0]}"
+            set -e
+            if [[ "$pytest_status" -eq 134 ]] &&
+               grep -qE 'passed in ' "$log_file" &&
+               grep -q 'bool_dealloc: deallocating True or False' "$log_file"
+            then
+              echo "::warning::Ignoring PySide 6.12 Linux finalization abort after passing $test_file"
+            elif [[ "$pytest_status" -ne 0 ]]
+            then
+              return "$pytest_status"
+            fi
+          }
           for test_file in \
             tests/test_anatomical_views.py \
             tests/test_corridor_overlay.py \
@@ -56,7 +74,7 @@ jobs:
             tests/test_planning_overlays.py \
             tests/test_trajectory_views.py
           do
-            python -m pytest -q "$test_file"
+            run_gui_test "$test_file"
           done
 
   package:
