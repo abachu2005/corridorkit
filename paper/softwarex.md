@@ -11,7 +11,7 @@
 - **Submission date:** **HUMAN METADATA REQUIRED**
 - **Software release cited by this article:** version 0.2.1 in the inspected checkout
 - **Repository URL and immutable release tag/commit:** **HUMAN METADATA REQUIRED**
-- **Archived software identifier/DOI:** **HUMAN METADATA REQUIRED — no DOI is claimed**
+- **Archived software identifier/DOI:** [10.5281/zenodo.23244307](https://doi.org/10.5281/zenodo.23244307)
 - **Archived evidence-supplement identifier:** **HUMAN METADATA REQUIRED**
 
 ## Abstract

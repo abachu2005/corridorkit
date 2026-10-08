@@ -20,6 +20,8 @@ See [SoftwareX manuscript](paper/softwarex.md) and
 non-human-subjects determination may still be required; public availability
 does not itself establish ethics exemption or redistribution permission.
 
+Archived release: [v0.2.1, DOI 10.5281/zenodo.23244307](https://doi.org/10.5281/zenodo.23244307).
+
 ## Install and run
 
 **Primary local workflow:** install the packaged

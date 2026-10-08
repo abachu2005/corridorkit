@@ -4,11 +4,12 @@ title: "skullbase-corridor: local-first finite-instrument corridor exploration i
 type: software
 version: 0.2.1
 date-released: 2026-10-08
+doi: 10.5281/zenodo.23244307
 authors:
   - family-names: Bachu
     given-names: Abhinav
 repository-code: "https://github.com/abachu2005/skullbase-corridor"
-url: "https://github.com/abachu2005/skullbase-corridor"
+url: "https://doi.org/10.5281/zenodo.23244307"
 license: Apache-2.0
 keywords:
   - 3D Slicer
