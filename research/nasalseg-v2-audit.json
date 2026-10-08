@@ -1,0 +1,4565 @@
+{
+  "engineering_eligible_count": 118,
+  "image_file_count": 130,
+  "interpretation": "Engineering eligibility does not establish complete operative anatomy, clinical validity, or suitability for patient-specific planning.",
+  "label_file_count": 130,
+  "paired_count": 130,
+  "records": [
+    {
+      "case_id": "P001_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P001_img.nrrd",
+      "image_sha256": "a493bf3ad5bb94f31edc18c16a89ac01d7432604e7f087488bdb3e27bf89d9be",
+      "label": "research/data-cache/NasalSeg-v2/labels/P001_seg.nrrd",
+      "label_sha256": "511e378f34acad0224ba267830b21236a01bc0c34a6459ca254d2e762125c7c1",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        153,
+        205,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P002_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P002_img.nrrd",
+      "image_sha256": "fcda5becb974320b5180f10f6ff74b65af384a6d54334b267b4428022f98943f",
+      "label": "research/data-cache/NasalSeg-v2/labels/P002_seg.nrrd",
+      "label_sha256": "50d7dbdc72e59bb7f9ca6e15d49a161e191396fcd250b2f0e7982dca9829b19d",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        164,
+        196,
+        49
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P003_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P003_img.nrrd",
+      "image_sha256": "59ef4b8967268b6078910f40002cd35bb50fe3d8e155e41e879ad87711e5a9a2",
+      "label": "research/data-cache/NasalSeg-v2/labels/P003_seg.nrrd",
+      "label_sha256": "849c04e908251c2e28c949872dc26d84d2154e744070adb3ad4e6d10a9e7087b",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        164,
+        196,
+        49
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P004_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P004_img.nrrd",
+      "image_sha256": "eb8f686c78ae447f068dba9f7fd637bc092125310773ddd05a08b4b96ee3da9c",
+      "label": "research/data-cache/NasalSeg-v2/labels/P004_seg.nrrd",
+      "label_sha256": "635889d2c3ef98f3857cad9ba59b83bf8b1accb8bbef46f0cb51ad29d001b7fa",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        124,
+        178,
+        49
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P005_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P005_img.nrrd",
+      "image_sha256": "e2ea5368cd77c18b8dd6963b763c4e0c99e28d06c633b7801018ec80f9221223",
+      "label": "research/data-cache/NasalSeg-v2/labels/P005_seg.nrrd",
+      "label_sha256": "f461069608e7423f298ae2fc4817e288fb63e32d2a30cfbba64c8a12497733e9",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        142,
+        187,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P006_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P006_img.nrrd",
+      "image_sha256": "b8660fe87b569ef88217a21ef84f60c7ab915a1e0bedfb409bb70ed81f47b5a0",
+      "label": "research/data-cache/NasalSeg-v2/labels/P006_seg.nrrd",
+      "label_sha256": "ac81b1b726ad6e8b7858faa84f3a95ac8544bca437dd1fc091fafce0f8b2e961",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        142,
+        187,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P007_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P007_img.nrrd",
+      "image_sha256": "2dfcd4d8dba978ace0f0af4c81bd776ad930906fcb85fb6534ce4884ee907384",
+      "label": "research/data-cache/NasalSeg-v2/labels/P007_seg.nrrd",
+      "label_sha256": "4ccfa08499ec3d203747b7a40ae27006f09cafb542e4bf2bd02a54ff11a41c18",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        169,
+        186,
+        50
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P008_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P008_img.nrrd",
+      "image_sha256": "5f5af532eaf6e54877f8bde83cbc5e6144a8b214b330d2920afe920e9ac36473",
+      "label": "research/data-cache/NasalSeg-v2/labels/P008_seg.nrrd",
+      "label_sha256": "b2edba65667c0610c8ce10989368d10bc9741c08dd6a16caff9213bf96c7f13d",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        131,
+        185,
+        49
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P009_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P009_img.nrrd",
+      "image_sha256": "d30e2d8cd865ac6bd25d58a48bc179a4f04b4df949e67cb4c8d142ef192a1b48",
+      "label": "research/data-cache/NasalSeg-v2/labels/P009_seg.nrrd",
+      "label_sha256": "49226a4e1f3668e23af07fcd27086da13443bb459ee9a7f7df5c7760ea6c677b",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        143,
+        188,
+        50
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P010_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P010_img.nrrd",
+      "image_sha256": "e99071e9d2b8d359a7922e7aac97c7ec141652096322dce59c87823e0c886981",
+      "label": "research/data-cache/NasalSeg-v2/labels/P010_seg.nrrd",
+      "label_sha256": "40d85537e37ca304991ffa92e604414e3e0283d276b1e11e51a62ea819f28a94",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        143,
+        188,
+        50
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P011_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P011_img.nrrd",
+      "image_sha256": "688eee7d667c31b91484f787ece7905c97f86851abc356fa33a55024c6367129",
+      "label": "research/data-cache/NasalSeg-v2/labels/P011_seg.nrrd",
+      "label_sha256": "9b95a8c74eaa86b3ed8d376c94de3e1d0104219feee92374269b80a4783582c9",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        152,
+        174,
+        48
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P012_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P012_img.nrrd",
+      "image_sha256": "75c6ab3e22a536f57b904d662c5803d715193bd06a2f0eed2fc64dd86ddab4ba",
+      "label": "research/data-cache/NasalSeg-v2/labels/P012_seg.nrrd",
+      "label_sha256": "2e210821789319b8fe0256fa33770025e5a42941eba72a4a39118d135cd79e73",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        152,
+        168,
+        48
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P013_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P013_img.nrrd",
+      "image_sha256": "821364ea77f316541b71d25a0ad14c366994739638ed91dc1d9fd0b5d3e49dde",
+      "label": "research/data-cache/NasalSeg-v2/labels/P013_seg.nrrd",
+      "label_sha256": "74c1cdfe42bc97769478efa0d7e3f2a5219c327cbca726610d0de06dea843756",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        124,
+        194,
+        54
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P014_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P014_img.nrrd",
+      "image_sha256": "526b54a44385ca956e0d8772884866f378f0ac91aabf6bf7919bdd49900f42c4",
+      "label": "research/data-cache/NasalSeg-v2/labels/P014_seg.nrrd",
+      "label_sha256": "adfeddbde17975936e5fb70d37b3ef592d4d2dfc399cc269f6e6902df76b60f1",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        163,
+        201,
+        49
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P015_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P015_img.nrrd",
+      "image_sha256": "b03e480b92ebb161123362533c9e87e0ddee1ee765a8b6a69516a91b6597dba8",
+      "label": "research/data-cache/NasalSeg-v2/labels/P015_seg.nrrd",
+      "label_sha256": "9f1de3f6416d76818c6ababc5c61fe4b77f619c2886448da3a3af94ce06de1ec",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        153,
+        190,
+        56
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P016_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P016_img.nrrd",
+      "image_sha256": "bcb8808be342b930f222694c6e61855ab2679cc82ebe35f75c4d4168f2b6ee75",
+      "label": "research/data-cache/NasalSeg-v2/labels/P016_seg.nrrd",
+      "label_sha256": "22fb34f93104d8a78238bf8fdafd1a133a41b55709ec4ff3b75e4a717c15e7b4",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        156,
+        191,
+        55
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P017_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P017_img.nrrd",
+      "image_sha256": "a7a2060bbe1b9e119cf39edbdfb69ecaa96e2904724d451c9aa8fbc521dc24d4",
+      "label": "research/data-cache/NasalSeg-v2/labels/P017_seg.nrrd",
+      "label_sha256": "6244493784164cc9d27e63d0a237b177a8b138d1b38decded55fae440cab288c",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        140,
+        183,
+        42
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P018_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P018_img.nrrd",
+      "image_sha256": "23702c314224dde3b4fecdaaa2be804e3273abf0fd4529bb83ae73e15eff9ad7",
+      "label": "research/data-cache/NasalSeg-v2/labels/P018_seg.nrrd",
+      "label_sha256": "1685874b580f8747f2bef41cafb0ce2c20044342ac392447c634887b84088391",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        140,
+        178,
+        50
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P019_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P019_img.nrrd",
+      "image_sha256": "7c9c192da6cce43a3728c77483b74e65c3dd4f7433693d88fced88f210999fca",
+      "label": "research/data-cache/NasalSeg-v2/labels/P019_seg.nrrd",
+      "label_sha256": "ba5d7be6064373cb26e1a1d118c52f04fe9df31a7e2816de46b640c01ebd1d58",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        131,
+        214,
+        51
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P020_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P020_img.nrrd",
+      "image_sha256": "8da59a8e6ce4a735a38e4cc01214638c414eb081f0c6ec53ba3077fb3e6d0ec3",
+      "label": "research/data-cache/NasalSeg-v2/labels/P020_seg.nrrd",
+      "label_sha256": "6c8367cf703f9ff21b2753d8ddf54cf683f002a57f075cc1208fbbf56ed1ed45",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        169,
+        178,
+        57
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P021_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P021_img.nrrd",
+      "image_sha256": "5ad178c53ba1f2df04389779e08a343108235e811895b0c411195bc6d0a00616",
+      "label": "research/data-cache/NasalSeg-v2/labels/P021_seg.nrrd",
+      "label_sha256": "06086dad600b71887406990f0a2a4d76d07cd3c97c5f996ec11f22b65a7e4359",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        181,
+        210,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P022_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P022_img.nrrd",
+      "image_sha256": "4ae7926e66d480c176cb864055e8d3ced57ad7b56badaa7fb8e57f329448a70b",
+      "label": "research/data-cache/NasalSeg-v2/labels/P022_seg.nrrd",
+      "label_sha256": "3272de8d445048c3cc8d691d5d37d7134215031248b8cfd16f0a45c0e1d38860",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        171,
+        180,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P023_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P023_img.nrrd",
+      "image_sha256": "de4e6b3ded48ff1ffb37c68a674ac425b2e401980d455f3ca9e6502728e55562",
+      "label": "research/data-cache/NasalSeg-v2/labels/P023_seg.nrrd",
+      "label_sha256": "b8bf44b231dda459ac4b9a04517a5255814c93b2b21f8c7f63b4bc270966fd08",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        143,
+        192,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P024_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P024_img.nrrd",
+      "image_sha256": "404f781ab3b2fd88777fed0d81398add9eec43cbe784c0b0e3bf71db3dabeb46",
+      "label": "research/data-cache/NasalSeg-v2/labels/P024_seg.nrrd",
+      "label_sha256": "57316cee6d9262d7328d5cf0ae8b011fcd17efbe1d1230cbd9095ad55f541ad2",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        151,
+        179,
+        51
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P025_img",
+      "engineering_eligible": false,
+      "finite": true,
+      "geometry_match": false,
+      "image": "research/data-cache/NasalSeg-v2/images/P025_img.nrrd",
+      "image_sha256": "23745daca7baaecf0fd95a5bbc736e57bfe03e535ca714997242dd7fbd670472",
+      "label": "research/data-cache/NasalSeg-v2/labels/P025_seg.nrrd",
+      "label_sha256": "0a7155cf3a7074a1202b64ca958fb1cf7b3350a6a613cbd0d262464a43999214",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        144,
+        170,
+        48
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P026_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P026_img.nrrd",
+      "image_sha256": "abc6ab60056804a80f2d16f33591b64cb2f07562a635e0d88c2cf3f170c9198e",
+      "label": "research/data-cache/NasalSeg-v2/labels/P026_seg.nrrd",
+      "label_sha256": "1a4163890d6707fd66907538c936d84a3b2cf3a8ef24c696a6ad3114b0d7ff5a",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        156,
+        186,
+        53
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P027_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P027_img.nrrd",
+      "image_sha256": "01436cf66c46a767f20f4ff111634fd341bc96731da15f8306d9c9121e7b4fd8",
+      "label": "research/data-cache/NasalSeg-v2/labels/P027_seg.nrrd",
+      "label_sha256": "c70bca2fa70838385f6845fcb0d968382a9720e918534f38c26046c5f98c4c0a",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        156,
+        186,
+        53
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P028_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P028_img.nrrd",
+      "image_sha256": "90ffeb597807fb53180cb1127ce902d7d7613bb9a6a2700bb5a8fd564ec39e2c",
+      "label": "research/data-cache/NasalSeg-v2/labels/P028_seg.nrrd",
+      "label_sha256": "726b906c33f9086ad6217a229f95cd812c3fe0dbfdd3d9aa17fac1a76de37586",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        184,
+        201,
+        59
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P029_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P029_img.nrrd",
+      "image_sha256": "975d09bb8e8f03ed97ac25fa2507a93a34aedc0935c14b4b6e4b997584da0b80",
+      "label": "research/data-cache/NasalSeg-v2/labels/P029_seg.nrrd",
+      "label_sha256": "0dd0ca9eb7e3797dc73cb1a3da82adb7410901dc6aee0962a784b57be880fa93",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        167,
+        201,
+        54
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P030_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P030_img.nrrd",
+      "image_sha256": "255882505143b89d342f768626d355db12312823649b8dfc93f68ec0373c81a4",
+      "label": "research/data-cache/NasalSeg-v2/labels/P030_seg.nrrd",
+      "label_sha256": "18e1d6853a9088697194181744fedba30a743e2893f867327b03f08becf47b4a",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        164,
+        187,
+        49
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P031_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P031_img.nrrd",
+      "image_sha256": "ad18a0094c57c2a824ce6325f8fccd289c528ba8d6ded74bd24a2e34a24f79e6",
+      "label": "research/data-cache/NasalSeg-v2/labels/P031_seg.nrrd",
+      "label_sha256": "dcf9de081898de6f9577e40cbabf0c24d49e02e20fe995084d12d6040c1018ae",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        164,
+        187,
+        49
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P032_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P032_img.nrrd",
+      "image_sha256": "372e700f9e322cebb9479099ec3d00e80aaf3bded9cac0a4a19f4bc05296b273",
+      "label": "research/data-cache/NasalSeg-v2/labels/P032_seg.nrrd",
+      "label_sha256": "86170ecb4d9fa2c5cd314171d9e44452fcb81e14beb902f3157c7d202eb22fc8",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        150,
+        196,
+        50
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P033_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P033_img.nrrd",
+      "image_sha256": "fe3a5d1428ba6b914b4cf79d7af4f2acdee320a0e7c2277c22d926a517d3c701",
+      "label": "research/data-cache/NasalSeg-v2/labels/P033_seg.nrrd",
+      "label_sha256": "1cc666afadcbd3381fd456dbfa1c965110c05c7e15f851bc6619f06ad1bb8192",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        155,
+        179,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P034_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P034_img.nrrd",
+      "image_sha256": "590e60d9b21c7de85cbd338606911422fb3463b2cce6c99c3e928c39f45c3f64",
+      "label": "research/data-cache/NasalSeg-v2/labels/P034_seg.nrrd",
+      "label_sha256": "0a052965810d7e990135d171007ca09e9448789df093d65a66d6af1ca6efa192",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        155,
+        179,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P035_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P035_img.nrrd",
+      "image_sha256": "e953f9fb59492329b7d764fce7cf9134ce3765593ee87481131d13d0168d98c4",
+      "label": "research/data-cache/NasalSeg-v2/labels/P035_seg.nrrd",
+      "label_sha256": "57f2200739484872ea634570e033502c43fd32a8f07571f5860dc89b4388d9fb",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        135,
+        169,
+        46
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P036_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P036_img.nrrd",
+      "image_sha256": "9411b4b068d592da64fa533c7dff403c8f1834c6c073c599a946f45fb9a971cb",
+      "label": "research/data-cache/NasalSeg-v2/labels/P036_seg.nrrd",
+      "label_sha256": "db3caadc6575c24f28d467b9bed01e3aa22d13f196331e65abe49a676f05a1cb",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        170,
+        189,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P037_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P037_img.nrrd",
+      "image_sha256": "5e0a310111086aff7b6ef38df3f0661bdb6580b471aea1053dbc3e78031b2cad",
+      "label": "research/data-cache/NasalSeg-v2/labels/P037_seg.nrrd",
+      "label_sha256": "b5c8f26cbdce73deff3ff410469b2197dfbcbc09c193b3a80dc070870729bc28",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        125,
+        169,
+        50
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P038_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P038_img.nrrd",
+      "image_sha256": "f958844a50e10906ebaea4fc398132db3e6b73d28bfde2b5b742f14cc266ebcb",
+      "label": "research/data-cache/NasalSeg-v2/labels/P038_seg.nrrd",
+      "label_sha256": "3ebc4746e19f6e4c4b2e32b8cfd01c623a8d59d4cb1ee555afa0b05c4ac30b6d",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        153,
+        197,
+        50
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P039_img",
+      "engineering_eligible": false,
+      "finite": true,
+      "geometry_match": false,
+      "image": "research/data-cache/NasalSeg-v2/images/P039_img.nrrd",
+      "image_sha256": "b783489e6e11d1716b98cf49b762dae78592b5b4842aa786e5626fdd9d56f705",
+      "label": "research/data-cache/NasalSeg-v2/labels/P039_seg.nrrd",
+      "label_sha256": "b8f5f400bf540b3a35f1465d3c3e7a17cff65d13889fc664c07526ff4e3d892d",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        152,
+        190,
+        53
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P040_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P040_img.nrrd",
+      "image_sha256": "a224bc4e923bc1037ed9e1c1c729b8133ddb93563f1015eb1f1a841326cca969",
+      "label": "research/data-cache/NasalSeg-v2/labels/P040_seg.nrrd",
+      "label_sha256": "a92e86741a67823fe400dbf1097ef044b0bbc9fe92a151f0a26550b1601808f1",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        169,
+        213,
+        54
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P041_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P041_img.nrrd",
+      "image_sha256": "06d011cc9760b4d59700daacdab46b12d77ca19a3b6c9246d14d9bf078e88105",
+      "label": "research/data-cache/NasalSeg-v2/labels/P041_seg.nrrd",
+      "label_sha256": "4e61743a7a4ea8df1df5f59bd928a1fbf6852f9675ed7fe1d16fd1e46388a216",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        169,
+        213,
+        54
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P042_img",
+      "engineering_eligible": false,
+      "finite": true,
+      "geometry_match": false,
+      "image": "research/data-cache/NasalSeg-v2/images/P042_img.nrrd",
+      "image_sha256": "bb75c880492ccfe90f2e3a3f8edb7283696c272f9120525bd1e139fb1d94df3b",
+      "label": "research/data-cache/NasalSeg-v2/labels/P042_seg.nrrd",
+      "label_sha256": "0da800e218a1d7c7fc2e39d6c919b89a402bcdfa36114dbae6988953cfb11fdb",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        166,
+        171,
+        53
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P043_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P043_img.nrrd",
+      "image_sha256": "8c7fd8fd534425bccbfd0ebb7e378ed39c459f0db46311a6796e6c6e9231164b",
+      "label": "research/data-cache/NasalSeg-v2/labels/P043_seg.nrrd",
+      "label_sha256": "d3ae1dd7b894e87cf0082e38afef623c89fe0f0938830de3a75e4f5cce1e6f61",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        142,
+        175,
+        39
+      ],
+      "spacing_mm": [
+        0.5859374999999999,
+        0.5859374999999999,
+        1.5102739726027394
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P044_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P044_img.nrrd",
+      "image_sha256": "b3feca231eef6cbcf29bd2d4b2746cd807e8224450232dda082c9537100b4d6a",
+      "label": "research/data-cache/NasalSeg-v2/labels/P044_seg.nrrd",
+      "label_sha256": "aca6a6c1ba393c72e377dca1a2a36ee58f012fb8467b2fa4bd0a623308f6544c",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        152,
+        153,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P045_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P045_img.nrrd",
+      "image_sha256": "4e5b9ed36d712f0715dbee43f2398f2239bffb8763b7814a722ca9f3d4dc3c7f",
+      "label": "research/data-cache/NasalSeg-v2/labels/P045_seg.nrrd",
+      "label_sha256": "9ec073494bd8dd6adbad1265820a0970c8fa90cdd17de4f91bf08c5a7a2b5502",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        174,
+        168,
+        45
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P046_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P046_img.nrrd",
+      "image_sha256": "9bc8db5148a982091d436fa1447af2a66c61805ebcc8a5867db5dcc7bb28c0e4",
+      "label": "research/data-cache/NasalSeg-v2/labels/P046_seg.nrrd",
+      "label_sha256": "fe31a3ab2b81e8f9455fc14e0d2da74d692f8777b2e9ce414f7e3780adc89f7d",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        155,
+        188,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P047_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P047_img.nrrd",
+      "image_sha256": "7a206567bacd17ee3d18f37ef8aad5d909e802007eaed992f6ad952049c0fe66",
+      "label": "research/data-cache/NasalSeg-v2/labels/P047_seg.nrrd",
+      "label_sha256": "eaff6d077b74b51593b2e7da1487acbd13b2ab7a8a7a7f2029a6701ec7da9d00",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        133,
+        184,
+        50
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P048_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P048_img.nrrd",
+      "image_sha256": "26f5af07442f87c0fc8e164696171c0c9aee2aee8775e229c85986e62e14c095",
+      "label": "research/data-cache/NasalSeg-v2/labels/P048_seg.nrrd",
+      "label_sha256": "b955c6bde0f2da36c3ed3abee433d5ca73cca9756876cf017cce3ac3bd069493",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        133,
+        184,
+        50
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P049_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P049_img.nrrd",
+      "image_sha256": "b69edf1d26191c08e253b236261b60efcebd9f2b0cccb05d2a38cc4b05315f84",
+      "label": "research/data-cache/NasalSeg-v2/labels/P049_seg.nrrd",
+      "label_sha256": "17a661dab789140d9194cbd551da5de5f7cc9ec2de3e142728de9a74efe84612",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        133,
+        184,
+        50
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P050_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P050_img.nrrd",
+      "image_sha256": "8c20827ad530355ffd0aa1103f517d9f66ffd66ee149709b5b830d1a44e78480",
+      "label": "research/data-cache/NasalSeg-v2/labels/P050_seg.nrrd",
+      "label_sha256": "a76316c5f7a81a31e08a38ad1ef4479c1ac1480c09832a7be63693916a011071",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        147,
+        190,
+        50
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P051_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P051_img.nrrd",
+      "image_sha256": "563be02cc8f73ad261705b8967481008a53482bd33eaf803fddec8de734ffba4",
+      "label": "research/data-cache/NasalSeg-v2/labels/P051_seg.nrrd",
+      "label_sha256": "43654dd79b0ad8f489c9c08bfcfc25070bd9b46a808eb3f59735071848dc4be0",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        154,
+        186,
+        54
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P052_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P052_img.nrrd",
+      "image_sha256": "a8b699065e947f9c5a650bb34ddda08c784895a3b107f88b0745250b00fe9611",
+      "label": "research/data-cache/NasalSeg-v2/labels/P052_seg.nrrd",
+      "label_sha256": "c91b8a7378787b43de293259189bebce6d77219fda2ee6a014565bb95cd3e5a6",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        183,
+        190,
+        49
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P053_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P053_img.nrrd",
+      "image_sha256": "47da2cef8398cc185961702a7704578fa56a29bdf8415a6f311fc549a26b0bc0",
+      "label": "research/data-cache/NasalSeg-v2/labels/P053_seg.nrrd",
+      "label_sha256": "5d33027beb7d96ce019a5ebd83d967c5b14233103b0090ca4efc698fd0ec53f6",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        132,
+        193,
+        49
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P054_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P054_img.nrrd",
+      "image_sha256": "f170c731853b534fd4a748d1cec30bf1cf55be3292d5c9e387f4939a7c2cc796",
+      "label": "research/data-cache/NasalSeg-v2/labels/P054_seg.nrrd",
+      "label_sha256": "97ada10f0e80962119b71cf1facd5873e1cba72631bd3689ae5b17fd98202b2e",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        132,
+        193,
+        49
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P055_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P055_img.nrrd",
+      "image_sha256": "2f42c036c355230cbe5e29b1b411398ac0f1fa3f63f46bdc62824116b4e42780",
+      "label": "research/data-cache/NasalSeg-v2/labels/P055_seg.nrrd",
+      "label_sha256": "a786dbd0c1adca8af5fe3ad1b7c8a71e5cf232852d7c69a44eb01fbd6d450f8c",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        184,
+        174,
+        49
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P056_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P056_img.nrrd",
+      "image_sha256": "26039a84cba40bfab1ffcc4954d4b505f53b3cc732dd41b34da0db27131472db",
+      "label": "research/data-cache/NasalSeg-v2/labels/P056_seg.nrrd",
+      "label_sha256": "4e1c6cdce84e0c0225999912bb42de5dbe01e98578076fe1c87b8fed84a1e803",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        141,
+        185,
+        55
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P057_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P057_img.nrrd",
+      "image_sha256": "03f42d2fcdaca5cdea8c69d652e157b93970bd39b994a803e2546883fb02a1bb",
+      "label": "research/data-cache/NasalSeg-v2/labels/P057_seg.nrrd",
+      "label_sha256": "566b4a4ca15af6d41919df3402b3915801bfde5dabd8b877994d78420965070a",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        137,
+        188,
+        56
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P058_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P058_img.nrrd",
+      "image_sha256": "78db6b134de837a67e8ac772029a4e979577bd01720bdb0f977e613224d27cb0",
+      "label": "research/data-cache/NasalSeg-v2/labels/P058_seg.nrrd",
+      "label_sha256": "ff8d3d076cec0fae766d6e966d0fbc38b7df0c12c9ab953b4952e168aca81b20",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        180,
+        202,
+        51
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P059_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P059_img.nrrd",
+      "image_sha256": "07c262ac29f2cb74450b76833217ad2e275da8f32f1879efdc190635b770a156",
+      "label": "research/data-cache/NasalSeg-v2/labels/P059_seg.nrrd",
+      "label_sha256": "f8b1a7ecc07b7fb94994dbcec023dccf1bda26c5d0595905b4865b72cd60ec57",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        148,
+        187,
+        53
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P060_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P060_img.nrrd",
+      "image_sha256": "6310faff46d99c6d17bde82c9f6d298f375ada3553cf271f33c4b8f2ed73e9f2",
+      "label": "research/data-cache/NasalSeg-v2/labels/P060_seg.nrrd",
+      "label_sha256": "b2e9897befe3206478ee9f4c3dca62a02d7dfa5ac78f112a8c25fdabbfc4bd2a",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        181,
+        195,
+        51
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P061_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P061_img.nrrd",
+      "image_sha256": "e81451d8704c886c8d620b663a3ffd8961a9cb472a0348da326b110f9030634b",
+      "label": "research/data-cache/NasalSeg-v2/labels/P061_seg.nrrd",
+      "label_sha256": "1d8aec041e9613382b3b508035e56a1667d13438007e46fa0d8000d0b0eeae06",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        181,
+        195,
+        51
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P062_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P062_img.nrrd",
+      "image_sha256": "0b2eea019c55fa3f1240e0f4e84f405526597067dba4d53341b9aef54e0b03a3",
+      "label": "research/data-cache/NasalSeg-v2/labels/P062_seg.nrrd",
+      "label_sha256": "8fc8588020ecc18a1a1faee7ff31d754b82117326f9845dae409804dad5b9ee9",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        181,
+        195,
+        51
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P063_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P063_img.nrrd",
+      "image_sha256": "ade8941d982adad33039463fd35256109bee9e93966ee5cb151a3586830a854c",
+      "label": "research/data-cache/NasalSeg-v2/labels/P063_seg.nrrd",
+      "label_sha256": "4e568b04bf7671b6778011718eb294d4e6a9190cdba71c3f0782fc0e97a0d500",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        118,
+        197,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P064_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P064_img.nrrd",
+      "image_sha256": "dcb6e0db6381852fca67fb2507c1c5812dea8292b0bd008ccf102ef1f2e70264",
+      "label": "research/data-cache/NasalSeg-v2/labels/P064_seg.nrrd",
+      "label_sha256": "52c1024d83ab1698d80ae8bf2f7684f477ecca30cd6503b293b5cea5ae00be26",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        122,
+        168,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P065_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P065_img.nrrd",
+      "image_sha256": "de7143c978cc1dea4fba99c87472a43a348f29c9e5e64ce2fae8dbaf28cee09a",
+      "label": "research/data-cache/NasalSeg-v2/labels/P065_seg.nrrd",
+      "label_sha256": "790eecbd40e79248b8391feadbbe75e76a2f17b02a2287d0287ecb238ec6dc91",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        161,
+        187,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P066_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P066_img.nrrd",
+      "image_sha256": "c3a44f4fcebd078267195e4bb64e41145376b93e72f192fc9b1cb993ecf8b4d6",
+      "label": "research/data-cache/NasalSeg-v2/labels/P066_seg.nrrd",
+      "label_sha256": "283d226098d6956fa97d71a0c644a39bfa843dd59f05871bfa3ed00b3261394a",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        140,
+        192,
+        48
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P067_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P067_img.nrrd",
+      "image_sha256": "eec8693aec8cd55320aa3dc3fd5c7988ad870a72f1a25cce8d6954d0d78fc93b",
+      "label": "research/data-cache/NasalSeg-v2/labels/P067_seg.nrrd",
+      "label_sha256": "133c7a8635099fe81e13ff3ee2b17954ec0ee0df0c9041f9ca1da2ece17b7ea5",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        165,
+        182,
+        50
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P068_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P068_img.nrrd",
+      "image_sha256": "52b8c20a2564d199d29c0236f5b6b340e009d4c214db1ad3f1ef00889bde4b6a",
+      "label": "research/data-cache/NasalSeg-v2/labels/P068_seg.nrrd",
+      "label_sha256": "d4421472813f669a8d3a848ed5a240a84dcf702b66ee514f11f2cd49042a32cb",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        154,
+        181,
+        57
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P069_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P069_img.nrrd",
+      "image_sha256": "a251f94e23792230480ac283434146dd81d1c38ae0464eec8316b4c490587216",
+      "label": "research/data-cache/NasalSeg-v2/labels/P069_seg.nrrd",
+      "label_sha256": "6f4342906aa964bc9629fe62459fa14299d7a253ab9a704260b3b04bddecf84f",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        125,
+        195,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P070_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P070_img.nrrd",
+      "image_sha256": "7eda56ab235d07207c537f9da0f036e422dcff06d7f0ea0cd88076b0f3145b82",
+      "label": "research/data-cache/NasalSeg-v2/labels/P070_seg.nrrd",
+      "label_sha256": "f9e54c615e40056e45c6aef81948f85e402f82ef63216f4487242f1403962aa9",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        143,
+        200,
+        47
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P071_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P071_img.nrrd",
+      "image_sha256": "b4024ee093d3991aa1d33a0b3d8b8b96a8f6fdc55273dc9f9c4fc151883bdcb8",
+      "label": "research/data-cache/NasalSeg-v2/labels/P071_seg.nrrd",
+      "label_sha256": "a525b6ffbcac5a11f0d3c877c1d285454a191b4b3a226017d51ee1c9fc367a0b",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        166,
+        172,
+        50
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P072_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P072_img.nrrd",
+      "image_sha256": "91a6bd0436e39cb50f085a8d24321623fe32dba2e7e0f460e78572fe578a64d6",
+      "label": "research/data-cache/NasalSeg-v2/labels/P072_seg.nrrd",
+      "label_sha256": "f274902c0a46511c85a6b109a2bc67a7ed3d97a8edcb1db05177f4815f25ab4e",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        118,
+        179,
+        51
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P073_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P073_img.nrrd",
+      "image_sha256": "795683d24850c54c92bfc092c1d669a7193b1d823b713c6e126ea0d34004270a",
+      "label": "research/data-cache/NasalSeg-v2/labels/P073_seg.nrrd",
+      "label_sha256": "7f27222638372fe5a5cc5d8c82db3d87cf8b9233baaf6bc3a227f62f14fb38a1",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        118,
+        179,
+        51
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P074_img",
+      "engineering_eligible": false,
+      "finite": true,
+      "geometry_match": false,
+      "image": "research/data-cache/NasalSeg-v2/images/P074_img.nrrd",
+      "image_sha256": "0ab8d7af68a83e273cb29d520d364f5651b4c2f421c8c7d336089dd86f375238",
+      "label": "research/data-cache/NasalSeg-v2/labels/P074_seg.nrrd",
+      "label_sha256": "229eaa06c6c761b4658b60107bfc2e96bed030668103ec65241ed37669654df3",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        182,
+        195,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P075_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P075_img.nrrd",
+      "image_sha256": "307b8f0cca38ccdf657013acf2a7eedaed722fdc060777b26b9bf8314569fca3",
+      "label": "research/data-cache/NasalSeg-v2/labels/P075_seg.nrrd",
+      "label_sha256": "b49d23ea963dffb232a4be9234a7a745da6b9d90a537dcf3b499ccd4976c23cc",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        148,
+        202,
+        51
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P076_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P076_img.nrrd",
+      "image_sha256": "533277c0db800cd9d9700eedb19c3990bdc79747188fbf482a4586b9f8750d65",
+      "label": "research/data-cache/NasalSeg-v2/labels/P076_seg.nrrd",
+      "label_sha256": "840e0a11f080124ed475693ef8d91a70234670c71a585343a2895d03eee7edda",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        167,
+        180,
+        51
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P077_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P077_img.nrrd",
+      "image_sha256": "1512b64cf4df88c966fc132544c5cc71160ce99a4d5939528c01e203e08b90aa",
+      "label": "research/data-cache/NasalSeg-v2/labels/P077_seg.nrrd",
+      "label_sha256": "2dc1eb17ea22fa2a11ec59bd72a48e239dbe4c0f1edc509c0c7e2ffa73819838",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        167,
+        180,
+        51
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P078_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P078_img.nrrd",
+      "image_sha256": "173b4019307eaee9f85928211c9161f6fcd49b8e729896a1f4f75e12363e1f18",
+      "label": "research/data-cache/NasalSeg-v2/labels/P078_seg.nrrd",
+      "label_sha256": "689a02b486d76a6a4234ce6ff10277cecd2333b472c522d44da728f3d71bf8e3",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        167,
+        180,
+        51
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P079_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P079_img.nrrd",
+      "image_sha256": "95b5d80addf284434b1fc4a1de344162f1e5d63cc36ab8ea35ca95d3ed307806",
+      "label": "research/data-cache/NasalSeg-v2/labels/P079_seg.nrrd",
+      "label_sha256": "a97f4c41f1507a1a523889bcc4a27f92c98d3ccfee5bfa60f9a02dad851b2db8",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        167,
+        180,
+        51
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P080_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P080_img.nrrd",
+      "image_sha256": "f8406b798bce8e0cfe597f4fa2466891c9fb23e0620bcba510096af4d01b842f",
+      "label": "research/data-cache/NasalSeg-v2/labels/P080_seg.nrrd",
+      "label_sha256": "be1393231664fb7d35591b291e9c56de85a5c1016527967a7f3e28a03718fa8b",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        150,
+        185,
+        53
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P081_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P081_img.nrrd",
+      "image_sha256": "8e28eea0ee57bc866b3b5850cdc6c97721f106d9d57ea22113d396ad972260ff",
+      "label": "research/data-cache/NasalSeg-v2/labels/P081_seg.nrrd",
+      "label_sha256": "395b1a59e2295fbc7f053a005145c92392c660d22988907bc28148d0f7b7c6b9",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        150,
+        185,
+        53
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P082_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P082_img.nrrd",
+      "image_sha256": "15f7ba0d6b82cce2f78635fbb8aa2c379f1c69b8e4b2f8054bf1fe9aa97ca3d2",
+      "label": "research/data-cache/NasalSeg-v2/labels/P082_seg.nrrd",
+      "label_sha256": "deb3b8a15f0d04a8d56fd1d13b658697d9cf8a485a0976566a73ac4360389984",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        171,
+        206,
+        56
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P083_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P083_img.nrrd",
+      "image_sha256": "008340065649dd4b7b21dc8f9e32e00fd7381af3f5a882df4faca697def21c8e",
+      "label": "research/data-cache/NasalSeg-v2/labels/P083_seg.nrrd",
+      "label_sha256": "8f11014f14eba53671ae49b8fca6db99eae9d3febd47296f362df10b2faa16c8",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        132,
+        188,
+        53
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P084_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P084_img.nrrd",
+      "image_sha256": "30019df0e7dd155042bce854da3865ab376c15e8627107580890fb95d19839aa",
+      "label": "research/data-cache/NasalSeg-v2/labels/P084_seg.nrrd",
+      "label_sha256": "1969f9392a48bc1e5ea2b91bb62d50a7c4792520329a0ca47016957a418e61f1",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        132,
+        188,
+        53
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P085_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P085_img.nrrd",
+      "image_sha256": "2aa7f41786436c43355834cd83f8314f0d3c3115d0119ef503697b1956ac102a",
+      "label": "research/data-cache/NasalSeg-v2/labels/P085_seg.nrrd",
+      "label_sha256": "a0fe077de27bf7ac4413fb5491bd5265a0c1d4f93c13bb1e8751e568e0f3c26a",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        159,
+        176,
+        45
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P086_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P086_img.nrrd",
+      "image_sha256": "f9bbfc08f01015cc7228858689ab7d995165f6dddc55dac650848385910c3229",
+      "label": "research/data-cache/NasalSeg-v2/labels/P086_seg.nrrd",
+      "label_sha256": "aa224ac9a353efa5b91aca3e8b14783273e4d5b881c14fa457e4b274bd4c2ba7",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        143,
+        165,
+        44
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P087_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P087_img.nrrd",
+      "image_sha256": "4628863c83878d5e478f728268c211266f70772b6c66b179830d27d670b2fa2e",
+      "label": "research/data-cache/NasalSeg-v2/labels/P087_seg.nrrd",
+      "label_sha256": "3af463d6a2a8c91633a37af100c75af6d6691426fcce005cd85664eae6e2e397",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        163,
+        194,
+        51
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P088_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P088_img.nrrd",
+      "image_sha256": "209ca3a7d70f74fd54ccafed2c07f3a493a0a85b20d554876b115a7bba37558f",
+      "label": "research/data-cache/NasalSeg-v2/labels/P088_seg.nrrd",
+      "label_sha256": "c4528f5580ad4c35f3c5d1e67045faadda186558c6f189b4ff8a5f0201807a12",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        157,
+        193,
+        51
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P089_img",
+      "engineering_eligible": false,
+      "finite": true,
+      "geometry_match": false,
+      "image": "research/data-cache/NasalSeg-v2/images/P089_img.nrrd",
+      "image_sha256": "f17f46b9614dad4ca8b668dadaa599c4ecd2863b913ab067971f173fb80d8786",
+      "label": "research/data-cache/NasalSeg-v2/labels/P089_seg.nrrd",
+      "label_sha256": "905a9edee5feac48414ed668450c0674d5799b25a652ee7a02c3809fb970bb99",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        117,
+        167,
+        49
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P090_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P090_img.nrrd",
+      "image_sha256": "8cfab6dd62633a3313552ad04ae39eb35d0b67efbf672edc16a8d814ce24a578",
+      "label": "research/data-cache/NasalSeg-v2/labels/P090_seg.nrrd",
+      "label_sha256": "d579725c5ce282f97daa6f53c73291cc399522271d319ae8337708b9893739b9",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        161,
+        173,
+        46
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P091_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P091_img.nrrd",
+      "image_sha256": "8d238ad5ff200a0fd8deed3530369651d29d490455b15b0e7bb3cb7751416de0",
+      "label": "research/data-cache/NasalSeg-v2/labels/P091_seg.nrrd",
+      "label_sha256": "39faabd659e0b24e35e7d744828478f6db330b1f4f6795d2c7513d9cc2546dc0",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        161,
+        173,
+        46
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P092_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P092_img.nrrd",
+      "image_sha256": "18ecd4850c70fcd140c6bd42ad48832f6355af8329c667d923a22ec3679a69e4",
+      "label": "research/data-cache/NasalSeg-v2/labels/P092_seg.nrrd",
+      "label_sha256": "353ee2994a8a287c88d21efcbb01eb3ad8627265deb670170bfc8927b76348ec",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        153,
+        190,
+        49
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P093_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P093_img.nrrd",
+      "image_sha256": "5008b26d8911f4583d0314443315e6e077da4c0c456b1e0d250887d6b75d3618",
+      "label": "research/data-cache/NasalSeg-v2/labels/P093_seg.nrrd",
+      "label_sha256": "827008444090686ada895148c4b16e847e0e8e685b5e9445174534a4b38f0893",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        157,
+        203,
+        58
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P094_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P094_img.nrrd",
+      "image_sha256": "ea20a77afa12a1a88be8d05bcbce56803b53b47f95172268c102335590f69e45",
+      "label": "research/data-cache/NasalSeg-v2/labels/P094_seg.nrrd",
+      "label_sha256": "188c54a9c6ccdead816a4eacb1c7ef7ac2c5be132866ed9e5724a1535d53f6a1",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        144,
+        165,
+        53
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P095_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P095_img.nrrd",
+      "image_sha256": "53cf5b6b3477c195262fecd9431791e39038a65bd82b0ebd49c92a459a0c7c84",
+      "label": "research/data-cache/NasalSeg-v2/labels/P095_seg.nrrd",
+      "label_sha256": "c339d34b3fa8bb34fb70bd7add993eee4709890347f5a728112a563b3e6b5e3f",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        112,
+        188,
+        51
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P096_img",
+      "engineering_eligible": false,
+      "finite": true,
+      "geometry_match": false,
+      "image": "research/data-cache/NasalSeg-v2/images/P096_img.nrrd",
+      "image_sha256": "1aaa9889f2148c3d7ec77bc3a57645588c8a0fcbad56643e9d882a39b6a5c678",
+      "label": "research/data-cache/NasalSeg-v2/labels/P096_seg.nrrd",
+      "label_sha256": "a2293d2e9350302706088255be02036ad5e15db96aaac3a703c540ad6d211e24",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        183,
+        189,
+        54
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P097_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P097_img.nrrd",
+      "image_sha256": "0c3182433457b51375058f44ad43845b0c85fc0641fc112a3ac62280fe85edc0",
+      "label": "research/data-cache/NasalSeg-v2/labels/P097_seg.nrrd",
+      "label_sha256": "95ee20bb418f32c785814b4482d1036e3c30cf8ba07e7d819d0b91838a09fc59",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        171,
+        186,
+        49
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P098_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P098_img.nrrd",
+      "image_sha256": "b88efec08c2c0ebbe886c63ed7d912b696be34fb9db63f42c65329704a9adf6e",
+      "label": "research/data-cache/NasalSeg-v2/labels/P098_seg.nrrd",
+      "label_sha256": "d5fc88947943a012ae8a8f5d082ed129467da960ddab0c926f33a5163232ccf2",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        124,
+        176,
+        45
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P099_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P099_img.nrrd",
+      "image_sha256": "ab510a64e58184ce8f4a83aff2b156b4470d7517f112641bf7ce151825243ef9",
+      "label": "research/data-cache/NasalSeg-v2/labels/P099_seg.nrrd",
+      "label_sha256": "9dfd3c5f13933c2f885bad7506861ec08832cc6be3eae93ef6b0e85fb1fe62c0",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        159,
+        169,
+        53
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P100_img",
+      "engineering_eligible": false,
+      "finite": true,
+      "geometry_match": false,
+      "image": "research/data-cache/NasalSeg-v2/images/P100_img.nrrd",
+      "image_sha256": "60b68fab42253c8eef2e3d569bb938d16dbb86a36153040d6df589ef73e6b799",
+      "label": "research/data-cache/NasalSeg-v2/labels/P100_seg.nrrd",
+      "label_sha256": "43456809330fc9df4db9ace1a277571b1e44477ad8e405cec631859e89f653b3",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        157,
+        184,
+        59
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P101_img",
+      "engineering_eligible": false,
+      "finite": true,
+      "geometry_match": false,
+      "image": "research/data-cache/NasalSeg-v2/images/P101_img.nrrd",
+      "image_sha256": "b877315d8682d64274a1374cbefe37a14f1c6d1a3c56eb52f7fca15712f41bea",
+      "label": "research/data-cache/NasalSeg-v2/labels/P101_seg.nrrd",
+      "label_sha256": "31a81fabb7ee8527806df5faeb19b600e6bf1e45494097c15fee212103282c41",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        164,
+        204,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P102_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P102_img.nrrd",
+      "image_sha256": "ff2b05b9c0e3a177e3a51126a0bf6ec17ec453e230573c3d6b056ca7b049e629",
+      "label": "research/data-cache/NasalSeg-v2/labels/P102_seg.nrrd",
+      "label_sha256": "a8a9893aac9b02bd910d725ce41a8fad2b0ede8cb8d3f212ee78351915ef514a",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        164,
+        204,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P103_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P103_img.nrrd",
+      "image_sha256": "c911098f3cef69f28b9c835a12a238b5f771248cc9ba984ecf35902c5ec4ec86",
+      "label": "research/data-cache/NasalSeg-v2/labels/P103_seg.nrrd",
+      "label_sha256": "a9b05510d86ce12b3e54bc09bc64eb4af179bb64c41bbb9169e9859cc7549dcc",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        129,
+        180,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P104_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P104_img.nrrd",
+      "image_sha256": "e571cf48523cf042a0f253e505727efb5b73801f7e613f713974d3fa8a5e7e47",
+      "label": "research/data-cache/NasalSeg-v2/labels/P104_seg.nrrd",
+      "label_sha256": "8d97a7786b250ac3398dcf2455c144a19ba9305345f2dd328cf465221316e999",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        158,
+        198,
+        48
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P105_img",
+      "engineering_eligible": false,
+      "finite": true,
+      "geometry_match": false,
+      "image": "research/data-cache/NasalSeg-v2/images/P105_img.nrrd",
+      "image_sha256": "043cfe98e918200fae04bcbc7273c2921a309ccca2db26f0c5ac9fa02379d9c4",
+      "label": "research/data-cache/NasalSeg-v2/labels/P105_seg.nrrd",
+      "label_sha256": "19a80a944d651fe8b59b910c2f58e691ff61bf7e8dd9c143d3aa086ff48aa05e",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        156,
+        195,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P106_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P106_img.nrrd",
+      "image_sha256": "2d62b085a2be0df2721d9ac14bfd9866c411aa62d86e120dba2e4fa0f533c72c",
+      "label": "research/data-cache/NasalSeg-v2/labels/P106_seg.nrrd",
+      "label_sha256": "0b9b9316c48355e726379026503d3ad518124e98ddc3c918c4b679bce9038a59",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        139,
+        187,
+        42
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P107_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P107_img.nrrd",
+      "image_sha256": "4f91618edbeb58f63f3785ebb27055d79181eab750ba87ee3f03bc9a7708149f",
+      "label": "research/data-cache/NasalSeg-v2/labels/P107_seg.nrrd",
+      "label_sha256": "a0ff5d02a7a6fd61f2b173af9295ad969172c9a14a53485a5689c45b6abbfe8f",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        151,
+        176,
+        51
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P108_img",
+      "engineering_eligible": false,
+      "finite": true,
+      "geometry_match": false,
+      "image": "research/data-cache/NasalSeg-v2/images/P108_img.nrrd",
+      "image_sha256": "85f4a4e0c51de6998534db17dc8d91b9d5c35c8d294f672e325d43b9804a777b",
+      "label": "research/data-cache/NasalSeg-v2/labels/P108_seg.nrrd",
+      "label_sha256": "e06339841c932c9af17745a18e73e4b2666bf888365a8214f512a4b1c100374f",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        149,
+        175,
+        48
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P109_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P109_img.nrrd",
+      "image_sha256": "3a300460e016190260fcf08b6640eec5cd37e369e25e432e0b5c23edc252b166",
+      "label": "research/data-cache/NasalSeg-v2/labels/P109_seg.nrrd",
+      "label_sha256": "326c489e03d7918a4cf0ef28c3bdef793a7984d7bd13f20f8806722b9d3460a1",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        125,
+        166,
+        50
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P110_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P110_img.nrrd",
+      "image_sha256": "ea85ee6f4df942d6cfbea0057126ab6f8731fa050eb090e98c2b850eb4b9a362",
+      "label": "research/data-cache/NasalSeg-v2/labels/P110_seg.nrrd",
+      "label_sha256": "0cf1bea362e61705ba278317bc4ded2f0038dc255d52b70bfc0f48310aa5ac84",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        149,
+        168,
+        53
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P111_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P111_img.nrrd",
+      "image_sha256": "873a62d070f5c2964776b4a4cfdeed985918140e85310d36d56e55dc7b51d5b9",
+      "label": "research/data-cache/NasalSeg-v2/labels/P111_seg.nrrd",
+      "label_sha256": "472e1bd2b1af34f6896a01fc17f8bd0e3afd86a0f0a58c054cfdc7b4eb268888",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        149,
+        168,
+        53
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P112_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P112_img.nrrd",
+      "image_sha256": "8a5beb20c4bdb850c3241256195ce815444b1773108eb5f14efb5eace7fceddf",
+      "label": "research/data-cache/NasalSeg-v2/labels/P112_seg.nrrd",
+      "label_sha256": "c1c53343776fd0c59e1610080589b812c3943a8c4ad733dbced109a7039f334c",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        128,
+        201,
+        49
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P113_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P113_img.nrrd",
+      "image_sha256": "8fa602bdaa192edf14c06ffb5d689c25ba136a77749fa1a07c2753619c907754",
+      "label": "research/data-cache/NasalSeg-v2/labels/P113_seg.nrrd",
+      "label_sha256": "6be68fea75d5ac0b09f375ab6cf5cc645cf14c17a6181d085de98a94766ed5c4",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        161,
+        189,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P114_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P114_img.nrrd",
+      "image_sha256": "a0c08e102856b8937ab133a4ab8892da799c3818efd4220713ed5874650107c5",
+      "label": "research/data-cache/NasalSeg-v2/labels/P114_seg.nrrd",
+      "label_sha256": "1d430b17d8d18295c7cf2fac565ad804d9084577cf7141a76b0db15a67e885bb",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        123,
+        181,
+        47
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P115_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P115_img.nrrd",
+      "image_sha256": "90705a578d1347e5124ffdbdc42e4599d0444ab82bd196db871a62957e87142a",
+      "label": "research/data-cache/NasalSeg-v2/labels/P115_seg.nrrd",
+      "label_sha256": "ac7c7008b26a475dde18a25b11142b44ad46d81c63ceff7b983a79c273337683",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        177,
+        184,
+        52
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P116_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P116_img.nrrd",
+      "image_sha256": "25f5683101ef1ab6e4af5d9ea27f8e3cb4503f3c1837765d3ce36189ab2b85f1",
+      "label": "research/data-cache/NasalSeg-v2/labels/P116_seg.nrrd",
+      "label_sha256": "c66223e93c5df16ee8a6592aeb31c8c855e91e80bc3112cc89254a9ea5655959",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        169,
+        188,
+        51
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P117_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P117_img.nrrd",
+      "image_sha256": "02637d28e61331339680ad33b17a3777943444904a89f070fea3582703131a2e",
+      "label": "research/data-cache/NasalSeg-v2/labels/P117_seg.nrrd",
+      "label_sha256": "47680d416d1bb7f61871c7c085446b19ca31ef3ff0e22d192192e7f416fc7a42",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        148,
+        182,
+        49
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P118_img",
+      "engineering_eligible": false,
+      "finite": true,
+      "geometry_match": false,
+      "image": "research/data-cache/NasalSeg-v2/images/P118_img.nrrd",
+      "image_sha256": "be06044d5557c89e88ca9da93bb5ef459d823faf0fbe1e8821b612dd3c681a12",
+      "label": "research/data-cache/NasalSeg-v2/labels/P118_seg.nrrd",
+      "label_sha256": "5388e7cfe0758c5051944a3d08c5c298bce2dc6cd046145c299adf87f970e35b",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        148,
+        182,
+        49
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P119_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P119_img.nrrd",
+      "image_sha256": "8f735ca554f0fc4ff3fcbb312803941c4600a2bc81de989fa444f257de7b90e1",
+      "label": "research/data-cache/NasalSeg-v2/labels/P119_seg.nrrd",
+      "label_sha256": "034ad0ba3150634641280c29ebd08c8ab2b7507df4105b922efd343d29423d06",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        133,
+        173,
+        43
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P120_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P120_img.nrrd",
+      "image_sha256": "88faa91ca7c6d90d4e8d507a31ac92385b21d3186bdeb57daebe20ed0a02971b",
+      "label": "research/data-cache/NasalSeg-v2/labels/P120_seg.nrrd",
+      "label_sha256": "ec79713c6bec2aabdef229ac0dee969ef8e31ba541b3ad22004e6a7a94b4e490",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        158,
+        175,
+        50
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P121_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P121_img.nrrd",
+      "image_sha256": "99e2ba6ce13ca10662dc40bf274f1975be45a7f31951bd572f2ede3aebbe0669",
+      "label": "research/data-cache/NasalSeg-v2/labels/P121_seg.nrrd",
+      "label_sha256": "abb244f1b350dd2b9c2c2654579780258afc583ae0f03db5536aeee8342a0df8",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        109,
+        177,
+        49
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P122_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P122_img.nrrd",
+      "image_sha256": "c924fbe7540c0cba5c9796cdf0bdcad72277b3a65d4ff8657499cd027b7dd5bc",
+      "label": "research/data-cache/NasalSeg-v2/labels/P122_seg.nrrd",
+      "label_sha256": "64bb68d97392beed9c17eb7530c0f3940d6ea63e22fff1a5e1c3ef49cc097773",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        158,
+        173,
+        45
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P123_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P123_img.nrrd",
+      "image_sha256": "c5a87dbf9342e07d7adadcb54a29bdb95012c6beffa10a7b975ea05bf8e1f0b6",
+      "label": "research/data-cache/NasalSeg-v2/labels/P123_seg.nrrd",
+      "label_sha256": "113efb27a076a1e0cc08bc321ec3e1e42197a894bb1a262821b595d6a4ad1982",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        152,
+        191,
+        48
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P124_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P124_img.nrrd",
+      "image_sha256": "892d29e31082adb057992f41ff5f8881529cfadd82c664d85d04da594a3f2883",
+      "label": "research/data-cache/NasalSeg-v2/labels/P124_seg.nrrd",
+      "label_sha256": "b6c633292ed3607c547f17b7d5442a2c15b59403bde0edd66ac4bc645ce8317a",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        150,
+        192,
+        48
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P125_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P125_img.nrrd",
+      "image_sha256": "d6890f72013df2da3e8cd5cea8d5458c9bf3b99eb66b9d7115cdbd67516a9771",
+      "label": "research/data-cache/NasalSeg-v2/labels/P125_seg.nrrd",
+      "label_sha256": "437433d0f2459823a1bce744e23e2391355fa9143b45be10f6d68282321c158b",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        137,
+        162,
+        50
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P126_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P126_img.nrrd",
+      "image_sha256": "8a3b6cd5e675a575c41c830b1d1be0491192a8a63f41c18ae8d8821565fbfc6a",
+      "label": "research/data-cache/NasalSeg-v2/labels/P126_seg.nrrd",
+      "label_sha256": "e08566e96ce606a869791164631e04f48ee87d1ac1f6424fe2d7d6cb7c48b862",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        141,
+        229,
+        54
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P127_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P127_img.nrrd",
+      "image_sha256": "756b889de8fbadea16cc5db572c4d3e7a1fbfc6c8644c763d5ae4d01b0cd312d",
+      "label": "research/data-cache/NasalSeg-v2/labels/P127_seg.nrrd",
+      "label_sha256": "562f46667f57d4a964a09fd6e6a3189972dc35d3ffc1acd3f9cf89c98344aa27",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        136,
+        188,
+        54
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P128_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P128_img.nrrd",
+      "image_sha256": "6fce7a73d8f3465360e41d74cc2329a0534a39683578c122999783a8dcb8dcca",
+      "label": "research/data-cache/NasalSeg-v2/labels/P128_seg.nrrd",
+      "label_sha256": "fe87b7191f58887fdda2607e50d2b2c4c06cfbe1a507aec8d7e618f0a29d17ac",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        136,
+        188,
+        54
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P129_img",
+      "engineering_eligible": false,
+      "finite": true,
+      "geometry_match": false,
+      "image": "research/data-cache/NasalSeg-v2/images/P129_img.nrrd",
+      "image_sha256": "47540afed599863b26a4e189cd99829ff1d630f7a474cc5cda6cc6158869a302",
+      "label": "research/data-cache/NasalSeg-v2/labels/P129_seg.nrrd",
+      "label_sha256": "69e0d06b5e677e83a66c6d0cc573a54dc14f3b24000e8fbe21d0d27ff2352265",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        141,
+        206,
+        50
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    },
+    {
+      "case_id": "P130_img",
+      "engineering_eligible": true,
+      "finite": true,
+      "geometry_match": true,
+      "image": "research/data-cache/NasalSeg-v2/images/P130_img.nrrd",
+      "image_sha256": "fca4ba4dee97cedc44c536316f089b3b8ff7fedf8e72acaee79f5ebc6ffc7e75",
+      "label": "research/data-cache/NasalSeg-v2/labels/P130_seg.nrrd",
+      "label_sha256": "074172374cbca40f499c3c22f990293cbe5a03d70cfab999f51427bbf95a3aa2",
+      "labels_present": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labels_valid": true,
+      "limitations": [
+        "Five air-space labels only; no tumor or complete skull-base critical anatomy.",
+        "Field-of-view and entry-to-target surgical suitability require expert review."
+      ],
+      "shape": [
+        137,
+        183,
+        47
+      ],
+      "spacing_mm": [
+        0.5859375,
+        0.5859375,
+        1.5
+      ],
+      "surgical_corridor_ground_truth": false,
+      "thin_slice_eligible": true
+    }
+  ],
+  "schema_version": "1.0",
+  "source": {
+    "license": "CC-BY-4.0",
+    "name": "NasalSeg",
+    "version": "13893419"
+  }
+}

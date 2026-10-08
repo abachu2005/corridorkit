@@ -1,0 +1,34 @@
+{
+  "artifacts": [
+    {
+      "bytes": 45557,
+      "file": "skullbase_corridor-0.1.0-py3-none-any.whl",
+      "sha256": "f13f187cfe832f1faffb12c765fcc227c86fb449c5ff37733c50cc30ce748466"
+    },
+    {
+      "bytes": 153753,
+      "file": "skullbase_corridor-0.1.0.tar.gz",
+      "sha256": "e9a54fd25c4444915e7ed10b8492fd797d040f1dd76243606f4dda4578a25175"
+    }
+  ],
+  "claim_boundary": "Engineering alpha; no clinical or safe-resection validation.",
+  "convergence_workflow": "passed",
+  "date": "2026-10-01",
+  "desktop_workflow": "passed_offscreen",
+  "nasalseg_v2": {
+    "engineering_eligible": 118,
+    "geometry_mismatch": 12,
+    "paired": 130,
+    "record": "13893419",
+    "surgical_ground_truth": false
+  },
+  "python": "3.11.7",
+  "schema_version": "1.0",
+  "sensitivity_workflow": "passed",
+  "software_version": "0.1.0",
+  "synthetic_workflow": "passed",
+  "tests": {
+    "failed": 0,
+    "passed": 38
+  }
+}

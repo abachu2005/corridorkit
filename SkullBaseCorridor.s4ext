@@ -1,0 +1,12 @@
+scm git
+scmurl https://github.com/abachu2005/skullbase-corridor.git
+scmrevision main
+depends NA
+build_subdirectory .
+homepage https://github.com/abachu2005/skullbase-corridor
+contributors Abhinav Bachu
+category IGT
+iconurl https://raw.githubusercontent.com/abachu2005/skullbase-corridor/main/slicer/SkullBaseComparison/Resources/Icons/SkullBaseComparison.png
+description Target-driven EEA and CTM corridor planning from CT with review-required cloud anatomy predictions.
+status Experimental
+enabled 1

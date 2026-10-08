@@ -1,0 +1,29 @@
+{
+  "title": "skullbase-corridor: local-first finite-instrument corridor exploration in 3D Slicer",
+  "description": "Research software for local, surgeon-supervised exploration of finite rigid skull-base instrument corridors. This release is not clinically validated and provides no treatment recommendation or safety claim.",
+  "creators": [
+    {
+      "name": "Bachu, Abhinav"
+    }
+  ],
+  "license": "Apache-2.0",
+  "upload_type": "software",
+  "access_right": "open",
+  "version": "0.2.0",
+  "publication_date": "2026-10-08",
+  "keywords": [
+    "3D Slicer",
+    "skull base",
+    "medical imaging",
+    "computational geometry",
+    "research software"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/abachu2005/skullbase-corridor",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ],
+  "notes": "Public execution is local-first. The optional Azure deployment is retained only as an engineering benchmark. No clinical validation, safety, efficacy, or approach-superiority claim is made."
+}

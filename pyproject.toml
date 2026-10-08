@@ -1,0 +1,63 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "skullbase-corridor"
+version = "0.2.0"
+description = "Geometry-first analysis of skull-base instrument corridors"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+authors = [{ name = "Skullbase Corridor contributors" }]
+dependencies = [
+  "numpy>=1.26",
+  "scipy>=1.11",
+  "nibabel>=5.2",
+  "SimpleITK>=2.3",
+  "pydicom>=2.4",
+  "pydantic>=2.6",
+  "typer>=0.12",
+]
+
+[project.optional-dependencies]
+desktop = ["PySide6>=6.7", "pyqtgraph>=0.13", "vtk>=9.3"]
+test = ["pytest>=8", "requests>=2.31"]
+atlas = ["requests>=2.31", "matplotlib>=3.8"]
+cloud = ["fastapi>=0.115", "uvicorn>=0.32"]
+local-inference = ["TotalSegmentator==2.11.0"]
+
+[project.scripts]
+skullbase-corridor = "skullbase_corridor.cli:app"
+
+[project.gui-scripts]
+skullbase-corridor-gui = "skullbase_corridor.desktop:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/skullbase_corridor"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/src", "/tests", "/docs", "/packaging/*.py", "/packaging/*.command", "/packaging/*.md",
+  "/README.md", "/LICENSE", "/CITATION.cff", "/.zenodo.json",
+  "/pyproject.toml", "/CMakeLists.txt",
+  "/SkullBaseCorridor.s4ext", "/infra/azure",
+  "/paper",
+  "/research/run_voxel_refinement.py",
+  "/research/prepare_interactive_real_case.py",
+  "/research/interactive_real_smoke.py",
+  "/research/prepare_skullbase_atlas.py",
+  "/research/run_slicer_bridge.py",
+  "/research/benchmark_entry_pipeline.py",
+  "/research/run_real_ct_entry_acceptance.py",
+  "/slicer",
+]
+exclude = ["**/__pycache__", "**/*.pyc", "/dist", "/build"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100

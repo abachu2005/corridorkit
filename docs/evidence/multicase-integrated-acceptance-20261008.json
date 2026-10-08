@@ -1,0 +1,60 @@
+{
+  "schema_version": "multicase-integrated-acceptance-v1",
+  "date": "2026-10-08",
+  "software_version": "0.2.0",
+  "dataset": {
+    "name": "NasalSeg v2",
+    "record": "https://zenodo.org/records/13893419",
+    "license": "CC-BY-4.0",
+    "archive_sha256": "60c6facf843685802c39e4adff4a05c081c1c4b6175c9cb573745c55abb0fa6a",
+    "manual_annotations_supplied_to_product": false,
+    "target_selection": "Deterministic interior point derived from label 5 for evaluation only"
+  },
+  "inference": {
+    "model": "TotalSegmentator",
+    "version": "2.11.0",
+    "tasks": [
+      "craniofacial_structures",
+      "head_glands_cavities",
+      "headneck_bones_vessels"
+    ],
+    "benchmark_backend": "Optional Azure Container Apps D4 CPU, 4 vCPU/16 GiB",
+    "public_runtime": "Managed local workstation worker"
+  },
+  "cases": [
+    {
+      "case": "P001",
+      "input_sha256": "5d78a544a6133de1d5244e46b6bfe60a7246991f3bf749fac17c1baa8a362841",
+      "target_ras_mm": [99.90234375000003, 240.05859375, -528.0000000000001],
+      "elapsed_seconds": 212.82,
+      "timing_context": "warm optional Azure D4 worker",
+      "candidate_count": 3,
+      "states": {"unavailable": 3}
+    },
+    {
+      "case": "P002",
+      "input_sha256": "cd060f73dd9a5066e02cf4c8120f18f4705ea080821be53a7b681529e1042387",
+      "target_ras_mm": [97.55859375000003, 232.44140625, -519.0],
+      "elapsed_seconds": 442,
+      "timing_context": "optional Azure D4 scale-from-zero",
+      "candidate_count": 3,
+      "states": {"blocked": 2, "unavailable": 1}
+    },
+    {
+      "case": "P003",
+      "input_sha256": "8fb9972838a3af60f19dae661144b71a5b2fe7ab8da62d27ddc65ccbdaf9ba0f",
+      "target_ras_mm": [97.55859375000003, 232.44140625, -532.4999999999999],
+      "elapsed_seconds": 188,
+      "timing_context": "optional Azure D4 warm worker",
+      "candidate_count": 3,
+      "states": {"blocked": 2, "unavailable": 1}
+    }
+  ],
+  "cached_p001_seconds": 9.46,
+  "interpretation": [
+    "This is bounded software execution evidence, not clinical validation.",
+    "Blocked and unavailable states were retained; no candidate was called safe.",
+    "Cloud timings are optional engineering benchmarks and do not predict local workstation performance.",
+    "NasalSeg labels are not operative-corridor ground truth."
+  ]
+}
