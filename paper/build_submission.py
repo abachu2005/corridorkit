@@ -37,11 +37,17 @@ def inline(value: str) -> str:
         tokens.append(content)
         return f"ZZTOKEN{len(tokens) - 1}ZZ"
 
-    value = re.sub(
-        r"\[([^\]]+)\]\(([^)]+)\)",
-        lambda m: token(r"\href{" + m.group(2) + "}{" + latex_escape(m.group(1)) + "}"),
-        value,
-    )
+    def link(match: re.Match[str]) -> str:
+        label, url = match.groups()
+        if label.startswith("`") and label.endswith("`"):
+            rendered = r"\texttt{" + latex_escape(label[1:-1]) + "}"
+        elif label.startswith(("http://", "https://")):
+            rendered = r"\nolinkurl{" + label + "}"
+        else:
+            rendered = latex_escape(label)
+        return token(r"\href{" + url + "}{" + rendered + "}")
+
+    value = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", link, value)
     value = re.sub(
         r"\[@([^\]]+)\]",
         lambda m: token(
@@ -51,7 +57,23 @@ def inline(value: str) -> str:
     )
     value = re.sub(
         r"`([^`]+)`",
-        lambda m: token(r"\texttt{" + latex_escape(m.group(1)) + "}"),
+        lambda m: token(
+            (
+                r"\texttt{"
+                + r"\allowbreak ".join(
+                    latex_escape(m.group(1))[i : i + 8]
+                    for i in range(0, len(m.group(1)), 8)
+                )
+                + "}"
+                if re.fullmatch(r"[0-9a-f]{32,}", m.group(1))
+                else r"\texttt{" + latex_escape(m.group(1)) + "}"
+            )
+        ),
+        value,
+    )
+    value = re.sub(
+        r"\\\((.*?)\\\)",
+        lambda m: token("$" + m.group(1) + "$"),
         value,
     )
     value = re.sub(
@@ -69,7 +91,7 @@ def convert_table(lines: list[str]) -> str:
     rows = [[cell.strip() for cell in line.strip().strip("|").split("|")] for line in lines]
     rows = [row for index, row in enumerate(rows) if index != 1]
     width = len(rows[0])
-    columns = "p{0.25\\linewidth}" + "p{0.68\\linewidth}" * (width - 1)
+    columns = r"@{}p{0.29\linewidth}@{\hspace{0.03\linewidth}}p{0.66\linewidth}@{}"
     output = [rf"\begin{{longtable}}{{{columns}}}", r"\toprule"]
     for index, row in enumerate(rows):
         output.append(" & ".join(inline(cell) for cell in row) + r" \\")
@@ -185,6 +207,7 @@ def main() -> None:
 \usepackage{{microtype}}
 \usepackage{{natbib}}
 \usepackage{{url}}
+\setlength{{\emergencystretch}}{{2em}}
 \graphicspath{{{{figures/}}}}
 
 \journal{{SoftwareX}}
@@ -205,7 +228,7 @@ def main() -> None:
   country={{USA}}}}
 
 \begin{{abstract}}
-{abstract}
+{inline(abstract)}
 \end{{abstract}}
 
 \begin{{keyword}}

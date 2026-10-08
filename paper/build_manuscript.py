@@ -112,29 +112,54 @@ def geometry_figure() -> None:
 
 
 def worked_example_figure() -> None:
-    from PIL import Image
+    from PIL import Image, ImageEnhance, ImageOps
 
     directory = FIGURES / "worked-example"
     images = [
         Image.open(directory / "planning-workspace.png").convert("RGB"),
         Image.open(directory / "eea-path.png").convert("RGB"),
         Image.open(directory / "transmaxillary-path.png").convert("RGB"),
-        Image.open(directory / "coverage-comparison.png").convert("RGB"),
     ]
-    fig, axes = plt.subplots(2, 2, figsize=(11.5, 8.0))
+    gamma_lut = [round(255 * ((value / 255) ** 0.62)) for value in range(256)]
+    images = [
+        ImageEnhance.Contrast(
+            ImageOps.autocontrast(image).point(gamma_lut * 3)
+        ).enhance(1.05)
+        for image in images
+    ]
+    fig, axes = plt.subplots(2, 2, figsize=(12.0, 8.6), facecolor="white")
     titles = [
         "A  Planning workspace",
-        "B  EEA trajectory",
-        "C  Transmaxillary trajectory",
-        "D  Sampled coverage comparison",
+        "B  Portal A trajectory (nominal EEA)",
+        "C  Portal B trajectory (nominal transmaxillary)",
     ]
-    for ax, image, title in zip(axes.flat, images, titles):
+    for ax, image, title in zip(axes.flat[:3], images, titles):
         ax.imshow(image)
         ax.set_title(title, loc="left", fontsize=10, fontweight="bold")
         ax.axis("off")
+    chart = axes.flat[3]
+    categories = ["Portal A only", "Portal B only", "Both portals", "Not reached"]
+    counts = [59, 232, 35, 87]
+    colors = [BLUE, ORANGE, TEAL, "#9AA6AC"]
+    bars = chart.barh(categories, counts, color=colors, edgecolor="white", height=0.64)
+    chart.invert_yaxis()
+    chart.set_xlim(0, 260)
+    chart.set_xlabel("Target samples (n = 413)", fontsize=9)
+    chart.set_title("D  Sampled coverage comparison", loc="left",
+                    fontsize=10, fontweight="bold")
+    chart.spines[["top", "right", "left"]].set_visible(False)
+    chart.grid(axis="x", color="#D8E1E5", linewidth=0.8)
+    chart.set_axisbelow(True)
+    chart.tick_params(axis="y", labelsize=9, length=0)
+    chart.tick_params(axis="x", labelsize=8)
+    for bar, count in zip(bars, counts):
+        chart.text(count + 5, bar.get_y() + bar.get_height() / 2, str(count),
+                   va="center", fontsize=9, fontweight="bold", color=DARK)
+    chart.text(0.0, -0.22, "Invented geometry; nominal approach labels",
+               transform=chart.transAxes, fontsize=8.5, color=DARK)
     fig.suptitle("Deterministic positive synthetic worked example",
                  fontsize=13, fontweight="bold", color=BLUE)
-    fig.tight_layout()
+    fig.tight_layout(rect=(0, 0.02, 1, 0.96), h_pad=2.0, w_pad=2.0)
     save(fig, "figure-3-positive-worked-example.png")
 
 
@@ -207,9 +232,9 @@ def bibliography_html() -> str:
   self-configuring method for deep learning-based biomedical image segmentation.
   <em>Nature Methods</em>. 2021;18(2):203–211.
   doi:10.1038/s41592-020-01008-z.</li>
-  <li id="ref-nasalseg">NasalSeg dataset, version record 13893419. Zenodo.
-  <a href="https://zenodo.org/records/13893419">https://zenodo.org/records/13893419</a>
-  (accessed 8 October 2026).</li>
+  <li id="ref-nasalseg">Zhang Y, Wang J, Pan T, et al. NasalSeg Dataset for
+  Nasal Cavity and Paranasal Sinuses Segmentation from CT Images. Zenodo. 2024.
+  doi:10.5281/zenodo.13893419.</li>
 </ol>
 """
 

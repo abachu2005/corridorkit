@@ -7,6 +7,7 @@
 \usepackage{microtype}
 \usepackage{natbib}
 \usepackage{url}
+\setlength{\emergencystretch}{2em}
 \graphicspath{{figures/}}
 
 \journal{SoftwareX}
@@ -27,7 +28,7 @@
   country={USA}}
 
 \begin{abstract}
-`skullbase-corridor` is open research software for reproducible, surgeon-supervised exploration of rigid skull-base approach corridors in physical image coordinates. It represents target samples, protected structures, finite circular portals, and finite rigid instruments, and records evaluated trajectories, insertion depths, clearances, coverage set operations, and explicit rejection or abstention reasons. The package combines a typed Python geometry engine, command-line and desktop interfaces, and a 3D Slicer module for image, segmentation, markup, linked-slice, three-dimensional, and report workflows. A deterministic worked example demonstrates feasible trajectories and distinct sampled coverage for two configured approaches. Verification includes analytical fixtures, independent geometric references, cross-platform automated tests, synthetic desktop workflows, and bounded public-data execution. The software supports research and method development; it is not clinically validated.
+\texttt{skullbase-corridor} is open research software for reproducible, surgeon-supervised exploration of rigid skull-base approach corridors in physical image coordinates. It represents target samples, protected structures, finite circular portals, and finite rigid instruments, and records evaluated trajectories, insertion depths, clearances, coverage set operations, and explicit rejection or abstention reasons. The package combines a typed Python geometry engine, command-line and desktop interfaces, and a 3D Slicer module for image, segmentation, markup, linked-slice, three-dimensional, and report workflows. A deterministic worked example demonstrates feasible trajectories and distinct sampled coverage for two configured approaches. Verification includes analytical fixtures, independent geometric references, cross-platform automated tests, synthetic desktop workflows, and bounded public-data execution. The software supports research and method development; it is not clinically validated.
 \end{abstract}
 
 \begin{keyword}
@@ -38,13 +39,13 @@ research software \sep computational geometry \sep medical imaging \sep 3D Slice
 
 \section{Code metadata (mandatory)}
 
-\begin{longtable}{p{0.25\linewidth}p{0.68\linewidth}}
+\begin{longtable}{@{}p{0.29\linewidth}@{\hspace{0.03\linewidth}}p{0.66\linewidth}@{}}
 \toprule
 Field & Value \\
 \midrule
 C1 Current code version & \texttt{v0.2.1} \\
 
-C2 Permanent link to code/repository used for this code version & \href{https://doi.org/10.5281/zenodo.23244307}{https://doi.org/10.5281/zenodo.23244307}; source repository: \href{https://github.com/abachu2005/skullbase-corridor}{GitHub} \\
+C2 Permanent link to code/repository used for this code version & Source repository: \href{https://github.com/abachu2005/skullbase-corridor}{\nolinkurl{https://github.com/abachu2005/skullbase-corridor}}; archived release: \href{https://doi.org/10.5281/zenodo.23244307}{\nolinkurl{https://doi.org/10.5281/zenodo.23244307}} \\
 
 C3 Permanent link to Reproducible Capsule & N/A; no executable reproducible capsule has been deposited \\
 
@@ -56,7 +57,7 @@ C6 Software code languages, tools, and services used & Python $\geq$3.11; 3D Sli
 
 C7 Compilation requirements, operating environments, and dependencies & Python $\geq$3.11. Release CI passed on Ubuntu, macOS, and Windows with Python 3.11 and 3.12. Core dependencies: NumPy, SciPy, nibabel, SimpleITK, pydicom, Pydantic, and Typer. Optional desktop dependencies: PySide6, pyqtgraph, and VTK. The scripted module requires 3D Slicer 5.12. \\
 
-C8 Link to developer documentation/manual & \href{https://github.com/abachu2005/skullbase-corridor/blob/v0.2.1/README.md}{`README.md`}, \href{https://github.com/abachu2005/skullbase-corridor/blob/v0.2.1/docs/USER_GUIDE.md}{`docs/USER\_GUIDE.md`}, and \href{https://github.com/abachu2005/skullbase-corridor/blob/v0.2.1/slicer/README.md}{`slicer/README.md`} \\
+C8 Link to developer documentation/manual & \href{https://github.com/abachu2005/skullbase-corridor/blob/v0.2.1/README.md}{\texttt{README.md}}, \href{https://github.com/abachu2005/skullbase-corridor/blob/v0.2.1/docs/USER_GUIDE.md}{\texttt{docs/USER\_GUIDE.md}}, and \href{https://github.com/abachu2005/skullbase-corridor/blob/v0.2.1/slicer/README.md}{\texttt{slicer/README.md}} \\
 
 C9 Support email for questions & \href{mailto:abachu@luc.edu}{abachu@luc.edu} \\
 
@@ -93,6 +94,8 @@ The scripted Slicer module integrates CT selection, markups, segmentation review
 
 The packaged Slicer workflow launches a managed TotalSegmentator \citep{totalsegmentator} process, using CPU or a compatible configured accelerator. Model predictions are labeled as predictions and require review. The geometry engine consumes reviewed image-derived structures independently of how those structures were produced.
 
+Anand V. Germanwala, a cranial-base neurosurgeon, reviewed the software's corridor model, intended research workflow, and limits on clinical interpretation. This expert review informed the methodology and presentation but was not a formal usability or clinical-validation study.
+
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/figure-1-software-architecture.png}
@@ -107,7 +110,7 @@ Targets can be supplied as physical-coordinate points or mask-derived voxel cent
 
 \subsection{Finite-instrument reach and aperture model}
 
-For entry point \textbackslash\{\}(\textbackslash\{\}mathbf\{e\}\textbackslash\{\}), unit direction \textbackslash\{\}(\textbackslash\{\}mathbf\{d\}\textbackslash\{\}), and target sample \textbackslash\{\}(\textbackslash\{\}mathbf\{x\}\textbackslash\{\}), required axial insertion is
+For entry point $\mathbf{e}$, unit direction $\mathbf{d}$, and target sample $\mathbf{x}$, required axial insertion is
 
 \[
 t=(\mathbf{x}-\mathbf{e})\cdot\mathbf{d},
@@ -168,27 +171,27 @@ TotalSegmentator does not supply complete skull-base critical anatomy. Cranial n
 
 \section{Verification evidence and impact}
 
-Verification uses deterministic fixtures, independent geometric references, cross-platform automated tests, and programmatic desktop interactions. The release CI passed on Ubuntu, macOS, and Windows with Python 3.11 and 3.12. The scripted Slicer module was exercised with public CT data in 3D Slicer 5.12.4, while the positive worked example was verified programmatically. These tests establish software execution, not independent usability or clinical validation.
+Verification uses deterministic fixtures, independent geometric references, cross-platform automated tests, and programmatic desktop interactions. The release CI passed on Ubuntu, macOS, and Windows with Python 3.11 and 3.12. A source-workflow run preceding version 0.2.1 exercised public CT loading and generated masks in 3D Slicer 5.12.4. Two fresh native rerun attempts for version 0.2.1 did not complete because Slicer stalled during startup under Rosetta; therefore, the earlier run is not presented as release-specific acceptance. The positive worked example was verified programmatically. These tests establish bounded software execution, not independent usability or clinical validation.
 
 \subsection{Positive worked example}
 
-The deterministic planning phantom contains an invented CT-like volume, a 413-sample ellipsoidal target, two finite portals, and three analytical protected spheres. It contains no patient data and is not an anatomical model. The same case was analyzed through the desktop workflow used for image-linked review. The EEA configuration produced 27 feasible sampled trajectories reaching 94 target samples; the transmaxillary configuration produced 77 trajectories reaching 267 samples. Set comparison assigned 59 samples to EEA only, 232 to transmaxillary only, 35 to both, 87 to sampled-unreached, and none to unavailable. The interface exposed 104 selectable trajectory witnesses and invalidated them when configuration state changed.
+The deterministic planning phantom contains an invented CT-like volume, a 413-sample ellipsoidal target, two finite portals, and three analytical protected spheres. It contains no patient data and is not an anatomical model. “EEA” and “transmaxillary” are nominal labels for synthetic Portal A and Portal B, respectively; they do not establish anatomically valid approaches. The same case was analyzed through the desktop workflow used for image-linked review. Portal A produced 27 feasible sampled trajectories reaching 94 target samples; Portal B produced 77 trajectories reaching 267 samples. Set comparison assigned 59 samples to Portal A only, 232 to Portal B only, 35 to both, 87 to sampled-unreached, and none to unavailable. The interface exposed 104 selectable trajectory witnesses and invalidated them when configuration state changed.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/figure-3-positive-worked-example.png}
-\caption{Positive synthetic worked example. (A) Linked-slice planning workspace. (B--C) Inspectable EEA and transmaxillary trajectory witnesses. (D) Sampled target-set comparison. All geometry is invented for software demonstration; the result is not anatomical evidence.}
+\caption{Positive synthetic worked example. (A) Linked-slice planning workspace. (B--C) Inspectable trajectories through Portal A (nominal EEA) and Portal B (nominal transmaxillary). (D) Sampled target-set comparison. All geometry and approach labels are invented for software demonstration; the result is not anatomical evidence.}
 \end{figure}
 
 \subsection{Numerical verification}
 
-For supported unobstructed analytical angular fixtures, an independent replay recorded 82 of 82 comparisons below a prespecified one-percent relative-error threshold; the maximum observed error was 0.0001204123\%. This result applies to the geometry-aware unobstructed method, not protected-structure quadrature. In a separate legacy grid-quadrature stress fixture, a small off-axis target retained 11.368\% error at the finest grid. That is a resolution limitation of the protected-geometry estimate: users should treat its solid-angle value as descriptive, inspect convergence, and omit the measurement when convergence is not demonstrated.
+For supported unobstructed analytical angular fixtures, an independent replay recorded 82 of 82 comparisons below a prespecified one-percent relative-error threshold; the maximum observed error was 0.0001204123\%. This result applies to the geometry-aware unobstructed method, not protected-structure quadrature. In a separate grid-quadrature stress fixture, a small off-axis target retained 11.368\% error at the finest grid. That is a resolution limitation of the protected-geometry estimate: users should treat its solid-angle value as descriptive, inspect convergence, and omit the measurement when convergence is not demonstrated.
 
-Voxel-cell refinement was first checked with 530 synthetic and 120 queries from three public cases, then repeated under a frozen protocol for 4,720 queries across 118 eligible NasalSeg cases (40 per case). A clearance-bound violation means the reported positive clearance exceeded the independent cell-box optimizer's upper distance bound after subtracting instrument radius. No false-clear, clearance-bound, field-of-view-policy, or budget-fallback changes were observed. Refinement recovered 2,164 clear classifications that the coarse method conservatively blocked; 1,190 budget-exhausted queries retained the coarse blocked result. Because the public replay shares broad-phase candidate selection with the implementation, these observations test bounded numerical consistency rather than completeness.
+Voxel-cell refinement was first checked with 530 synthetic and 120 queries from three public cases, then repeated under a frozen protocol for 4,720 queries across 118 eligible NasalSeg cases (40 per case). A clearance-bound violation means the reported positive clearance exceeded the independent cell-box optimizer's upper distance bound after subtracting instrument radius. No false-clear, clearance-bound, or field-of-view-policy violations were observed. Refinement recovered 2,164 clear classifications that the coarse method conservatively blocked. In 1,190 budget-exhausted queries, the specified fallback preserved the coarse blocked classification; this was expected fallback behavior, not evidence that refinement completed. Because the public replay shares broad-phase candidate selection with the implementation, these observations test bounded numerical consistency rather than completeness.
 
 NasalSeg v2 \citep{nasalseg} supplied the public P001--P003 cases and the 118-case replay cohort. Twelve of 130 image/label pairs were excluded because image and label physical geometry did not match. Its air-space labels provide no operative-corridor reference standard; the dataset is used only for file, coordinate, and execution tests.
 
-The software's methodological contribution is the combination of inspectable finite-instrument witnesses, explicit unknown states, and set-based comparison of alternative versus simultaneous access. These capabilities support reproducible method studies and synthetic education scenarios.
+The software turns a corridor result from a single reachability label into an inspectable record: researchers can recover the finite path, insertion depth, represented obstruction state, target subset, and reason for rejection or abstention. This supports reproducible sensitivity studies of portal and instrument assumptions, direct comparison of alternative and simultaneous access without double counting target samples, and regression testing across geometry implementations. The Slicer integration places those records beside the images and segmentations from which inputs were derived. The immediate impact is methodological and educational: it provides a shared, auditable software substrate for phantom, cadaveric, and future clinically validated studies, rather than evidence that any approach is safe or superior.
 
 \section{Limitations}
 
@@ -202,11 +205,11 @@ The model-assisted workflow depends on a large local machine-learning stack and 
 
 \section{Reproducibility and availability}
 
-The source code is licensed under Apache-2.0. Dependencies retain their own licenses. Version 0.2.1 is archived at \href{https://doi.org/10.5281/zenodo.23244307}{10.5281/zenodo.23244307} and corresponds to Git tag \texttt{v0.2.1} at commit \texttt{a0c6933258f60e370747cfd4096b9445eff8a572}. The archive contains source, tests, documentation, packaging scripts, and deterministic fixtures; it excludes public CT archives, private data, model weights, and local sessions.
+The source code is licensed under Apache-2.0. Dependencies retain their own licenses. Version 0.2.1 is archived at \href{https://doi.org/10.5281/zenodo.23244307}{10.5281/zenodo.23244307} and corresponds to Git tag \texttt{v0.2.1} at commit \texttt{a0c69332\allowbreak 58f60e37\allowbreak 0747cfd4\allowbreak 096b9445\allowbreak eff8a572}. The archive contains source, tests, documentation, packaging scripts, and deterministic fixtures; it excludes public CT archives, private data, model weights, and local sessions.
 
 The source-release tooling uses an explicit allowlist, compares staged content with current files, records hashes, and runs wheel smoke checks. The Slicer package provisions an isolated per-user runtime without modifying Slicer's embedded Python.
 
-The retained NasalSeg manifest identifies version record 13893419, declared CC BY 4.0 terms, and archive SHA-256 \texttt{60c6facf843685802c39e4adff4a05c081c1c4b6175c9cb573745c55abb0fa6a}. The software does not redistribute the dataset.
+The retained NasalSeg manifest identifies version record 13893419, declared CC BY 4.0 terms, and archive SHA-256 \texttt{60c6facf\allowbreak 84368580\allowbreak 2c39e4ad\allowbreak ff4a05c0\allowbreak 81c1c4b6\allowbreak 175c9cb5\allowbreak 73745c55\allowbreak abb0fa6a}. The software does not redistribute the dataset.
 
 \subsection{Data availability}
 
@@ -214,7 +217,7 @@ Source code version 0.2.1 is archived on Zenodo under DOI \href{https://doi.org/
 
 \section{Ethics and data governance}
 
-The software evidence uses synthetic fixtures and an existing public dataset described by its source as deidentified. It involves no recruitment, private records, chart review, outcomes, or identity linkage. Loyola University Chicago determined that this work did not require Institutional Review Board approval.
+This work used only synthetic data and publicly available, deidentified data, and did not involve human subjects research. It involved no recruitment, private records, chart review, outcomes, or identity linkage.
 
 Images, predictions, temporary work products, Slicer scenes, and reports remain on the workstation unless the user explicitly exports them.
 

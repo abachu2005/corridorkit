@@ -25,7 +25,7 @@ research software; computational geometry; medical imaging; 3D Slicer; finite in
 | Field | Value |
 |---|---|
 | C1 Current code version | `v0.2.1` |
-| C2 Permanent link to code/repository used for this code version | [https://doi.org/10.5281/zenodo.23244307](https://doi.org/10.5281/zenodo.23244307); source repository: [GitHub](https://github.com/abachu2005/skullbase-corridor) |
+| C2 Permanent link to code/repository used for this code version | Source repository: [https://github.com/abachu2005/skullbase-corridor](https://github.com/abachu2005/skullbase-corridor); archived release: [https://doi.org/10.5281/zenodo.23244307](https://doi.org/10.5281/zenodo.23244307) |
 | C3 Permanent link to Reproducible Capsule | N/A; no executable reproducible capsule has been deposited |
 | C4 Legal Code License | Apache License 2.0 (`Apache-2.0`) |
 | C5 Code versioning system used | Git |
@@ -91,6 +91,11 @@ The `src/skullbase_corridor` Python package separates domain models, image input
 The scripted Slicer module integrates CT selection, markups, segmentation review, candidate display, exact evaluated paths, linked two- and three-dimensional views, scene persistence, and report export. A separate bounded bridge can export selected Slicer segments on the full CT grid, convert Slicer's array order to engine order, retain the world-RAS affine, and import a saved coverage segmentation. Targets above the bridge's 2,000-foreground-voxel limit are rejected rather than silently subsampled.
 
 The packaged Slicer workflow launches a managed TotalSegmentator [@totalsegmentator] process, using CPU or a compatible configured accelerator. Model predictions are labeled as predictions and require review. The geometry engine consumes reviewed image-derived structures independently of how those structures were produced.
+
+Anand V. Germanwala, a cranial-base neurosurgeon, reviewed
+the software's corridor model, intended research workflow, and limits on
+clinical interpretation. This expert review informed the methodology and
+presentation but was not a formal usability or clinical-validation study.
 
 <div class="figure">
 <img src="figures/figure-1-software-architecture.png" alt="Software architecture and data flow">
@@ -168,27 +173,30 @@ TotalSegmentator does not supply complete skull-base critical anatomy. Cranial n
 Verification uses deterministic fixtures, independent geometric references,
 cross-platform automated tests, and programmatic desktop interactions. The
 release CI passed on Ubuntu, macOS, and Windows with Python 3.11 and 3.12.
-The scripted Slicer module was exercised with public CT data in 3D Slicer
-5.12.4, while the positive worked example was verified programmatically. These
-tests establish software execution, not independent usability or clinical
-validation.
+A source-workflow run preceding version 0.2.1 exercised public CT loading and
+generated masks in 3D Slicer 5.12.4. Two fresh native rerun attempts for version
+0.2.1 did not complete because Slicer stalled during startup under Rosetta;
+therefore, the earlier run is not presented as release-specific acceptance. The
+positive worked example was verified programmatically. These tests establish
+bounded software execution, not independent usability or clinical validation.
 
 ### 5.1 Positive worked example
 
 The deterministic planning phantom contains an invented CT-like volume, a
 413-sample ellipsoidal target, two finite portals, and three analytical protected
-spheres. It contains no patient data and is not an anatomical model. The same
-case was analyzed through the desktop workflow used for image-linked review.
-The EEA configuration produced 27 feasible sampled trajectories reaching 94
-target samples; the transmaxillary configuration produced 77 trajectories
-reaching 267 samples. Set comparison assigned 59 samples to EEA only, 232 to
-transmaxillary only, 35 to both, 87 to sampled-unreached, and none to
-unavailable. The interface exposed 104 selectable trajectory witnesses and
-invalidated them when configuration state changed.
+spheres. It contains no patient data and is not an anatomical model. “EEA” and
+“transmaxillary” are nominal labels for synthetic Portal A and Portal B,
+respectively; they do not establish anatomically valid approaches. The same case
+was analyzed through the desktop workflow used for image-linked review. Portal A
+produced 27 feasible sampled trajectories reaching 94 target samples; Portal B
+produced 77 trajectories reaching 267 samples. Set comparison assigned 59
+samples to Portal A only, 232 to Portal B only, 35 to both, 87 to
+sampled-unreached, and none to unavailable. The interface exposed 104 selectable
+trajectory witnesses and invalidated them when configuration state changed.
 
 <div class="figure">
 <img src="figures/figure-3-positive-worked-example.png" alt="Positive synthetic worked example">
-<p class="caption"><strong>Figure 3.</strong> Positive synthetic worked example. (A) Linked-slice planning workspace. (B–C) Inspectable EEA and transmaxillary trajectory witnesses. (D) Sampled target-set comparison. All geometry is invented for software demonstration; the result is not anatomical evidence.</p>
+<p class="caption"><strong>Figure 3.</strong> Positive synthetic worked example. (A) Linked-slice planning workspace. (B–C) Inspectable trajectories through Portal A (nominal EEA) and Portal B (nominal transmaxillary). (D) Sampled target-set comparison. All geometry and approach labels are invented for software demonstration; the result is not anatomical evidence.</p>
 </div>
 
 ### 5.2 Numerical verification
@@ -197,7 +205,7 @@ For supported unobstructed analytical angular fixtures, an independent replay
 recorded 82 of 82 comparisons below a prespecified one-percent relative-error
 threshold; the maximum observed error was 0.0001204123%. This result applies to
 the geometry-aware unobstructed method, not protected-structure quadrature. In a
-separate legacy grid-quadrature stress fixture, a small off-axis target retained
+separate grid-quadrature stress fixture, a small off-axis target retained
 11.368% error at the finest grid. That is a resolution limitation of the
 protected-geometry estimate: users should treat its solid-angle value as
 descriptive, inspect convergence, and omit the measurement when convergence is
@@ -208,12 +216,13 @@ three public cases, then repeated under a frozen protocol for 4,720 queries
 across 118 eligible NasalSeg cases (40 per case). A clearance-bound violation
 means the reported positive clearance exceeded the independent cell-box
 optimizer's upper distance bound after subtracting instrument radius. No
-false-clear, clearance-bound, field-of-view-policy, or budget-fallback changes
-were observed. Refinement recovered 2,164 clear classifications that the coarse
-method conservatively blocked; 1,190 budget-exhausted queries retained the
-coarse blocked result. Because the public replay shares broad-phase candidate
-selection with the implementation, these observations test bounded numerical
-consistency rather than completeness.
+false-clear, clearance-bound, or field-of-view-policy violations were observed.
+Refinement recovered 2,164 clear classifications that the coarse method
+conservatively blocked. In 1,190 budget-exhausted queries, the specified
+fallback preserved the coarse blocked classification; this was expected
+fallback behavior, not evidence that refinement completed. Because the public
+replay shares broad-phase candidate selection with the implementation, these
+observations test bounded numerical consistency rather than completeness.
 
 NasalSeg v2 [@nasalseg] supplied the public P001–P003 cases and the 118-case
 replay cohort. Twelve of 130 image/label pairs were excluded because image and
@@ -221,10 +230,17 @@ label physical geometry did not match. Its air-space labels provide no
 operative-corridor reference standard; the dataset is used only for file,
 coordinate, and execution tests.
 
-The software's methodological contribution is the combination of inspectable
-finite-instrument witnesses, explicit unknown states, and set-based comparison
-of alternative versus simultaneous access. These capabilities support
-reproducible method studies and synthetic education scenarios.
+The software turns a corridor result from a single reachability label into an
+inspectable record: researchers can recover the finite path, insertion depth,
+represented obstruction state, target subset, and reason for rejection or
+abstention. This supports reproducible sensitivity studies of portal and
+instrument assumptions, direct comparison of alternative and simultaneous
+access without double counting target samples, and regression testing across
+geometry implementations. The Slicer integration places those records beside
+the images and segmentations from which inputs were derived. The immediate
+impact is methodological and educational: it provides a shared, auditable
+software substrate for phantom, cadaveric, and future clinically validated
+studies, rather than evidence that any approach is safe or superior.
 
 ## 6. Limitations
 
@@ -276,10 +292,9 @@ article reports the retained aggregate verification results.
 
 ## 8. Ethics and data governance
 
-The software evidence uses synthetic fixtures and an existing public dataset
-described by its source as deidentified. It involves no recruitment, private
-records, chart review, outcomes, or identity linkage. Loyola University Chicago
-determined that this work did not require Institutional Review Board approval.
+This work used only synthetic data and publicly available, deidentified data,
+and did not involve human subjects research. It involved no recruitment,
+private records, chart review, outcomes, or identity linkage.
 
 Images, predictions, temporary work products, Slicer scenes, and reports remain
 on the workstation unless the user explicitly exports them.
