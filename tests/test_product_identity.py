@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_package_version_and_entry_points_agree():
-    config = tomllib.loads((ROOT / "pyproject.toml").read_text())
+    config = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
     project = config["project"]
     assert project["name"] == "corridorkit"
     assert project["version"] == corridorkit.__version__ == "0.3.0"
@@ -36,7 +36,7 @@ def test_cli_displays_current_brand():
 
 def test_current_source_has_no_legacy_package_imports():
     for path in (ROOT / "src/corridorkit").rglob("*.py"):
-        for node in ast.walk(ast.parse(path.read_text())):
+        for node in ast.walk(ast.parse(path.read_text(encoding="utf-8"))):
             if isinstance(node, ast.Import):
                 modules = [alias.name for alias in node.names]
             elif isinstance(node, ast.ImportFrom):
@@ -47,9 +47,9 @@ def test_current_source_has_no_legacy_package_imports():
 
 
 def test_slicer_display_brand_and_extension_build_name_agree():
-    source = (ROOT / "slicer/SkullBaseComparison/SkullBaseComparison.py").read_text()
+    source = (ROOT / "slicer/SkullBaseComparison/SkullBaseComparison.py").read_text(encoding="utf-8")
     assert 'self.parent.title = "CorridorKit"' in source
-    assert "project(CorridorKit)" in (ROOT / "CMakeLists.txt").read_text()
+    assert "project(CorridorKit)" in (ROOT / "CMakeLists.txt").read_text(encoding="utf-8")
     assert (ROOT / "CorridorKit.s4ext").is_file()
 
 
