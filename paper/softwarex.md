@@ -63,6 +63,11 @@ controller defaults to the managed local worker; selecting the optional Azure
 backend is an explicit advanced configuration requiring a separate endpoint and
 token. This distinction preserves the local-data policy for ordinary use.
 
+<div class="figure">
+<img src="figures/figure-1-local-first-architecture.png" alt="Local-first software architecture and data flow">
+<p class="caption"><strong>Figure 1.</strong> Local-first software architecture and data flow. The public workflow keeps CT images, predictions, geometry, and reports on the user's workstation. The optional Azure backend is retained only as evaluation infrastructure.</p>
+</div>
+
 ### 2.2 Coordinates and input representations
 
 All engine geometry is represented in millimetres in a declared physical frame. Affine matrices map voxel indices to physical positions. Image loaders normalize declared RAS/LPS conventions and spatial units to RAS millimetres, and incompatible frames are rejected rather than silently aligned. Registration and resampling are explicit review operations.
@@ -86,6 +91,11 @@ and perpendicular distance from the trajectory is
 A target sample is a reach candidate only when insertion is nonnegative, does not exceed instrument length, and the perpendicular distance is no greater than the working-tip radius plus configured target tolerance. Shaft radius is not added to target tolerance.
 
 The inserted instrument is modeled as a finite capsule from the entry point to the insertion depth required for the target. Collision and aperture checks conservatively use the larger of shaft radius and working-tip radius. A portal is a finite circular disk with a declared forward normal. The software checks forward traversal and conservatively tests whether the oblique shaft footprint fits the aperture. This is not a manufacturer-specific, articulated, deformable, or tissue-interacting instrument model.
+
+<div class="figure">
+<img src="figures/figure-2-finite-instrument-geometry.png" alt="Synthetic finite-instrument geometry schematic">
+<p class="caption"><strong>Figure 2.</strong> Synthetic finite-instrument geometry schematic. (A) A finite swept capsule traverses a finite portal toward a target sample. (B) Exact-path evaluation retains collision states against represented protected geometry. This schematic is not patient anatomy and is not to scale.</p>
+</div>
 
 Analytical sphere clearance is computed directly. Voxel masks represent closed affine cells. The coarse voxel backend uses conservative physical-space bounds and interpolation guards; optional near-boundary refinement checks candidate cells under a finite budget. Exhausting that budget preserves conservative blockage. Geometry required outside a protected mask field of view triggers the configured out-of-field policy.
 
@@ -158,6 +168,11 @@ running hour before storage, registry, bandwidth, taxes, and discounts; keeping
 one worker continuously warm would be approximately USD 387 per 730-hour month.
 No cloud benchmark establishes local CPU/GPU performance, which depends on the
 user's hardware and model cache.
+
+<div class="figure">
+<img src="figures/figure-3-public-evaluation-summary.png" alt="Public engineering evaluation summary">
+<p class="caption"><strong>Figure 3.</strong> Public engineering evaluation summary. (A) Optional Azure D4 CPU timings for P001–P003; these are not local-runtime estimates. (B) Exact candidate states were retained as blocked or unavailable, with no path labeled safe. (C) NasalSeg v2 image/label geometry audit. The dataset has no operative-corridor ground truth, so these observations support execution and accounting only.</p>
+</div>
 
 ## 5. Limitations
 
