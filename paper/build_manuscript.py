@@ -62,14 +62,14 @@ def architecture_figure() -> None:
             (x1 + 0.05, 2.02), (x2 - 0.05, 2.02), arrowstyle="-|>",
             mutation_scale=13, linewidth=1.4, color=TEAL
         ))
-    ax.text(5.5, 3.65, "Public execution boundary: local workstation",
+    ax.text(5.5, 3.65, "Software components and data flow",
             ha="center", fontsize=13, fontweight="bold", color=BLUE)
     ax.add_patch(Rectangle((0.08, 0.7), 10.84, 2.65, fill=False,
                            linestyle="--", linewidth=1.4, edgecolor=TEAL))
     ax.text(5.5, 0.25,
-            "The optional Azure backend is evaluation infrastructure and is not required by the public workflow.",
+            "The packaged default runs analysis on the workstation; deployment choice is not the scientific contribution.",
             ha="center", fontsize=9, color=DARK)
-    save(fig, "figure-1-local-first-architecture.png")
+    save(fig, "figure-1-software-architecture.png")
 
 
 def geometry_figure() -> None:
@@ -111,50 +111,31 @@ def geometry_figure() -> None:
     save(fig, "figure-2-finite-instrument-geometry.png")
 
 
-def evidence_figure() -> None:
-    evidence = json.loads(EVIDENCE.read_text())
-    cases = evidence["cases"]
-    labels = [case["case"] for case in cases]
-    times = [case["elapsed_seconds"] for case in cases]
-    blocked = [case["states"].get("blocked", 0) for case in cases]
-    unavailable = [case["states"].get("unavailable", 0) for case in cases]
+def worked_example_figure() -> None:
+    from PIL import Image
 
-    fig, axes = plt.subplots(1, 3, figsize=(11.5, 4.0))
-    ax, bx, cx = axes
-    bars = ax.bar(labels, times, color=[TEAL, ORANGE, BLUE], width=0.62)
-    for bar, value in zip(bars, times):
-        ax.text(bar.get_x() + bar.get_width() / 2, value + 10, f"{value:g} s",
-                ha="center", fontsize=9)
-    ax.set_ylim(0, max(times) * 1.2)
-    ax.set_ylabel("Elapsed seconds")
-    ax.set_title("A  Optional Azure benchmark", loc="left", fontweight="bold")
-    ax.spines[["top", "right"]].set_visible(False)
-
-    x = np.arange(len(labels))
-    bx.bar(x, blocked, color=RED, label="blocked")
-    bx.bar(x, unavailable, bottom=blocked, color=GOLD, label="unavailable")
-    bx.set_xticks(x, labels)
-    bx.set_ylim(0, 3.6)
-    bx.set_yticks([0, 1, 2, 3])
-    bx.set_ylabel("Candidate paths")
-    bx.set_title("B  Retained path states", loc="left", fontweight="bold")
-    bx.legend(frameon=False, loc="upper left")
-    bx.spines[["top", "right"]].set_visible(False)
-
-    eligible, excluded = 118, 12
-    cx.pie([eligible, excluded], colors=[TEAL, ORANGE], startangle=90,
-           wedgeprops={"width": 0.38, "edgecolor": "white"})
-    cx.text(0, 0.08, "130", ha="center", va="center", fontsize=20,
-            fontweight="bold", color=DARK)
-    cx.text(0, -0.2, "paired records", ha="center", va="center", fontsize=8, color=DARK)
-    cx.set_title("C  NasalSeg geometry audit", loc="left", fontweight="bold")
-    cx.legend([f"eligible: {eligible}", f"excluded: {excluded}"],
-              loc="lower center", bbox_to_anchor=(0.5, -0.18), frameon=False, fontsize=8)
-    fig.text(0.5, -0.04,
-             "Engineering execution evidence only; no operative-corridor ground truth or clinical validation.",
-             ha="center", fontsize=9, color=DARK)
+    directory = FIGURES / "worked-example"
+    images = [
+        Image.open(directory / "planning-workspace.png").convert("RGB"),
+        Image.open(directory / "eea-path.png").convert("RGB"),
+        Image.open(directory / "transmaxillary-path.png").convert("RGB"),
+        Image.open(directory / "coverage-comparison.png").convert("RGB"),
+    ]
+    fig, axes = plt.subplots(2, 2, figsize=(11.5, 8.0))
+    titles = [
+        "A  Planning workspace",
+        "B  EEA trajectory",
+        "C  Transmaxillary trajectory",
+        "D  Sampled coverage comparison",
+    ]
+    for ax, image, title in zip(axes.flat, images, titles):
+        ax.imshow(image)
+        ax.set_title(title, loc="left", fontsize=10, fontweight="bold")
+        ax.axis("off")
+    fig.suptitle("Deterministic positive synthetic worked example",
+                 fontsize=13, fontweight="bold", color=BLUE)
     fig.tight_layout()
-    save(fig, "figure-3-public-evaluation-summary.png")
+    save(fig, "figure-3-positive-worked-example.png")
 
 
 def bibliography_html() -> str:
@@ -164,10 +145,68 @@ def bibliography_html() -> str:
   image computing platform for the Quantitative Imaging Network.
   <em>Magnetic Resonance Imaging</em>. 2012;30(9):1323–1341.
   doi:10.1016/j.mri.2012.05.001.</li>
+  <li>Ungi T, Lasso A, Fichtinger G. Open-source platforms for navigated
+  image-guided interventions. <em>Medical Image Analysis</em>. 2016;33:181–186.
+  doi:10.1016/j.media.2016.06.011.</li>
+  <li>Yeniaras E, Fuentes DT, Fahrenholtz SJ, et al. Design and initial evaluation
+  of a treatment planning software system for MRI-guided laser ablation in the
+  brain. <em>Int J CARS</em>. 2014;9:659–667. doi:10.1007/s11548-013-0948-x.</li>
+  <li>Muralidharan V, Swaminathan G, Devadhas D, Joseph BV. Patient-specific
+  interactive software module for virtual preoperative planning and visualization
+  of pedicle screw entry point and trajectories. <em>Neurology India</em>.
+  2018;66(6):1766–1770. doi:10.4103/0028-3886.246281.</li>
+  <li>Chen X, Xu L, Wang H, et al. Development of a surgical navigation system
+  based on 3D Slicer for intraoperative implant placement surgery.
+  <em>Medical Engineering &amp; Physics</em>. 2017;41:81–89.
+  doi:10.1016/j.medengphy.2017.01.005.</li>
+  <li>Narizzano M, Arnulfo G, Ricci S, et al. SEEG assistant: a 3DSlicer extension
+  to support epilepsy surgery. <em>BMC Bioinformatics</em>. 2017;18:124.
+  doi:10.1186/s12859-017-1545-8.</li>
+  <li>Brunenberg EJL, Vilanova A, Visser-Vandewalle V, et al. Automatic trajectory
+  planning for deep brain stimulation: a feasibility study. <em>MICCAI</em>.
+  2007:584–592. doi:10.1007/978-3-540-75757-3_71.</li>
+  <li>Bériault S, Al Subaie F, Collins DL, Sadikot AF, Pike GB. A multi-modal
+  approach to computer-assisted deep brain stimulation trajectory planning.
+  <em>Int J CARS</em>. 2012;7(5):687–704. doi:10.1007/s11548-012-0768-4.</li>
+  <li>Shamir RR, Joskowicz L, Tamir I, et al. Reduced risk trajectory planning in
+  image-guided keyhole neurosurgery. <em>Medical Physics</em>.
+  2012;39(5):2885–2895. doi:10.1118/1.4704643.</li>
+  <li>Trope M, Shamir RR, Joskowicz L, et al. The role of automatic computer-aided
+  surgical trajectory planning in improving the expected safety of stereotactic
+  neurosurgery. <em>Int J CARS</em>. 2015;10(7):1127–1140.
+  doi:10.1007/s11548-014-1126-5.</li>
+  <li>Sparks R, Vakharia V, Rodionov R, et al. Anatomy-driven multiple trajectory
+  planning of intracranial electrodes for epilepsy surgery. <em>Int J CARS</em>.
+  2017;12(8):1245–1255. doi:10.1007/s11548-017-1628-z.</li>
+  <li>Wankhede A, Madiraju L, Siampli E, et al. Validation of a novel path planner
+  for stereotactic neurosurgical interventions. <em>Int J Med Robotics Comput
+  Assist Surg</em>. 2022;18(6):e2458. doi:10.1002/rcs.2458.</li>
+  <li>Roth J, Singh A, Nyquist G, et al. Three-dimensional and 2-dimensional
+  endoscopic exposure of midline cranial base targets. <em>Neurosurgery</em>.
+  2009;65(6):1116–1128. doi:10.1227/01.NEU.0000360340.85186.7A.</li>
+  <li>Wilson DA, Williamson RW, Preul MC, Little AS. Comparative analysis of
+  surgical freedom and angle of attack of two minimal-access endoscopic
+  transmaxillary approaches. <em>World Neurosurgery</em>. 2014;82:e487–e493.
+  doi:10.1016/j.wneu.2013.02.003.</li>
+  <li>Elhadi AM, Almefty KK, Mendes GAC, et al. Comparison of surgical freedom and
+  area of exposure in three endoscopic transmaxillary approaches.
+  <em>J Neurol Surg B Skull Base</em>. 2014;75(5):346–353.
+  doi:10.1055/s-0034-1372467.</li>
+  <li>Lin B-J, Ju D-T, Hsu T-H, et al. Quantitative comparison of endoscopically
+  assisted endonasal, sublabial and transorbital transmaxillary approaches.
+  <em>Clinical Otolaryngology</em>. 2021;46(1):123–130. doi:10.1111/coa.13559.</li>
+  <li>Agosti E, Saraceno G, Rampinelli V, et al. Quantitative anatomic comparison
+  of endoscopic transnasal and microsurgical transcranial approaches.
+  <em>Operative Neurosurgery</em>. 2022;23(4):e256–e266.
+  doi:10.1227/ons.0000000000000312.</li>
   <li id="ref-totalsegmentator">Wasserthal J, Breit H-C, Meyer MT, et al.
   TotalSegmentator: robust segmentation of 104 anatomic structures in CT images.
   <em>Radiology: Artificial Intelligence</em>. 2023;5(5):e230024.
   doi:10.1148/ryai.230024.</li>
+  <li>Isensee F, Jaeger PF, Kohl SAA, Petersen J, Maier-Hein KH. nnU-Net: a
+  self-configuring method for deep learning-based biomedical image segmentation.
+  <em>Nature Methods</em>. 2021;18(2):203–211.
+  doi:10.1038/s41592-020-01008-z.</li>
   <li id="ref-nasalseg">NasalSeg dataset, version record 13893419. Zenodo.
   <a href="https://zenodo.org/records/13893419">https://zenodo.org/records/13893419</a>
   (accessed 8 October 2026).</li>
@@ -180,9 +219,20 @@ def build_document() -> None:
     from weasyprint import HTML
 
     source = (PAPER / "softwarex.md").read_text()
-    source = source.replace("[@slicer]", "[1]")
-    source = source.replace("[@totalsegmentator]", "[2]")
-    source = source.replace("[@nasalseg]", "[3]")
+    citation_numbers = {
+        "slicer": 1, "ungi2016": 2, "yeniaras2014": 3, "muralidharan2018": 4,
+        "chen2017": 5, "narizzano2017": 6, "brunenberg2007": 7,
+        "beriault2012": 8, "shamir2012": 9, "trope2015": 10, "sparks2017": 11,
+        "wankhede2022": 12, "roth2009": 13, "wilson2014": 14, "elhadi2014": 15,
+        "lin2021": 16, "agosti2022": 17, "totalsegmentator": 18, "nnunet": 19,
+        "nasalseg": 20,
+    }
+
+    def replace_citations(match: re.Match[str]) -> str:
+        keys = re.findall(r"@([A-Za-z0-9_-]+)", match.group(0))
+        return "[" + ", ".join(str(citation_numbers[key]) for key in keys) + "]"
+
+    source = re.sub(r"\[(?:@[A-Za-z0-9_-]+(?:;\s*)?)+\]", replace_citations, source)
     source = source.replace(r"\(\mathbf{e}\)", "<strong>e</strong>")
     source = source.replace(r"\(\mathbf{d}\)", "<strong>d</strong>")
     source = source.replace(r"\(\mathbf{x}\)", "<strong>x</strong>")
@@ -230,8 +280,8 @@ a { color: #176b87; text-decoration: none; }
 blockquote { color: #455a64; border-left: 3px solid #b0bec5; padding-left: 10pt; }
 """
     banner = (
-        '<div class="draft-banner">SUBMISSION DRAFT — author affiliation, email, ORCID, '
-        "funding, competing-interest, acknowledgement, and ethics metadata remain to be verified."
+        '<div class="draft-banner">INTERNAL REVIEW DRAFT — not in the mandatory SoftwareX template. '
+        "Runtime evidence and author metadata remain incomplete."
         "</div>"
     )
     html = (
@@ -246,7 +296,7 @@ blockquote { color: #455a64; border-left: 3px solid #b0bec5; padding-left: 10pt;
 def main() -> None:
     architecture_figure()
     geometry_figure()
-    evidence_figure()
+    worked_example_figure()
     build_document()
     print(PAPER / "softwarex.pdf")
 

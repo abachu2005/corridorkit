@@ -1,10 +1,10 @@
 # SoftwareX highlights
 
-- Models finite rigid instruments, apertures, targets, and protected geometry in physical image coordinates.
-- Retains exact trajectory witnesses, coverage sets, rejection reasons, and conservative abstention states.
-- Integrates typed Python analysis with linked image review and scene persistence in 3D Slicer.
-- Uses a local-first publication design so imaging and generated artifacts remain on the workstation.
-- Reports bounded software verification without claims of clinical safety, efficacy, superiority, usability, or validation.
+- Models finite instruments, apertures, targets, and protected geometry.
+- Retains trajectory witnesses, coverage sets, rejection reasons, and abstention.
+- Integrates typed geometry analysis with linked image review in 3D Slicer.
+- Provides a packaged 3D Slicer workflow for workstation execution.
+- Reports bounded software verification without clinical claims.
 
 ## Submission note
 

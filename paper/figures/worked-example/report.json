@@ -1,0 +1,24 @@
+{
+  "approach_modes_verified": true,
+  "case_id": "SYNTHETIC-planning-phantom-v1-NOT-validated-anatomy",
+  "errors": [],
+  "full_target_contours_verified": true,
+  "limitations": "Synthetic or public computational targets/portals, not validated operative anatomy. Programmatic desktop verification, not clinician acceptance.",
+  "native_vtk": false,
+  "passed": true,
+  "selectable_paths": 104,
+  "selected_paths": [
+    {
+      "approach": "EEA (SYNTHETIC)",
+      "kind": "eea",
+      "trajectory_index": 9
+    },
+    {
+      "approach": "Transmaxillary (SYNTHETIC)",
+      "kind": "transmaxillary",
+      "trajectory_index": 0
+    }
+  ],
+  "source_ct_loaded": true,
+  "stale_paths_cleared": true
+}
