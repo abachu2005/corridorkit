@@ -11,7 +11,7 @@ def make_icon(path: Path) -> None:
     draw.polygon([(260, 850), (500, 470), (550, 510)], fill="#44d9c1")
     draw.polygon([(790, 850), (550, 470), (500, 510)], fill="#67aaff")
     draw.ellipse((470, 440, 578, 548), fill="#f0bd69")
-    image.save(path, format="ICNS")
+    image.save(path, format="PNG" if path.suffix.lower() == ".png" else "ICNS")
 
 
 if __name__ == "__main__":

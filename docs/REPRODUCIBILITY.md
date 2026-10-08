@@ -1,4 +1,4 @@
-# Reproducing the v0.2.0 software results
+# Reproducing the v0.2.1 software results
 
 This protocol reproduces software behavior, not clinical validity. No private
 patient data are required. Public CTs and model weights are downloaded from
@@ -26,11 +26,11 @@ GPU, cloud account, or credentials.
 ```bash
 python -m pip install -e '.[desktop,test]' build
 python packaging/verify_source_release.py --desktop --tests --build \
-  --output dist/source-release-v0.2.0 \
-  --report dist/source-release-v0.2.0-report.json
+  --output dist/source-release-v0.2.1 \
+  --report dist/source-release-v0.2.1-report.json
 python packaging/build_slicer_package.py
 python packaging/verify_slicer_package.py \
-  dist/SkullBaseCorridor-Slicer-5.12-0.2.0.zip
+  dist/SkullBaseCorridor-Slicer-5.12-0.2.1.zip
 ```
 
 GUI tests are intentionally isolated into separate processes by the source
@@ -39,7 +39,7 @@ verifier because a combined Qt test process can hang.
 ## Local model-assisted Slicer workflow
 
 1. Install 3D Slicer 5.12.
-2. Extract `SkullBaseCorridor-Slicer-5.12-0.2.0.zip`.
+2. Extract `SkullBaseCorridor-Slicer-5.12-0.2.1.zip`.
 3. Add the extracted
    `SkullBaseCorridor/slicer/SkullBaseComparison` directory under Slicer's
    **Edit → Application Settings → Modules → Additional module paths**.

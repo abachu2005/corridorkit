@@ -28,7 +28,7 @@ def software_version() -> str:
     try:
         return version("skullbase-corridor")
     except PackageNotFoundError:
-        return "0.2.0"
+        return "0.2.1"
 
 
 def atomic_json_write(path: str | Path, value: Any) -> None:

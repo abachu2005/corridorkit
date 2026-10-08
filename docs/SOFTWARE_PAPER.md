@@ -67,7 +67,7 @@ The `src/skullbase_corridor` package separates typed domain configurations,
 geometry, analysis, image I/O, application services, desktop views and exports.
 The CLI supports synthetic case generation, analysis and environment reporting.
 The desktop provides interactive inspection using Qt and optional VTK.
-`pyproject.toml` declares Python >=3.11 and release version 0.2.0; the domain
+`pyproject.toml` declares Python >=3.11 and release version 0.2.1; the domain
 schema is separately versioned (currently 1.1). A schema version is not a claim
 of algorithm validation.
 

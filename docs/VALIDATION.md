@@ -1,6 +1,6 @@
 # Engineering validation statement
 
-Version: 0.2.0 research software release; clinical release gates remain open.
+Version: 0.2.1 research software release; clinical release gates remain open.
 
 ## Established
 

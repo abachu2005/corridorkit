@@ -134,7 +134,7 @@ or incomplete anatomy suppresses the affected measurement.
 ```bash
 python packaging/verify_source_release.py --desktop --tests --build \
   --output dist/source-release-new --report dist/source-release-new-report.json
-python packaging/verify_wheel.py dist/source-release-new/skullbase_corridor-0.2.0-py3-none-any.whl
+python packaging/verify_wheel.py dist/source-release-new/skullbase_corridor-0.2.1-py3-none-any.whl
 ```
 
 Use a fresh output/report path for each attempt. The verifier builds from a

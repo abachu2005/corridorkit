@@ -15,6 +15,7 @@ REQUIRED_MODULE_FILES = {
     "CorridorAnalysis.py",
     "EntryProposals.py",
     "IntegratedPlanning.py",
+    "Resources/Icons/SkullBaseComparison.png",
     "SkullBaseComparison.py",
 }
 FORBIDDEN_PARTS = {

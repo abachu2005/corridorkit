@@ -30,7 +30,7 @@ The manual label volumes were **not** supplied to anatomy inference or path
 evaluation. Exact checksums, targets, timings, and states are retained in
 `docs/evidence/multicase-integrated-acceptance-20261008.json`.
 
-The public v0.2.0 runtime is local-first: Slicer launches an isolated managed
+The public v0.2.1 runtime is local-first: Slicer launches an isolated managed
 Python worker and CT data remain on the workstation. The first setup installs
 the pinned TotalSegmentator stack and first model use downloads weights. The
 Azure deployment below is optional engineering infrastructure, not a public

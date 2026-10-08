@@ -9,7 +9,7 @@
 - **Corresponding-author email:** **HUMAN METADATA REQUIRED**
 - **ORCID:** **HUMAN METADATA REQUIRED — do not infer**
 - **Submission date:** **HUMAN METADATA REQUIRED**
-- **Software release cited by this article:** version 0.2.0 in the inspected checkout
+- **Software release cited by this article:** version 0.2.1 in the inspected checkout
 - **Repository URL and immutable release tag/commit:** **HUMAN METADATA REQUIRED**
 - **Archived software identifier/DOI:** **HUMAN METADATA REQUIRED — no DOI is claimed**
 - **Archived evidence-supplement identifier:** **HUMAN METADATA REQUIRED**
@@ -24,7 +24,7 @@ research software; computational geometry; medical imaging; 3D Slicer; finite in
 
 ## Code metadata
 
-- **Current code version:** 0.2.0
+- **Current code version:** 0.2.1
 - **Permanent link to code/repository used for this article:** **HUMAN METADATA REQUIRED**
 - **Permanent link to reproducible capsule/evidence supplement:** **HUMAN METADATA REQUIRED**
 - **Legal code license:** Apache License 2.0
@@ -130,11 +130,11 @@ Verification is based on deterministic tests, analytical fixtures, independent g
 
 Native Slicer 5.12.4 acceptance on macOS 15.4 previously loaded the public
 P001 CT, rendered EEA and CTM entry windows and finite shafts in linked 2-D/3-D
-views, and saved a scene and screenshot. A final v0.2.0 rerun was attempted
+views, and saved a scene and screenshot. A final v0.2.1 rerun was attempted
 twice on 8 October 2026, but the installed Intel Slicer process remained in
 macOS dynamic-loader startup under Rosetta and never reached the Python
 acceptance callback. The historical image is therefore retained as prior
-integration evidence, not represented as a fresh v0.2.0 screenshot. Automated
+integration evidence, not represented as a fresh v0.2.1 screenshot. Automated
 current-source tests and package verification passed separately; native release
 acceptance remains an explicit unresolved platform gate.
 
@@ -175,7 +175,7 @@ their upstream compatibility constraints.
 
 ## 6. Reproducibility and availability
 
-The source code is licensed under Apache-2.0. Dependencies retain their own licenses. The Python package declares Python 3.11 or newer and version 0.2.0. The lightweight release is expected to contain source, tests, text documentation, packaging verification scripts, and deterministic synthetic fixtures. It does not contain public CT archives, private user data, local sessions, screenshots, model weights, or all frozen benchmark outputs.
+The source code is licensed under Apache-2.0. Dependencies retain their own licenses. The Python package declares Python 3.11 or newer and version 0.2.1. The lightweight release is expected to contain source, tests, text documentation, packaging verification scripts, and deterministic synthetic fixtures. It does not contain public CT archives, private user data, local sessions, screenshots, model weights, or all frozen benchmark outputs.
 
 The source-release tooling builds from a source allowlist, compares staged content with current files, records hashes, and can run tests and wheel smoke checks. The packaged Slicer extension uses a manifest and checksum-verified wheelhouse to provision an isolated per-user runtime without modifying Slicer's Python packages. For the article release, this runtime must also include and verify all dependencies needed for local TotalSegmentator CPU/GPU execution.
 

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "skullbase-corridor"
-version = "0.2.0"
+version = "0.2.1"
 description = "Geometry-first analysis of skull-base instrument corridors"
 readme = "README.md"
 license = { file = "LICENSE" }

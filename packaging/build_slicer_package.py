@@ -30,6 +30,7 @@ MODULE_FILES = (
     "EntryProposals.py",
     "IntegratedPlanning.py",
 )
+MODULE_RESOURCES = ("Resources/Icons/SkullBaseComparison.png",)
 SOURCE_DATE_EPOCH = 315532800  # 1980-01-01, the first date representable by ZIP.
 ZIP_TIME = (1980, 1, 1, 0, 0, 0)
 ARCHIVE_ROOT = "SkullBaseCorridor"
@@ -105,6 +106,10 @@ def stage_payload(stage: Path, wheelhouse: Path) -> dict[str, object]:
 
     for name in MODULE_FILES:
         shutil.copyfile(MODULE_SOURCE / name, module / name)
+    for name in MODULE_RESOURCES:
+        destination = module / name
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(MODULE_SOURCE / name, destination)
 
     # SkullBaseComparison loads this small numerical core directly for its
     # in-process landmark measurements.

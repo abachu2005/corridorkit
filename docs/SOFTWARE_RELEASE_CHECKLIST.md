@@ -83,7 +83,7 @@ combined Qt-suite hang; it does not claim the lifecycle cause is fixed.
 python packaging/verify_source_release.py --desktop --tests --build \
   --output dist/source-release-new --report dist/source-release-new-report.json
 python packaging/verify_wheel.py \
-  dist/source-release-new/skullbase_corridor-0.2.0-py3-none-any.whl
+  dist/source-release-new/skullbase_corridor-0.2.1-py3-none-any.whl
 ```
 
 Choose fresh output/report paths; existing evidence is not overwritten.

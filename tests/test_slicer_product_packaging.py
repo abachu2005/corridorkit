@@ -9,8 +9,10 @@ def test_extension_metadata_and_integrated_controller_are_packaged():
     assert (ROOT / "CMakeLists.txt").is_file()
     descriptor = (ROOT / "SkullBaseCorridor.s4ext").read_text()
     assert "category IGT" in descriptor
+    assert (ROOT / "slicer/SkullBaseComparison/Resources/Icons/SkullBaseComparison.png").is_file()
     module = (ROOT / "slicer/SkullBaseComparison/CMakeLists.txt").read_text()
     assert "IntegratedPlanning.py" in module
+    assert "Resources/Icons/SkullBaseComparison.png" in module
     ast.parse((ROOT / "slicer/SkullBaseComparison/IntegratedPlanning.py").read_text())
 
 

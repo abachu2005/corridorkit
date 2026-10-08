@@ -49,7 +49,7 @@ root:
 ```sh
 python packaging/build_slicer_package.py
 python packaging/verify_slicer_package.py \
-  dist/SkullBaseCorridor-Slicer-5.12-0.2.0.zip
+  dist/SkullBaseCorridor-Slicer-5.12-0.2.1.zip
 ```
 
 Extract the archive to a permanent directory. In Slicer 5.12, open
